@@ -1,4 +1,4 @@
-# OpenRoots / ProgressRooms — Agent Helper & Reference Guide
+# OpenRoots / Progress Rooms — Agent Helper & Reference Guide
 
 A concise, point-by-point reference document for new AI agents working across `openroots` and `progressrooms`.
 
@@ -23,7 +23,7 @@ A concise, point-by-point reference document for new AI agents working across `o
 - **Endpoint**: `https://api.brevo.com/v3/smtp/email`
 - **API Key**: Configured via `BREVO_API_KEY` in `progressrooms-api/.env` (REST v3 key)
 - **Sender Email**: `sahilambekar.dev@gmail.com`
-- **Sender Name**: `ProgressRooms` (or `Aerial Yoga with Shivani` in client repo)
+- **Sender Name**: `Progress Rooms` (or `Aerial Yoga with Shivani` in client repo)
 - **Status Flag**: `BREVO_ENABLED=True`
 
 ### Razorpay (Mock / Development)
@@ -73,9 +73,9 @@ A concise, point-by-point reference document for new AI agents working across `o
 - **Payload Structure**:
   ```json
   {
-    "sender": { "name": "ProgressRooms", "email": "sahilambekar.dev@gmail.com" },
+    "sender": { "name": "Progress Rooms", "email": "sahilambekar.dev@gmail.com" },
     "to": [{ "email": "recipient@example.com", "name": "Recipient Name" }],
-    "subject": "🌿 Your ProgressRooms Code (123456)",
+    "subject": "🌿 Your Progress Rooms Code (123456)",
     "htmlContent": "<html>...nature sanctuary styled HTML template...</html>"
   }
   ```
@@ -120,7 +120,7 @@ progressrooms/
 Copy and paste this prompt to initialize a new agent in this project:
 
 ```text
-You are working on the ProgressRooms multi-tenant SaaS project inside /Users/sahil/Documents/work/openroots/progressrooms.
+You are working on the Progress Rooms multi-tenant SaaS project inside /Users/sahil/Documents/work/openroots/progressrooms.
 
 Here is the context, architectural baseline, and operating procedure from previous sessions:
 

@@ -6,7 +6,7 @@ OpenRoots is the parent organization workspace housing digital platforms, brand 
 
 ## 🌿 Project Ecosystem
 
-### 1. [ProgressRooms](https://github.com/sahilambekar-ai/progressrooms)
+### 1. [Progress Rooms](https://github.com/sahilambekar-ai/progressrooms)
 A multi-tenant operating platform for teachers, instructors, trainers, and studios conducting scheduled classes, workshops, and memberships.
 
 The platform architecture is decomposed into dedicated repositories:
@@ -23,12 +23,12 @@ The platform architecture is decomposed into dedicated repositories:
 openroots/
 ├── AGENT_HELPER.md              # AI agent reference guide & environment specifications
 ├── README.md                    # Root workspace documentation
-├── assets/                      # OpenRoots & ProgressRooms brand identity assets
+├── assets/                      # OpenRoots & Progress Rooms brand identity assets
 │   └── logo-options/            # Visual identity explorations and variations
 ├── openroots_logo_01.png        # OpenRoots primary emblem
-├── progressrooms/               # ProgressRooms orchestrator & specs (Git Submodule)
+├── progressrooms/               # Progress Rooms orchestrator & specs (Git Submodule)
 ├── progressrooms-script.md      # Comprehensive product & technical specification
-└── progressrooms_logo_01.png    # ProgressRooms primary emblem
+└── progressrooms_logo_01.png    # Progress Rooms primary emblem
 ```
 
 ---

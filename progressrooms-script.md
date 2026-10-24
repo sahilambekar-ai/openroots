@@ -1,4 +1,4 @@
-# ProgressRooms.com
+# Progress Rooms.com
 
 ## Complete Product, Architecture, Database, Payment, Website and Development Specification
 
@@ -8,7 +8,7 @@
 
 Build a production-ready multi-tenant SaaS application called:
 
-# ProgressRooms
+# Progress Rooms
 
 Primary domain:
 
@@ -16,7 +16,7 @@ Primary domain:
 https://progressrooms.com
 ```
 
-ProgressRooms is a platform for teachers, instructors, trainers, coaches, and studios who conduct scheduled classes, sessions, workshops, or training programs.
+Progress Rooms is a platform for teachers, instructors, trainers, coaches, and studios who conduct scheduled classes, sessions, workshops, or training programs.
 
 The platform should be industry-agnostic.
 
@@ -52,7 +52,7 @@ Internally, both must use the same organization-based architecture.
 
 # 2. PRODUCT VISION
 
-ProgressRooms should become an operating platform for businesses that conduct instructor-led sessions.
+Progress Rooms should become an operating platform for businesses that conduct instructor-led sessions.
 
 The platform combines:
 
@@ -87,7 +87,7 @@ The system must be multi-tenant.
 The core hierarchy:
 
 ```text
-ProgressRooms Platform
+Progress Rooms Platform
 │
 ├── Super Admin
 │
@@ -166,7 +166,7 @@ The application contains four major user categories.
 
 ## 5.1 Super Admin
 
-The ProgressRooms platform owner.
+The Progress Rooms platform owner.
 
 Capabilities:
 
@@ -188,7 +188,7 @@ Capabilities:
 
 ## 5.2 Organization Owner
 
-The person who creates a ProgressRooms business account.
+The person who creates a Progress Rooms business account.
 
 Capabilities depend on the subscription plan.
 
@@ -495,7 +495,7 @@ The initial teacher subscription plan may eventually use recurring payments.
 However, do not confuse:
 
 ```text
-Teacher's ProgressRooms subscription
+Teacher's Progress Rooms subscription
 ```
 
 with:
@@ -3247,7 +3247,7 @@ However, future Studio plan may support:
 www.johnguitar.com
 ```
 
-pointing to the ProgressRooms website.
+pointing to the Progress Rooms website.
 
 Prepare architecture but do not implement DNS management initially.
 
