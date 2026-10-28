@@ -1,0 +1,807 @@
+[
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 245,
+    "call": "staffApi(\"/auth/me\")"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 250,
+    "call": "staffApi(`/auth/context${activeStudioId ? `?studio_id=${encodeURIComponent(activeStudioId)}` : \"\"}`)"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 557,
+    "call": "fetch(`${API_BASE_URL}/teachers/${editingTeacher.id}/password`, {\n      method: \"POST\", headers: { \"Content-Type\": \"application/json\", ...authHeaders() },\n      body: JSON.stringify({ studio_password: password }),\n    })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 573,
+    "call": "fetch(`${API_BASE_URL}/teachers/${editingTeacher.id}/invitation`, {\n        method: \"POST\", headers: { \"Content-Type\": \"application/json\", ...authHeaders() }, body: JSON.stringify({ studio_password: password }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 675,
+    "call": "staffApi(`/auth/context?studio_id=${org}`, { signal: controller.signal })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 732,
+    "call": "staffApi(\n      `/organizations/${orgId}/occurrences?start_date=${encodeURIComponent(start.toISOString())}&end_date=${encodeURIComponent(end.toISOString())}`\n    )"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 762,
+    "call": "staffApi(`/organizations/${orgId}/occurrences/${classId}/attendance`)"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 790,
+    "call": "staffApi(`/organizations/${orgId}/occurrences/${selectedLiveClassId}/attendance`, {\n        method: \"POST\",\n        body: JSON.stringify({ enrollment_id: enrollmentId, status }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 817,
+    "call": "staffApi(`/organizations/${orgId}/occurrences/${selectedLiveClassId}/attendance`, {\n          method: \"POST\",\n          body: JSON.stringify({ enrollment_id: student.enrollment_id, status: \"ATTENDED\" }),\n        })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 847,
+    "call": "staffApi(\"/auth/me\", {\n        method: \"PATCH\",\n        body: JSON.stringify({\n          full_name: teacherProfileName,\n          phone: teacherProfilePhone,\n          address: teacherProfileAddress,\n          location: teacherProfileLocation,\n        }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 882,
+    "call": "staffApi(url)"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 895,
+    "call": "staffApi(`/organizations/${orgId}/support-tickets/${ticketId}`)"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 907,
+    "call": "staffApi(`/organizations/${orgId}/support-tickets/${ticketId}/messages`, {\n        method: \"POST\",\n        body: JSON.stringify({ message: ticketReplyMessage.trim() }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 926,
+    "call": "staffApi(`/organizations/${orgId}/support-tickets/${ticketId}/status`, {\n        method: \"PATCH\",\n        body: JSON.stringify({ status: nextStatus }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 947,
+    "call": "fetch(url, { headers: authHeaders() })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 968,
+    "call": "fetch(`${API_BASE_URL}/teachers`, {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\", ...authHeaders() },\n        body: JSON.stringify({\n          username: teacherUsername.trim() || undefined,\n          password: teacherPassword || undefined,\n          address: teacherAddress.trim() || undefined,\n          location: teacherLocation.trim() || undefined,\n          billing_country: teacherBillingCountry || undefined,\n          name: teacherName.trim(),\n          email: teacherEmail.trim().toLowerCase(),\n          phone: teacherPhone.trim() || undefined,\n          title: teacherTitle.trim() || \"Teacher\",\n          bio: teacherBio.trim() || undefined,\n        }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1032,
+    "call": "fetch(`${API_BASE_URL}/teachers/${editingTeacher.id}`, {\n        method: \"PUT\",\n        headers: { \"Content-Type\": \"application/json\", ...authHeaders() },\n        body: JSON.stringify({\n          studio_password: studioPassword,\n          email: teacherEmail,\n          username: teacherUsername,\n          ...(teacherPasswordChanged && teacherPassword ? { password: teacherPassword } : {}),\n          address: teacherAddress,\n          location: teacherLocation,\n          billing_country: teacherBillingCountry || undefined,\n          name: teacherName,\n          phone: teacherPhone,\n          title: teacherTitle,\n          bio: teacherBio,\n          is_active: teacherIsActive,\n        }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1066,
+    "call": "fetch(`${API_BASE_URL}/organizations/${orgId || currentUser?.organization_id}/teachers/${memberId}/zoom/impact`, { headers: authHeaders() })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1077,
+    "call": "fetch(`${API_BASE_URL}/teachers/${teacherId}`, {\n        method: \"DELETE\",\n        headers: authHeaders(),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1104,
+    "call": "fetch(`${API_BASE_URL}/teachers/${teacher.id}`, { method: \"PUT\", headers: { \"Content-Type\": \"application/json\", ...authHeaders() }, body: JSON.stringify({ is_active: !teacher.is_active, studio_password: studioPassword }) })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1126,
+    "call": "fetch(`${API_BASE_URL}/students?${params}`, { headers: authHeaders() })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1154,
+    "call": "fetch(url, { headers: authHeaders() })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1174,
+    "call": "staffApi(`/organizations/${currentOrgId}/classes`)"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1185,
+    "call": "staffApi(\"/students\", {\n        method: \"POST\",\n        body: JSON.stringify({ email: studentAdmissionEmail.trim(), class_id: studentAdmissionClassId, studio_id: currentUser?.organization_id }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1207,
+    "call": "fetch(`${API_BASE_URL}/organizations/${id}/profile`, {\n        headers: { Authorization: `Bearer ${token}` }\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1334,
+    "call": "fetch(`${API_BASE_URL}/organizations/${orgId}/profile`, {\n        method: \"PUT\",\n        headers: {\n          \"Content-Type\": \"application/json\",\n          Authorization: `Bearer ${token}`\n        },\n        body: JSON.stringify(payload)\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1408,
+    "call": "fetch(`${API_BASE_URL}/organizations/${orgId}/profile`, {\n        method: \"PUT\",\n        headers: {\n          \"Content-Type\": \"application/json\",\n          Authorization: `Bearer ${token}`\n        },\n        body: JSON.stringify(payload)\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1545,
+    "call": "fetch(`${API_BASE_URL}/teachers${searchParam}`, { signal: controller.signal, headers: authHeaders() })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1558,
+    "call": "fetch(`${API_BASE_URL}/students?page=1&page_size=50${searchParam}${studioParam}`, { signal: controller.signal, headers: authHeaders() })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1692,
+    "call": "staffApi(`/organizations/${orgId}/attendance/${attendanceType === \"teacher\" ? \"teachers\" : \"students\"}/${personId}?month=${attendanceMonth}`, { signal: controller.signal })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1704,
+    "call": "staffApi(`/organizations/${orgId}/attendance/teachers/${selectedAttendancePerson.id}/occurrences/${event.occurrenceId}`, {\n        method: \"PUT\", body: JSON.stringify({ status: event.status, notes: event.remarks }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1708,
+    "call": "staffApi(`/organizations/${orgId}/occurrences/${event.occurrenceId}/attendance`, {\n        method: \"POST\", body: JSON.stringify({ enrollment_id: event.enrollmentId, status: event.status === \"PRESENT\" ? \"ATTENDED\" : event.status === \"EXCUSED\" ? \"EXCUSED\" : \"ABSENT\", notes: event.remarks }),\n      })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3830,
+    "call": "staffApi(`/organizations/${currentUser?.organization_id}/occurrences/${event.occurrenceId}/send-invite`, { method: \"POST\" })"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3831,
+    "call": "staffApi(`/organizations/${currentUser?.organization_id}/occurrences/${event.occurrenceId}/join-link`, { method: \"POST\" })"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 558,
+    "call": "fetch(API + path, {\n        ...options,\n        headers: {\n          Authorization: `Bearer ${token}`,\n          ...(options?.headers || {}),\n        },\n        cache: 'no-store',\n      })"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 582,
+    "call": "get('/auth/me')"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 583,
+    "call": "get('/student/enrollments')"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 584,
+    "call": "get('/student/upcoming-classes')"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 585,
+    "call": "get('/student/studios')"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 618,
+    "call": "fetch(`${API}/teachers/public/lookup?query=${encodeURIComponent(queryStr)}`)"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 659,
+    "call": "fetch(`${API}/student/classes/${occurrenceId}/cancel`, {\n        method: 'POST',\n        headers: {\n          Authorization: `Bearer ${token}`,\n        },\n      })"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 700,
+    "call": "get(`/student/classes/${c.id}/available-reschedule-slots`)"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 715,
+    "call": "fetch(`${API}/student/classes/${reschedulingClass.id}/reschedule`, {\n        method: 'POST',\n        headers: {\n          'Content-Type': 'application/json',\n          Authorization: `Bearer ${token}`,\n        },\n        body: JSON.stringify({ target_occurrence_id: selectedTargetSlotId }),\n      })"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 782,
+    "call": "get(`/student/attendance?${query.toString()}`, { signal: controller.signal })"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 798,
+    "call": "get('/student/support-tickets')"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 815,
+    "call": "get(`/student/support-tickets/${ticketId}`)"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 826,
+    "call": "fetch(`${API}/student/support-tickets/${ticketId}/messages`, {\n        method: 'POST',\n        headers: {\n          'Content-Type': 'application/json',\n          Authorization: `Bearer ${localStorage.getItem('pr_access_token')}`,\n        },\n        body: JSON.stringify({ message: supportReplyMessage.trim() }),\n      })"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 853,
+    "call": "fetch(`${API}/student/support-tickets`, {\n        method: 'POST',\n        headers: {\n          'Content-Type': 'application/json',\n          Authorization: `Bearer ${localStorage.getItem('pr_access_token')}`,\n        },\n        body: JSON.stringify({\n          organization_id: newTicketStudioId,\n          subject: newTicketSubject.trim(),\n          category: newTicketCategory,\n          initial_message: newTicketMessage.trim(),\n        }),\n      })"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 885,
+    "call": "fetch(`${API}/public/organizations/${encodeURIComponent(studio)}`, { cache: 'no-store', signal: controller.signal })"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1117,
+    "call": "get(`/student/classes/${nextClass.id}/meeting-url`)"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1212,
+    "call": "get(`/student/classes/${c.id}/meeting-url`)"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1701,
+    "call": "get(`/student/classes/${event.occurrenceId}/send-invite`, { method: 'POST' })"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1702,
+    "call": "get(`/student/classes/${event.occurrenceId}/meeting-url`)"
+  },
+  {
+    "file": "src/app/(tenant)/[orgSlug]/route.ts",
+    "line": 10,
+    "call": "fetch(`${api}/public/organizations/${encodeURIComponent(params.orgSlug)}/website-html`, { cache:'no-store' })"
+  },
+  {
+    "file": "src/app/api/communication/[...path]/route.ts",
+    "line": 15,
+    "call": "fetch(url, {\n      method: request.method,\n      headers,\n      body: request.method === \"GET\" ? undefined : await request.text(),\n      cache: \"no-store\",\n      redirect: \"manual\",\n      signal: AbortSignal.timeout(15000),\n    })"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 60,
+    "call": "fetch(`${API_BASE}/auth/login`, {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({\n          email: email.trim().toLowerCase(),\n          password: password,\n        }),\n      })"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 121,
+    "call": "fetch(`${API_BASE}/auth/forgot-password`, {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({ email: email.trim().toLowerCase() }),\n      })"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 152,
+    "call": "fetch(`${API_BASE}/auth/reset-password`, {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({\n          email: email.trim().toLowerCase(),\n          code: resetCode.trim(),\n          new_password: newPassword,\n        }),\n      })"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 178,
+    "call": "fetch(`${API_BASE}/auth/dev-login`, {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({ role: userRole }),\n      })"
+  },
+  {
+    "file": "src/app/meetings/[occurrenceId]/page.tsx",
+    "line": 18,
+    "call": "staffApi('/auth/me')"
+  },
+  {
+    "file": "src/app/meetings/[occurrenceId]/page.tsx",
+    "line": 26,
+    "call": "staffApi(`/student/classes/${params.occurrenceId}/meeting-url`)"
+  },
+  {
+    "file": "src/app/meetings/[occurrenceId]/page.tsx",
+    "line": 28,
+    "call": "staffApi(`/organizations/${encodeURIComponent(studio)}/occurrences/${params.occurrenceId}/join-link`, { method: 'POST' })"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 118,
+    "call": "fetch(`${API_BASE}/auth/register`, {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({\n          full_name: fullName.trim(),\n          email: email.trim().toLowerCase(),\n          password: password,\n          phone: phone.trim() || null,\n          whatsapp_number: whatsappNumber.trim() || null,\n          role: role,\n          privacy_accepted: privacyAccepted,\n          privacy_policy_version: PRIVACY_POLICY_VERSION,\n          location: location.trim() || null,\n          billing_country: billingCountry,\n          studio_name: role === \"STUDIO\" ? (studioName.trim() || `${fullName.trim()} Studio`) : null,\n          selected_plan: role === \"STUDIO\" ? (selectedPlan || \"starter\") : \"starter\",\n        }),\n      })"
+  },
+  {
+    "file": "src/components/AdminHealth.tsx",
+    "line": 60,
+    "call": "staffApi(`/admin/health?period=${period}`, { signal: controller.signal })"
+  },
+  {
+    "file": "src/components/AdminPeople.tsx",
+    "line": 11,
+    "call": "staffApi(`/admin/people?${new URLSearchParams({role, search, page: String(page)})}`)"
+  },
+  {
+    "file": "src/components/AdminPeople.tsx",
+    "line": 16,
+    "call": "staffApi(`/admin/people/${person.id}`, {method: \"DELETE\"})"
+  },
+  {
+    "file": "src/components/AdminStudios.tsx",
+    "line": 56,
+    "call": "staffApi(`/admin/organizations/${studio.id}${action === \"status\" ? \"/status\" : \"\"}`, {method: action === \"status\" ? \"PATCH\" : \"DELETE\", ...(action === \"status\" ? {body: JSON.stringify({status: next})} : {})})"
+  },
+  {
+    "file": "src/components/AdminStudios.tsx",
+    "line": 66,
+    "call": "staffApi(\"/admin/organizations\")"
+  },
+  {
+    "file": "src/components/AdminStudios.tsx",
+    "line": 74,
+    "call": "staffApi(`/admin/organizations/${detailId}`)"
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 58,
+    "call": "staffApi(`/organizations/${orgId}/billing/summary?${query}`)"
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 63,
+    "call": "staffApi(`/organizations/${orgId}/billing/teachers`)"
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 89,
+    "call": "fetch(`${API_BASE}/organizations/${orgId}/billing/export.csv?${params}`, {\n        headers: { Authorization: `Bearer ${token}` },\n      })"
+  },
+  {
+    "file": "src/components/DashboardTypographyProvider.tsx",
+    "line": 40,
+    "call": "staffApi(\"/auth/me/preferences\", { cache: \"no-store\" })"
+  },
+  {
+    "file": "src/components/DashboardTypographyProvider.tsx",
+    "line": 66,
+    "call": "staffApi(\"/auth/me/preferences\", { method: \"PATCH\", body: JSON.stringify({ dashboard_font: next }) })"
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 21,
+    "call": "staffApi(`/organizations/${org}/zoom/settings`)"
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 21,
+    "call": "staffApi(`/organizations/${org}/zoom/host-key`)"
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 39,
+    "call": "staffApi(`/organizations/${org}/teachers/${member}/zoom/connect?zoom_host_id=${encodeURIComponent(hostId.trim())}`, { method: \"POST\" })"
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 50,
+    "call": "staffApi(`/organizations/${org}/zoom/host-key`, { method: \"PUT\", body: JSON.stringify({ host_key: hostKey }) })"
+  },
+  {
+    "file": "src/components/OtpVerificationCard.tsx",
+    "line": 70,
+    "call": "fetch(`${API_BASE}/auth/request-otp`, {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({\n          email: email.trim().toLowerCase(),\n          purpose: purpose,\n        }),\n      })"
+  },
+  {
+    "file": "src/components/OtpVerificationCard.tsx",
+    "line": 104,
+    "call": "fetch(`${API_BASE}/auth/verify-otp`, {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({\n          email: email.trim().toLowerCase(),\n          otp: cleanCode,\n          purpose: purpose,\n        }),\n      })"
+  },
+  {
+    "file": "src/components/ProgressRoomsBilling.tsx",
+    "line": 31,
+    "call": "staffApi(`${path}/teachers`)"
+  },
+  {
+    "file": "src/components/ProgressRoomsBilling.tsx",
+    "line": 42,
+    "call": "staffApi(`${path}/progressrooms?${query}`)"
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 48,
+    "call": "staffApi(path)"
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 50,
+    "call": "staffApi(url, { method: \"POST\", body: JSON.stringify(body) })"
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 60,
+    "call": "post(`${path}/quote`, { plan_id: planId, billing_country: country })"
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 68,
+    "call": "post(`${path}/checkouts/${purchase.id}/reconcile`)"
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 83,
+    "call": "post(`${path}/checkouts`, { plan_id: quote.plan_id, billing_country: country,\n        idempotency_key: key, expected_total_paise: quote.total_paise, accepted_policy_version: SAAS_PRICING_POLICY_VERSION })"
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 97,
+    "call": "post(`${path}/checkouts/${purchase.id}/verify`, result)"
+  },
+  {
+    "file": "src/components/StoreCheckout.tsx",
+    "line": 23,
+    "call": "fetch(`${API}${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('pr_access_token')}` }, body: JSON.stringify(body) })"
+  },
+  {
+    "file": "src/components/StoreCheckout.tsx",
+    "line": 36,
+    "call": "request('/commerce/payments/verify', { order_id: order.order_id, ...payment })"
+  },
+  {
+    "file": "src/components/StoreCheckout.tsx",
+    "line": 47,
+    "call": "request('/commerce/orders', offering.kind === 'class' ? { session_id: offering.id, package_id: offering.package_id } : { tier_id: offering.id })"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 36,
+    "call": "staffApi(`${base}/enrollments`)"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 55,
+    "call": "staffApi(base, { method: \"PATCH\", body: JSON.stringify({ ...form, full_name: form.full_name.trim(), phone: form.phone.trim(), whatsapp_number: form.whatsapp_number.trim() || null }) })"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 63,
+    "call": "staffApi(`${base}/enrollments/${pass.id}/${pass.status === \"PAUSED\" ? \"resume\" : \"pause\"}`, { method: \"POST\" })"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 72,
+    "call": "staffApi(`${base}/enrollments/${cancellingPass.id}/cancel`, { method: \"POST\" })"
+  },
+  {
+    "file": "src/components/StudioAccessNotice.tsx",
+    "line": 18,
+    "call": "staffApi(`/organizations/${orgId}/saas-billing/access`)"
+  },
+  {
+    "file": "src/components/StudioAccount.tsx",
+    "line": 13,
+    "call": "fetch(`${api}/auth/me`, { headers: { Authorization: `Bearer ${token}` } })"
+  },
+  {
+    "file": "src/components/StudioAnalytics.tsx",
+    "line": 28,
+    "call": "staffApi(`/organizations/${orgId}/analytics`)"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 155,
+    "call": "staffApi(`/organizations/${id}/classes`)"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 156,
+    "call": "staffApi(`/organizations/${id}/classes?history=true`)"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 166,
+    "call": "staffApi(`/auth/context?studio_id=${org}`)"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 171,
+    "call": "staffApi(`/organizations/${id}/occurrences/teacher-agenda`)"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 187,
+    "call": "staffApi(\"/auth/context\")"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 193,
+    "call": "staffApi(`/organizations/${activeOrgId}/members`)"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 199,
+    "call": "staffApi(`/students?page=1&page_size=100&studio_id=${activeOrgId}`)"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 228,
+    "call": "staffApi(\"/students?page=1&page_size=100\")"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 304,
+    "call": "staffApi(`/organizations/${org}/classes/${id}`, { method: \"DELETE\" })"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 317,
+    "call": "staffApi(`/organizations/${org}/classes/${classId}/toggle-status`, {\n        method: \"PATCH\",\n        body: JSON.stringify({ is_active: !currentActive }),\n      })"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 374,
+    "call": "staffApi(`/organizations/${org}/classes/${editingClass.id}`, {\n          method: \"PUT\",\n          body: JSON.stringify({\n            ...(pricingOnly ? {} : {\n            name,\n            short_description: shortDescription.trim() || undefined,\n            full_description: fullDescription.trim() || null,\n            skill_level: skillLevel,\n            session_type: sessionType,\n            requirements: requirementsPayload,\n            capacity: capacity.trim() ? Number(capacity) : null,\n            duration_minutes: duration_minutes > 0 ? duration_minutes : 60,\n            instructor_member_ids: teacher ? [teacher] : [],\n            acknowledge_zoom_host_impact: acknowledgeZoomHostImpact,\n            is_active: isActive,\n            schedule_rules: scheduling ? days.map(day => ({ day_of_week: day, start_time: start, end_time: end, effective_start_date: date || new Date().toLocaleDateString(\"en-CA\") })) : [],\n            }),\n            pricing: {\n              pricing_type: \"PACKAGE\",\n              packages: packagePayload,\n              total_classes: packagePayload[0].total_classes,\n              price: packagePayload[0].price,\n              currency: \"INR\",\n              validity_days: packagePayload[0].validity_days,\n            },\n          }),\n        })"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 404,
+    "call": "staffApi(`/organizations/${org}/class-types`)"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 407,
+    "call": "staffApi(`/organizations/${org}/class-types`, {\n            method: \"POST\",\n            body: JSON.stringify({ name: \"General\", slug: `general-${crypto.randomUUID().slice(0, 8)}` }),\n          })"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 412,
+    "call": "staffApi(`/organizations/${org}/classes`, {\n          method: \"POST\",\n          body: JSON.stringify({\n            name,\n            slug: `${name.toLowerCase().replace(/[^a-z0-9]+/g, \"-\").replace(/^-|-$/g, \"\").slice(0, 240) || \"class\"}-${crypto.randomUUID().slice(0, 8)}`,\n            short_description: shortDescription.trim() || undefined,\n            full_description: fullDescription.trim() || null,\n            skill_level: skillLevel,\n            session_type: sessionType,\n            requirements: requirementsPayload,\n            class_type_id: type.id,\n            instructor_member_ids: teacher ? [teacher] : [],\n            acknowledge_zoom_host_impact: acknowledgeZoomHostImpact,\n            capacity: capacity.trim() ? Number(capacity) : null,\n            duration_minutes: duration_minutes > 0 ? duration_minutes : 60,\n            pricing: { pricing_type: \"PACKAGE\", packages: packagePayload, total_classes: packagePayload[0].total_classes, price: packagePayload[0].price, currency: \"INR\", validity_days: packagePayload[0].validity_days },\n            schedule_rules: scheduling ? days.map((day) => ({\n              day_of_week: day,\n              start_time: start,\n              end_time: end,\n              effective_start_date: date || new Date().toLocaleDateString(\"en-CA\"),\n            })) : [],\n            is_active: isActive,\n          }),\n        })"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 464,
+    "call": "staffApi(`/organizations/${org}/one-on-one-classes`, {\n        method: \"POST\",\n        body: JSON.stringify({\n          title: oneOnOneTitle.trim() || \"1-on-1 Private Session\",\n          full_description: oneOnOneDescription || null,\n          offer_price: oneOnOneOfferPrice === \"\" ? null : Number(oneOnOneOfferPrice),\n          teacher_member_id: oneOnOneTeacher,\n          student_user_id: oneOnOneStudent,\n          date: oneOnOneDate,\n          start_time: oneOnOneStart,\n          end_time: oneOnOneEnd,\n          price: Number(oneOnOnePrice) || 0,\n        }),\n      })"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 595,
+    "call": "staffApi(`/organizations/${org}/occurrences/${item.id}/join-link`, { method: \"POST\" })"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 122,
+    "call": "staffApi(`/organizations/${orgId}/membership-tiers`)"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 123,
+    "call": "staffApi(`/organizations/${orgId}/membership-tiers?history=true`)"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 135,
+    "call": "staffApi(`/organizations/${orgId}/classes`)"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 158,
+    "call": "staffApi(\"/auth/context\")"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 227,
+    "call": "staffApi(`/organizations/${org}/membership-tiers/${id}`, { method: \"DELETE\" })"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 240,
+    "call": "staffApi(`/organizations/${org}/membership-tiers/${tierId}/toggle-status`, {\n        method: \"PATCH\",\n        body: JSON.stringify({ is_active: !currentActive }),\n      })"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 312,
+    "call": "staffApi(`/organizations/${org}/membership-tiers/${editingTier.id}`, {\n          method: \"PUT\",\n          body: JSON.stringify(payload),\n        })"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 318,
+    "call": "staffApi(`/organizations/${org}/membership-tiers`, {\n          method: \"POST\",\n          body: JSON.stringify(payload),\n        })"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 39,
+    "call": "staffApi(path)"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 45,
+    "call": "staffApi(path + \"/impact\")"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 48,
+    "call": "staffApi(path + \"/connect\", { method: \"POST\" })"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 52,
+    "call": "staffApi(path)"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 68,
+    "call": "staffApi(path + \"/studio-connect\", { method: \"POST\", body: JSON.stringify({ studio_password: password, zoom_host_id: zoomHostId.trim() || null }) })"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 80,
+    "call": "staffApi(path + \"/authorization-request\", { method: \"POST\" })"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 81,
+    "call": "staffApi(path)"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 84,
+    "call": "staffApi(`/organizations/${org}/zoom/settings`)"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 85,
+    "call": "staffApi(`/organizations/${org}/teachers/${prefs.default_host_member_id}/zoom/impact`)"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 90,
+    "call": "staffApi(`/organizations/${org}/zoom/settings`, { method: \"PUT\", body: JSON.stringify(body) })"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 93,
+    "call": "staffApi(path + \"/impact\")"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 95,
+    "call": "staffApi(path + \"?acknowledge_impact=true\", { method: \"DELETE\" })"
+  },
+  {
+    "file": "src/components/ZoomAuthorizationLanding.tsx",
+    "line": 27,
+    "call": "staffApi(\"/integrations/zoom/request\", { method: \"POST\", body: JSON.stringify({ request: params.get(\"request\") }) })"
+  },
+  {
+    "file": "src/components/ZoomAuthorizationLanding.tsx",
+    "line": 30,
+    "call": "staffApi(\"/integrations/zoom/callback\", { method: \"POST\", body: JSON.stringify({ state: params.get(\"state\"), code: params.get(\"code\") }) })"
+  },
+  {
+    "file": "src/components/ZoomAuthorizationLanding.tsx",
+    "line": 38,
+    "call": "staffApi(\"/integrations/zoom/confirm\", { method: \"POST\", body: JSON.stringify({ confirmation_id: candidate.confirmation_id }) })"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 93,
+    "call": "staffApi(path + \"/settings\")"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 93,
+    "call": "staffApi(path + \"/meetings\")"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 101,
+    "call": "staffApi(`/organizations/${org}/teachers/${savedPrefs.default_host_member_id}/zoom/impact`)"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 106,
+    "call": "staffApi(path + \"/settings\", { method: \"PUT\", body: JSON.stringify(body) })"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 136,
+    "call": "staffApi(path + \"/apply-future-settings\", { method: \"POST\", body: JSON.stringify({ version: prefs.version, apply: false }) })"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 137,
+    "call": "staffApi(path + \"/apply-future-settings\", { method: \"POST\", body: JSON.stringify({ version: prefs.version, apply: true }) })"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 150,
+    "call": "staffApi(`/organizations/${org}/occurrences/${meeting.id}/zoom/reconcile`, { method: \"POST\", body: \"{}\" })"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 152,
+    "call": "staffApi(endpoint, { method: \"POST\", body: \"{}\" })"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 154,
+    "call": "staffApi(endpoint, { method: \"POST\", body: JSON.stringify({ replacement_member_id: replacement[meeting.id], confirm_links_change: true }) })"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 158,
+    "call": "staffApi(path + \"/retry-revocations\", { method: \"POST\" })"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 20,
+    "call": "fetch(`${API}${path}`, {\n    ...options,\n    headers: { Authorization: `Bearer ${token}`, ...(options.body instanceof FormData ? {} : { 'Content-Type':'application/json' }), ...options.headers },\n  })"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 65,
+    "call": "request(`/organizations/${studio.id}/website`)"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 77,
+    "call": "fetch(`${API}/public/website-templates`)"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 81,
+    "call": "request('/website-workspace')"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 128,
+    "call": "request(`/organizations/${org.id}/website`, { method:'PUT', body:JSON.stringify(content) })"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 130,
+    "call": "request(`/organizations/${org.id}/website/publish`, { method:'POST' })"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 151,
+    "call": "request(`/organizations/${org.id}/website/preview`, { method:'POST', body:JSON.stringify(payload) })"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 162,
+    "call": "request(`/organizations/${org.id}/website/download/${release.version}`)"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 178,
+    "call": "request(`/organizations/${org.id}/website/image`, { method:'POST', body })"
+  },
+  {
+    "file": "src/lib/api.ts",
+    "line": 8,
+    "call": "fetch(`${API_BASE_URL}/public/organizations/${encodeURIComponent(orgSlug)}`, {\n      cache: 'no-store', // Published websites are visible immediately\n      signal: AbortSignal.timeout(15000),\n    })"
+  },
+  {
+    "file": "src/lib/api.ts",
+    "line": 23,
+    "call": "fetch(`${API_BASE_URL}/public/organizations/${encodeURIComponent(orgSlug)}/classes/${encodeURIComponent(sessionSlug)}`, {\n      cache: 'no-store',\n      signal: AbortSignal.timeout(15000),\n    })"
+  },
+  {
+    "file": "src/lib/auth-session.ts",
+    "line": 6,
+    "call": "fetch(`${API}/auth/logout`, {\n      method: \"POST\",\n      headers: { Authorization: `Bearer ${token}` },\n      signal: AbortSignal.timeout(15000),\n    })"
+  },
+  {
+    "file": "src/lib/communication-api.ts",
+    "line": 17,
+    "call": "fetch(`/api/communication${path}`, {\n      ...options,\n      headers: { \"Content-Type\": \"application/json\", Authorization: `Bearer ${token}` },\n    })"
+  },
+  {
+    "file": "src/lib/staff-api.ts",
+    "line": 3,
+    "call": "fetch(`${process.env.NEXT_PUBLIC_API_URL || \"http://localhost:8000/api/v1\"}${path}`, {\n    ...options,\n    headers: { \"Content-Type\": \"application/json\", Authorization: `Bearer ${localStorage.getItem(\"pr_access_token\") || \"\"}`, ...options.headers },\n  })"
+  }
+]

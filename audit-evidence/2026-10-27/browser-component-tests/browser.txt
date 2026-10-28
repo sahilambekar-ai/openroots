@@ -1,0 +1,57 @@
+
+> progressrooms-web@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:37834) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37835) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37851) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 34 tests using 2 workers
+
+(node:37854) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:37853) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/browser/auth.spec.ts:18:5 › login reports rejected credentials, then preserves next and exact password (1.6s)
+  ✓   1 [chromium] › tests/browser/auth.spec.ts:2:5 › student registration requires consent, preserves password, verifies OTP and returns to next (1.7s)
+  ✓   3 [chromium] › tests/browser/auth.spec.ts:26:5 › expired staff session redirects with requested studio destination intact (1.4s)
+  ✓   4 [chromium] › tests/browser/auth.spec.ts:31:5 › foreign studio cannot silently switch into an authorized studio (1.4s)
+  ✓   5 [chromium] › tests/browser/auth.spec.ts:37:5 › password recovery preserves new password and requires a fresh sign in (1.1s)
+  ✓   6 [chromium] › tests/browser/auth.spec.ts:44:5 › unverified login rejects invalid OTP then verifies before saving credentials (1.1s)
+  ✓   8 [chromium] › tests/browser/auth.spec.ts:58:5 › unsafe external login return destination is discarded (743ms)
+  ✓   7 [chromium] › tests/browser/auth.spec.ts:52:5 › studio registration requires a studio name and submits studio onboarding details (1.0s)
+  ✓   9 [chromium] › tests/browser/commerce.spec.ts:3:5 › paid class purchase waits for verification; failure retries the same order after reload (669ms)
+  ✓  10 [chromium] › tests/browser/commerce.spec.ts:12:5 › free enrollment verifies before activation (496ms)
+  ✓  11 [chromium] › tests/browser/commerce.spec.ts:17:5 › dismissed payment can retry without a false success (473ms)
+  ✓  12 [chromium] › tests/browser/commerce.spec.ts:21:5 › billing consent, quote total and verified purchase history (637ms)
+  ✓  13 [chromium] › tests/browser/commerce.spec.ts:32:5 › billing permission denial exposes no payment controls (374ms)
+  ✓  14 [chromium] › tests/browser/commerce.spec.ts:36:5 › pending subscription reconciles into paid history without starting checkout (489ms)
+  ✓  15 [chromium] › tests/browser/commerce.spec.ts:43:5 › guest checkout goes to sign in before creating any order (533ms)
+  ✓  16 [chromium] › tests/browser/commerce.spec.ts:47:5 › denied class purchase does not activate access (465ms)
+(node:37971) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  17 [chromium] › tests/browser/commerce.spec.ts:51:5 › expired checkout clears credentials and preserves the sign-in destination (554ms)
+(node:37979) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [mobile-chromium] › tests/browser/auth.spec.ts:2:5 › student registration requires consent, preserves password, verifies OTP and returns to next (1.2s)
+  ✓  19 [mobile-chromium] › tests/browser/auth.spec.ts:18:5 › login reports rejected credentials, then preserves next and exact password (1.1s)
+  ✓  20 [mobile-chromium] › tests/browser/auth.spec.ts:26:5 › expired staff session redirects with requested studio destination intact (906ms)
+  ✓  21 [mobile-chromium] › tests/browser/auth.spec.ts:31:5 › foreign studio cannot silently switch into an authorized studio (980ms)
+  ✓  22 [mobile-chromium] › tests/browser/auth.spec.ts:37:5 › password recovery preserves new password and requires a fresh sign in (911ms)
+  ✓  23 [mobile-chromium] › tests/browser/auth.spec.ts:44:5 › unverified login rejects invalid OTP then verifies before saving credentials (1.0s)
+  ✓  24 [mobile-chromium] › tests/browser/auth.spec.ts:52:5 › studio registration requires a studio name and submits studio onboarding details (964ms)
+  ✓  25 [mobile-chromium] › tests/browser/auth.spec.ts:58:5 › unsafe external login return destination is discarded (763ms)
+  ✓  26 [mobile-chromium] › tests/browser/commerce.spec.ts:3:5 › paid class purchase waits for verification; failure retries the same order after reload (777ms)
+  ✓  27 [mobile-chromium] › tests/browser/commerce.spec.ts:12:5 › free enrollment verifies before activation (571ms)
+  ✓  28 [mobile-chromium] › tests/browser/commerce.spec.ts:17:5 › dismissed payment can retry without a false success (488ms)
+  ✓  29 [mobile-chromium] › tests/browser/commerce.spec.ts:21:5 › billing consent, quote total and verified purchase history (611ms)
+  ✓  30 [mobile-chromium] › tests/browser/commerce.spec.ts:32:5 › billing permission denial exposes no payment controls (373ms)
+  ✓  31 [mobile-chromium] › tests/browser/commerce.spec.ts:36:5 › pending subscription reconciles into paid history without starting checkout (582ms)
+  ✓  32 [mobile-chromium] › tests/browser/commerce.spec.ts:43:5 › guest checkout goes to sign in before creating any order (580ms)
+  ✓  33 [mobile-chromium] › tests/browser/commerce.spec.ts:47:5 › denied class purchase does not activate access (523ms)
+  ✓  34 [mobile-chromium] › tests/browser/commerce.spec.ts:51:5 › expired checkout clears credentials and preserves the sign-in destination (671ms)
+
+  34 passed (18.1s)

@@ -1,0 +1,13 @@
+{
+  "backend_passed": 451,
+  "backend_failed": 0,
+  "backend_xfailed": 0,
+  "backend_skipped": 0,
+  "postgres_tests": 13,
+  "frontend_helper_tests": 13,
+  "production_python_packages": 37,
+  "production_python_advisories": 0,
+  "linux_image_tested": false,
+  "postgres_version_tested": "18.4",
+  "no_push_or_deployment": true
+}

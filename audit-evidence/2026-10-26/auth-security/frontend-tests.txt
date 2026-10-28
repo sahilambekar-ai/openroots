@@ -1,0 +1,25 @@
+
+> progressrooms-web@0.1.0 test
+> node --test tests/*.test.cjs
+
+✔ password policy counts Unicode code points and preserves spaces (17.856917ms)
+✔ logout clears browser credentials only after server result 200 (3.411458ms)
+✔ logout clears browser credentials only after server result 401 (3.401166ms)
+✔ logout retains credentials for retry on network failure (2.304625ms)
+✔ logout retains credentials for retry on http failure (2.616542ms)
+✔ fetchPublicOrganization: sends the public route and returns response data (21.798167ms)
+✔ fetchPublicOrganization: maps absent resources to null (3.478667ms)
+✔ fetchPublicOrganization: exposes service outages to the error boundary (2.320458ms)
+✔ fetchPublicOrganization: exposes network errors to the error boundary (2.907208ms)
+✔ fetchPublicSession: sends the public route and returns response data (1.956083ms)
+✔ fetchPublicSession: maps absent resources to null (1.769458ms)
+✔ fetchPublicSession: exposes service outages to the error boundary (2.515083ms)
+✔ fetchPublicSession: exposes network errors to the error boundary (1.8795ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 184.490833

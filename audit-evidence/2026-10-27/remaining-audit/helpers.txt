@@ -1,0 +1,27 @@
+
+> progressrooms-web@0.1.0 test
+> node --test tests/*.test.cjs
+
+✔ FastAPI field errors produce readable text without exposing submitted values (0.377375ms)
+✔ String errors, malformed errors and unknown errors keep useful fallbacks (0.069958ms)
+✔ password policy counts Unicode code points and preserves spaces (19.633584ms)
+✔ logout clears browser credentials only after server result 200 (3.621542ms)
+✔ logout clears browser credentials only after server result 401 (2.205625ms)
+✔ logout retains credentials for retry on network failure (2.333167ms)
+✔ logout retains credentials for retry on http failure (2.369208ms)
+✔ fetchPublicOrganization: sends the public route and returns response data (23.778125ms)
+✔ fetchPublicOrganization: maps absent resources to null (4.031792ms)
+✔ fetchPublicOrganization: exposes service outages to the error boundary (2.749375ms)
+✔ fetchPublicOrganization: exposes network errors to the error boundary (3.023ms)
+✔ fetchPublicSession: sends the public route and returns response data (2.112041ms)
+✔ fetchPublicSession: maps absent resources to null (1.741375ms)
+✔ fetchPublicSession: exposes service outages to the error boundary (2.511083ms)
+✔ fetchPublicSession: exposes network errors to the error boundary (3.530583ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 171.461042

@@ -1,0 +1,20 @@
+{
+  "npm_all": {
+    "info": 0,
+    "low": 0,
+    "moderate": 3,
+    "high": 0,
+    "critical": 0,
+    "total": 3
+  },
+  "npm_runtime": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "python_production_packages": 35,
+  "python_production_advisories": 0
+}

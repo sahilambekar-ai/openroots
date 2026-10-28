@@ -1,0 +1,7 @@
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.autogenerate.compare] Detected removed index 'ix_support_tickets_org_id' on 'support_tickets'
+INFO  [alembic.autogenerate.compare] Detected added index ''ix_support_tickets_organization_id'' on '('organization_id',)'
+INFO  [alembic.autogenerate.compare] Detected added index ''ix_support_tickets_student_id'' on '('student_id',)'
+ERROR [alembic.util.messaging] New upgrade operations detected: [('remove_index', Index('ix_support_tickets_org_id', Column('organization_id', UUID(), table=<support_tickets>, nullable=False))), ('add_index', Index('ix_support_tickets_organization_id', Column('organization_id', UUID(), table=<support_tickets>, nullable=False))), ('add_index', Index('ix_support_tickets_student_id', Column('student_id', UUID(), table=<support_tickets>)))]
+FAILED: New upgrade operations detected: [('remove_index', Index('ix_support_tickets_org_id', Column('organization_id', UUID(), table=<support_tickets>, nullable=False))), ('add_index', Index('ix_support_tickets_organization_id', Column('organization_id', UUID(), table=<support_tickets>, nullable=False))), ('add_index', Index('ix_support_tickets_student_id', Column('student_id', UUID(), table=<support_tickets>)))]

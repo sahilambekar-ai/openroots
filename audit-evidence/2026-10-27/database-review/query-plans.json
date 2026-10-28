@@ -1,0 +1,2116 @@
+{
+  "version": "PostgreSQL 16.15 on aarch64-apple-darwin27.0.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+  "synthetic": true,
+  "sizes": {
+    "organizations": 100,
+    "users": 10000,
+    "sessions": 2000,
+    "support_tickets": 100000,
+    "class_occurrences": 100000,
+    "session_enrollments": 100000,
+    "orders": 50000,
+    "payments": 50000,
+    "meeting_email_deliveries": 100000
+  },
+  "plans": {
+    "student_support": {
+      "sql": "SELECT support_tickets.id, support_tickets.organization_id, support_tickets.student_id, support_tickets.student_name, support_tickets.student_email, support_tickets.subject, support_tickets.category, support_tickets.status, support_tickets.resolved_at, support_tickets.resolved_by_member_id, support_tickets.created_at, support_tickets.updated_at \nFROM support_tickets \nWHERE support_tickets.student_id = 'd6d77053-92bc-7af6-3332-8bea8c4c6904' ORDER BY support_tickets.updated_at DESC",
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Sort",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 42.6,
+            "Total Cost": 42.62,
+            "Plan Rows": 10,
+            "Plan Width": 154,
+            "Actual Startup Time": 0.008,
+            "Actual Total Time": 0.008,
+            "Actual Rows": 10,
+            "Actual Loops": 1,
+            "Sort Key": [
+              "updated_at DESC"
+            ],
+            "Sort Method": "quicksort",
+            "Sort Space Used": 26,
+            "Sort Space Type": "Memory",
+            "Shared Hit Blocks": 3,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "support_tickets",
+                "Alias": "support_tickets",
+                "Startup Cost": 4.37,
+                "Total Cost": 42.43,
+                "Plan Rows": 10,
+                "Plan Width": 154,
+                "Actual Startup Time": 0.004,
+                "Actual Total Time": 0.004,
+                "Actual Rows": 10,
+                "Actual Loops": 1,
+                "Recheck Cond": "(student_id = 'd6d77053-92bc-7af6-3332-8bea8c4c6904'::uuid)",
+                "Rows Removed by Index Recheck": 0,
+                "Exact Heap Blocks": 1,
+                "Lossy Heap Blocks": 0,
+                "Shared Hit Blocks": 3,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "ix_support_tickets_student_id",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 4.37,
+                    "Plan Rows": 10,
+                    "Plan Width": 0,
+                    "Actual Startup Time": 0.002,
+                    "Actual Total Time": 0.002,
+                    "Actual Rows": 10,
+                    "Actual Loops": 1,
+                    "Index Cond": "(student_id = 'd6d77053-92bc-7af6-3332-8bea8c4c6904'::uuid)",
+                    "Shared Hit Blocks": 2,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 103,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.234,
+          "Triggers": [],
+          "Execution Time": 0.015
+        }
+      ]
+    },
+    "studio_open_support": {
+      "sql": "SELECT support_tickets.id, support_tickets.organization_id, support_tickets.student_id, support_tickets.student_name, support_tickets.student_email, support_tickets.subject, support_tickets.category, support_tickets.status, support_tickets.resolved_at, support_tickets.resolved_by_member_id, support_tickets.created_at, support_tickets.updated_at \nFROM support_tickets \nWHERE support_tickets.organization_id = '71f82408-0503-1caf-aec6-98e6445b893a' AND support_tickets.status = 'OPEN' ORDER BY support_tickets.updated_at DESC",
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Sort",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 581.47,
+            "Total Cost": 581.95,
+            "Plan Rows": 189,
+            "Plan Width": 154,
+            "Actual Startup Time": 0.04,
+            "Actual Total Time": 0.043,
+            "Actual Rows": 200,
+            "Actual Loops": 1,
+            "Sort Key": [
+              "updated_at DESC"
+            ],
+            "Sort Method": "quicksort",
+            "Sort Space Used": 56,
+            "Sort Space Type": "Memory",
+            "Shared Hit Blocks": 24,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "support_tickets",
+                "Alias": "support_tickets",
+                "Startup Cost": 6.23,
+                "Total Cost": 574.33,
+                "Plan Rows": 189,
+                "Plan Width": 154,
+                "Actual Startup Time": 0.006,
+                "Actual Total Time": 0.022,
+                "Actual Rows": 200,
+                "Actual Loops": 1,
+                "Recheck Cond": "((organization_id = '71f82408-0503-1caf-aec6-98e6445b893a'::uuid) AND ((status)::text = 'OPEN'::text))",
+                "Rows Removed by Index Recheck": 0,
+                "Exact Heap Blocks": 22,
+                "Lossy Heap Blocks": 0,
+                "Shared Hit Blocks": 24,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "ix_support_tickets_org_status",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 6.18,
+                    "Plan Rows": 189,
+                    "Plan Width": 0,
+                    "Actual Startup Time": 0.005,
+                    "Actual Total Time": 0.005,
+                    "Actual Rows": 200,
+                    "Actual Loops": 1,
+                    "Index Cond": "((organization_id = '71f82408-0503-1caf-aec6-98e6445b893a'::uuid) AND ((status)::text = 'OPEN'::text))",
+                    "Shared Hit Blocks": 2,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.026,
+          "Triggers": [],
+          "Execution Time": 0.051
+        }
+      ]
+    },
+    "studio_month_schedule": {
+      "sql": "SELECT class_occurrences.id, class_occurrences.session_id, class_occurrences.organization_id, class_occurrences.instructor_id, class_occurrences.scheduled_start_at, class_occurrences.scheduled_end_at, class_occurrences.actual_start_at, class_occurrences.actual_end_at, class_occurrences.status, class_occurrences.meeting_url, class_occurrences.host_url, class_occurrences.meeting_provider, class_occurrences.provider_meeting_id, class_occurrences.zoom_connection_id, class_occurrences.zoom_connection_version, class_occurrences.zoom_host_member_id, class_occurrences.zoom_host_email, class_occurrences.zoom_provisioning_status, class_occurrences.zoom_operation_key, class_occurrences.zoom_settings_snapshot, class_occurrences.cancellation_reason, class_occurrences.created_at, class_occurrences.updated_at \nFROM class_occurrences \nWHERE class_occurrences.organization_id = '71f82408-0503-1caf-aec6-98e6445b893a' AND class_occurrences.actual_start_at >= '2026-10-27 18:58:57.161882+05:30' AND class_occurrences.actual_start_at <= '2026-11-26 18:58:57.161882+05:30' ORDER BY class_occurrences.actual_start_at",
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Sort",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 849.08,
+            "Total Cost": 849.85,
+            "Plan Rows": 307,
+            "Plan Width": 2638,
+            "Actual Startup Time": 0.076,
+            "Actual Total Time": 0.081,
+            "Actual Rows": 300,
+            "Actual Loops": 1,
+            "Sort Key": [
+              "actual_start_at"
+            ],
+            "Sort Method": "quicksort",
+            "Sort Space Used": 71,
+            "Sort Space Type": "Memory",
+            "Shared Hit Blocks": 12,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "class_occurrences",
+                "Alias": "class_occurrences",
+                "Startup Cost": 8.21,
+                "Total Cost": 836.4,
+                "Plan Rows": 307,
+                "Plan Width": 2638,
+                "Actual Startup Time": 0.008,
+                "Actual Total Time": 0.039,
+                "Actual Rows": 300,
+                "Actual Loops": 1,
+                "Recheck Cond": "((organization_id = '71f82408-0503-1caf-aec6-98e6445b893a'::uuid) AND (actual_start_at >= '2026-10-27 18:58:57.161882+05:30'::timestamp with time zone) AND (actual_start_at <= '2026-11-26 18:58:57.161882+05:30'::timestamp with time zone))",
+                "Rows Removed by Index Recheck": 0,
+                "Exact Heap Blocks": 10,
+                "Lossy Heap Blocks": 0,
+                "Shared Hit Blocks": 12,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "ix_class_occurrences_org_time",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 8.13,
+                    "Plan Rows": 307,
+                    "Plan Width": 0,
+                    "Actual Startup Time": 0.005,
+                    "Actual Total Time": 0.005,
+                    "Actual Rows": 300,
+                    "Actual Loops": 1,
+                    "Index Cond": "((organization_id = '71f82408-0503-1caf-aec6-98e6445b893a'::uuid) AND (actual_start_at >= '2026-10-27 18:58:57.161882+05:30'::timestamp with time zone) AND (actual_start_at <= '2026-11-26 18:58:57.161882+05:30'::timestamp with time zone))",
+                    "Shared Hit Blocks": 2,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 137,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.237,
+          "Triggers": [],
+          "Execution Time": 0.091
+        }
+      ]
+    },
+    "session_active_enrollment_count": {
+      "sql": "SELECT count(*) AS count_1 \nFROM session_enrollments \nWHERE session_enrollments.session_id = 'e29da57e-582b-ee30-5e05-c7e36824e3f5' AND session_enrollments.status = 'ACTIVE'",
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Plain",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 180.69,
+            "Total Cost": 180.7,
+            "Plan Rows": 1,
+            "Plan Width": 8,
+            "Actual Startup Time": 0.011,
+            "Actual Total Time": 0.012,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 2,
+            "Shared Read Blocks": 1,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "session_enrollments",
+                "Alias": "session_enrollments",
+                "Startup Cost": 4.68,
+                "Total Cost": 180.56,
+                "Plan Rows": 50,
+                "Plan Width": 0,
+                "Actual Startup Time": 0.005,
+                "Actual Total Time": 0.007,
+                "Actual Rows": 50,
+                "Actual Loops": 1,
+                "Recheck Cond": "(session_id = 'e29da57e-582b-ee30-5e05-c7e36824e3f5'::uuid)",
+                "Rows Removed by Index Recheck": 0,
+                "Filter": "((status)::text = 'ACTIVE'::text)",
+                "Rows Removed by Filter": 0,
+                "Exact Heap Blocks": 1,
+                "Lossy Heap Blocks": 0,
+                "Shared Hit Blocks": 2,
+                "Shared Read Blocks": 1,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "ix_session_enrollments_session_id",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 4.67,
+                    "Plan Rows": 50,
+                    "Plan Width": 0,
+                    "Actual Startup Time": 0.004,
+                    "Actual Total Time": 0.004,
+                    "Actual Rows": 50,
+                    "Actual Loops": 1,
+                    "Index Cond": "(session_id = 'e29da57e-582b-ee30-5e05-c7e36824e3f5'::uuid)",
+                    "Shared Hit Blocks": 1,
+                    "Shared Read Blocks": 1,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 81,
+            "Shared Read Blocks": 2,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.211,
+          "Triggers": [],
+          "Execution Time": 0.016
+        }
+      ]
+    },
+    "student_studio_enrollments": {
+      "sql": "SELECT session_enrollments.id, session_enrollments.organization_id, session_enrollments.session_id, session_enrollments.user_id, session_enrollments.order_id, session_enrollments.purchase_order_id, session_enrollments.status, session_enrollments.valid_from, session_enrollments.valid_until, session_enrollments.paused_at, session_enrollments.total_sessions, session_enrollments.sessions_attended, session_enrollments.billing_value, session_enrollments.billing_currency, session_enrollments.billing_type, session_enrollments.billing_label, session_enrollments.created_at, session_enrollments.updated_at \nFROM session_enrollments \nWHERE session_enrollments.organization_id = '71f82408-0503-1caf-aec6-98e6445b893a' AND session_enrollments.user_id = 'd6d77053-92bc-7af6-3332-8bea8c4c6904'",
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Index Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Scan Direction": "Forward",
+            "Index Name": "ix_session_enrollments_org_user",
+            "Relation Name": "session_enrollments",
+            "Alias": "session_enrollments",
+            "Startup Cost": 0.42,
+            "Total Cost": 8.44,
+            "Plan Rows": 1,
+            "Plan Width": 839,
+            "Actual Startup Time": 0.004,
+            "Actual Total Time": 0.005,
+            "Actual Rows": 10,
+            "Actual Loops": 1,
+            "Index Cond": "((organization_id = '71f82408-0503-1caf-aec6-98e6445b893a'::uuid) AND (user_id = 'd6d77053-92bc-7af6-3332-8bea8c4c6904'::uuid))",
+            "Rows Removed by Index Recheck": 0,
+            "Shared Hit Blocks": 4,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning": {
+            "Shared Hit Blocks": 48,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.032,
+          "Triggers": [],
+          "Execution Time": 0.008
+        }
+      ]
+    },
+    "studio_collected_payments": {
+      "sql": "SELECT sum(payments.amount) AS sum_1 \nFROM payments JOIN orders ON payments.order_id = orders.id \nWHERE orders.organization_id = '71f82408-0503-1caf-aec6-98e6445b893a' AND orders.currency = 'INR' AND orders.status = 'PAID' AND payments.status = 'SUCCESS' AND payments.currency = 'INR'",
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Plain",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 2338.14,
+            "Total Cost": 2338.15,
+            "Plan Rows": 1,
+            "Plan Width": 32,
+            "Actual Startup Time": 4.254,
+            "Actual Total Time": 4.254,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 725,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Hash Join",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Join Type": "Inner",
+                "Startup Cost": 740.63,
+                "Total Cost": 2336.89,
+                "Plan Rows": 500,
+                "Plan Width": 5,
+                "Actual Startup Time": 0.059,
+                "Actual Total Time": 4.24,
+                "Actual Rows": 500,
+                "Actual Loops": 1,
+                "Inner Unique": true,
+                "Hash Cond": "(payments.order_id = orders.id)",
+                "Shared Hit Blocks": 725,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "payments",
+                    "Alias": "payments",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 1465.0,
+                    "Plan Rows": 50000,
+                    "Plan Width": 21,
+                    "Actual Startup Time": 0.002,
+                    "Actual Total Time": 2.862,
+                    "Actual Rows": 50000,
+                    "Actual Loops": 1,
+                    "Filter": "(((currency)::text = 'INR'::text) AND ((status)::text = 'SUCCESS'::text))",
+                    "Rows Removed by Filter": 0,
+                    "Shared Hit Blocks": 715,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  },
+                  {
+                    "Node Type": "Hash",
+                    "Parent Relationship": "Inner",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Startup Cost": 734.38,
+                    "Total Cost": 734.38,
+                    "Plan Rows": 500,
+                    "Plan Width": 16,
+                    "Actual Startup Time": 0.055,
+                    "Actual Total Time": 0.055,
+                    "Actual Rows": 500,
+                    "Actual Loops": 1,
+                    "Hash Buckets": 1024,
+                    "Original Hash Buckets": 1024,
+                    "Hash Batches": 1,
+                    "Original Hash Batches": 1,
+                    "Peak Memory Usage": 32,
+                    "Shared Hit Blocks": 10,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0,
+                    "Plans": [
+                      {
+                        "Node Type": "Bitmap Heap Scan",
+                        "Parent Relationship": "Outer",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Relation Name": "orders",
+                        "Alias": "orders",
+                        "Startup Cost": 8.16,
+                        "Total Cost": 734.38,
+                        "Plan Rows": 500,
+                        "Plan Width": 16,
+                        "Actual Startup Time": 0.007,
+                        "Actual Total Time": 0.038,
+                        "Actual Rows": 500,
+                        "Actual Loops": 1,
+                        "Recheck Cond": "(organization_id = '71f82408-0503-1caf-aec6-98e6445b893a'::uuid)",
+                        "Rows Removed by Index Recheck": 0,
+                        "Filter": "(((currency)::text = 'INR'::text) AND ((status)::text = 'PAID'::text))",
+                        "Rows Removed by Filter": 0,
+                        "Exact Heap Blocks": 8,
+                        "Lossy Heap Blocks": 0,
+                        "Shared Hit Blocks": 10,
+                        "Shared Read Blocks": 0,
+                        "Shared Dirtied Blocks": 0,
+                        "Shared Written Blocks": 0,
+                        "Local Hit Blocks": 0,
+                        "Local Read Blocks": 0,
+                        "Local Dirtied Blocks": 0,
+                        "Local Written Blocks": 0,
+                        "Temp Read Blocks": 0,
+                        "Temp Written Blocks": 0,
+                        "Plans": [
+                          {
+                            "Node Type": "Bitmap Index Scan",
+                            "Parent Relationship": "Outer",
+                            "Parallel Aware": false,
+                            "Async Capable": false,
+                            "Index Name": "ix_orders_organization_id",
+                            "Startup Cost": 0.0,
+                            "Total Cost": 8.04,
+                            "Plan Rows": 500,
+                            "Plan Width": 0,
+                            "Actual Startup Time": 0.005,
+                            "Actual Total Time": 0.005,
+                            "Actual Rows": 500,
+                            "Actual Loops": 1,
+                            "Index Cond": "(organization_id = '71f82408-0503-1caf-aec6-98e6445b893a'::uuid)",
+                            "Shared Hit Blocks": 2,
+                            "Shared Read Blocks": 0,
+                            "Shared Dirtied Blocks": 0,
+                            "Shared Written Blocks": 0,
+                            "Local Hit Blocks": 0,
+                            "Local Read Blocks": 0,
+                            "Local Dirtied Blocks": 0,
+                            "Local Written Blocks": 0,
+                            "Temp Read Blocks": 0,
+                            "Temp Written Blocks": 0
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 188,
+            "Shared Read Blocks": 3,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.52,
+          "Triggers": [],
+          "Execution Time": 4.261
+        }
+      ]
+    },
+    "due_meeting_email_batch": {
+      "sql": "SELECT meeting_email_deliveries.id \nFROM meeting_email_deliveries \nWHERE meeting_email_deliveries.status IN ('PENDING', 'RETRY') AND meeting_email_deliveries.available_at <= '2026-10-27 18:58:57.161882+05:30' ORDER BY meeting_email_deliveries.available_at \n LIMIT 100",
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Limit",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 209.3,
+            "Total Cost": 209.55,
+            "Plan Rows": 100,
+            "Plan Width": 24,
+            "Actual Startup Time": 0.535,
+            "Actual Total Time": 0.54,
+            "Actual Rows": 100,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 1004,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Sort",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 209.3,
+                "Total Cost": 211.8,
+                "Plan Rows": 1000,
+                "Plan Width": 24,
+                "Actual Startup Time": 0.535,
+                "Actual Total Time": 0.537,
+                "Actual Rows": 100,
+                "Actual Loops": 1,
+                "Sort Key": [
+                  "available_at"
+                ],
+                "Sort Method": "top-N heapsort",
+                "Sort Space Used": 39,
+                "Sort Space Type": "Memory",
+                "Shared Hit Blocks": 1004,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Scan Direction": "Forward",
+                    "Index Name": "ix_meeting_email_deliveries_status",
+                    "Relation Name": "meeting_email_deliveries",
+                    "Alias": "meeting_email_deliveries",
+                    "Startup Cost": 0.29,
+                    "Total Cost": 171.08,
+                    "Plan Rows": 1000,
+                    "Plan Width": 24,
+                    "Actual Startup Time": 0.006,
+                    "Actual Total Time": 0.47,
+                    "Actual Rows": 1000,
+                    "Actual Loops": 1,
+                    "Index Cond": "((status)::text = ANY ('{PENDING,RETRY}'::text[]))",
+                    "Rows Removed by Index Recheck": 0,
+                    "Filter": "(available_at <= '2026-10-27 18:58:57.161882+05:30'::timestamp with time zone)",
+                    "Rows Removed by Filter": 0,
+                    "Shared Hit Blocks": 1004,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 52,
+            "Shared Read Blocks": 1,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.15,
+          "Triggers": [],
+          "Execution Time": 0.545
+        }
+      ]
+    }
+  },
+  "without_student_index": [
+    {
+      "Plan": {
+        "Node Type": "Sort",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 3368.17,
+        "Total Cost": 3368.19,
+        "Plan Rows": 10,
+        "Plan Width": 154,
+        "Actual Startup Time": 2.674,
+        "Actual Total Time": 2.675,
+        "Actual Rows": 10,
+        "Actual Loops": 1,
+        "Sort Key": [
+          "updated_at DESC"
+        ],
+        "Sort Method": "quicksort",
+        "Sort Space Used": 26,
+        "Sort Space Type": "Memory",
+        "Shared Hit Blocks": 2118,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "support_tickets",
+            "Alias": "support_tickets",
+            "Startup Cost": 0.0,
+            "Total Cost": 3368.0,
+            "Plan Rows": 10,
+            "Plan Width": 154,
+            "Actual Startup Time": 0.002,
+            "Actual Total Time": 2.673,
+            "Actual Rows": 10,
+            "Actual Loops": 1,
+            "Filter": "(student_id = 'd6d77053-92bc-7af6-3332-8bea8c4c6904'::uuid)",
+            "Rows Removed by Filter": 99990,
+            "Shared Hit Blocks": 2118,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      },
+      "Planning": {
+        "Shared Hit Blocks": 6,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.031,
+      "Triggers": [],
+      "Execution Time": 2.677
+    }
+  ],
+  "constraints": [
+    {
+      "table_name": "alembic_version",
+      "name": "alembic_version_pkc",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (version_num)"
+    },
+    {
+      "table_name": "attendance_records",
+      "name": "attendance_records_class_occurrence_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (class_occurrence_id) REFERENCES class_occurrences(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "attendance_records",
+      "name": "attendance_records_marked_by_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (marked_by_user_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "attendance_records",
+      "name": "attendance_records_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "attendance_records",
+      "name": "attendance_records_session_enrollment_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (session_enrollment_id) REFERENCES session_enrollments(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "attendance_records",
+      "name": "uq_occurrence_enrollment_attendance",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (class_occurrence_id, session_enrollment_id)"
+    },
+    {
+      "table_name": "audit_logs",
+      "name": "audit_logs_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "audit_logs",
+      "name": "audit_logs_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "audit_logs",
+      "name": "audit_logs_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "auth_rate_limits",
+      "name": "auth_rate_limits_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (key)"
+    },
+    {
+      "table_name": "class_occurrence_changes",
+      "name": "class_occurrence_changes_changed_by_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (changed_by_user_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "class_occurrence_changes",
+      "name": "class_occurrence_changes_class_occurrence_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (class_occurrence_id) REFERENCES class_occurrences(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "class_occurrence_changes",
+      "name": "class_occurrence_changes_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "class_occurrences",
+      "name": "class_occurrences_instructor_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (instructor_id) REFERENCES organization_members(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "class_occurrences",
+      "name": "class_occurrences_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "class_occurrences",
+      "name": "class_occurrences_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "class_occurrences",
+      "name": "class_occurrences_session_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "class_occurrences",
+      "name": "fk_occ_zoom_connection",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id, zoom_connection_id) REFERENCES teacher_zoom_connections(organization_id, id)"
+    },
+    {
+      "table_name": "class_occurrences",
+      "name": "fk_occ_zoom_host",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id, zoom_host_member_id) REFERENCES organization_members(organization_id, id)"
+    },
+    {
+      "table_name": "class_reminder_schedules",
+      "name": "class_reminder_schedules_class_occurrence_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (class_occurrence_id) REFERENCES class_occurrences(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "class_reminder_schedules",
+      "name": "class_reminder_schedules_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "class_types",
+      "name": "class_types_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "class_types",
+      "name": "class_types_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "communication_channel_audit_logs",
+      "name": "communication_channel_audit_logs_changed_by_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (changed_by_user_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "communication_channel_audit_logs",
+      "name": "communication_channel_audit_logs_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "communication_logs",
+      "name": "communication_logs_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "communication_logs",
+      "name": "communication_logs_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "communication_logs",
+      "name": "communication_logs_recipient_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (recipient_user_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "media_assets",
+      "name": "media_assets_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "media_assets",
+      "name": "media_assets_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "meeting_email_deliveries",
+      "name": "meeting_email_deliveries_class_occurrence_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (class_occurrence_id) REFERENCES class_occurrences(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "meeting_email_deliveries",
+      "name": "meeting_email_deliveries_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "meeting_email_deliveries",
+      "name": "meeting_email_deliveries_recipient_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (recipient_user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "meeting_email_deliveries",
+      "name": "uq_meeting_mail_event_recipient",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (event_key, recipient_user_id)"
+    },
+    {
+      "table_name": "membership_tier_classes",
+      "name": "membership_tier_classes_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "membership_tier_classes",
+      "name": "membership_tier_classes_session_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "membership_tier_classes",
+      "name": "membership_tier_classes_tier_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (tier_id) REFERENCES membership_tiers(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "membership_tiers",
+      "name": "ck_membership_tiers_offer_price",
+      "type": "c",
+      "validated": true,
+      "definition": "CHECK (((offer_price IS NULL) OR ((offer_price >= (0)::numeric) AND (offer_price <= price))))"
+    },
+    {
+      "table_name": "membership_tiers",
+      "name": "ck_membership_tiers_price_nonnegative",
+      "type": "c",
+      "validated": true,
+      "definition": "CHECK ((price >= (0)::numeric))"
+    },
+    {
+      "table_name": "membership_tiers",
+      "name": "membership_tiers_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "membership_tiers",
+      "name": "membership_tiers_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "notifications",
+      "name": "notifications_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "notifications",
+      "name": "notifications_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "notifications",
+      "name": "notifications_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "order_items",
+      "name": "order_items_order_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "order_items",
+      "name": "order_items_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "order_items",
+      "name": "order_items_session_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (session_id) REFERENCES sessions(id)"
+    },
+    {
+      "table_name": "orders",
+      "name": "orders_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "orders",
+      "name": "orders_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "orders",
+      "name": "orders_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "orders",
+      "name": "uq_orders_provider_order_id",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (provider_order_id)"
+    },
+    {
+      "table_name": "organization_domains",
+      "name": "organization_domains_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_domains",
+      "name": "organization_domains_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "organization_integrations",
+      "name": "organization_integrations_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_integrations",
+      "name": "organization_integrations_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "organization_members",
+      "name": "ck_organization_members_teacher_code",
+      "type": "c",
+      "validated": true,
+      "definition": "CHECK ((((NOT can_teach) AND (teacher_code IS NULL)) OR (can_teach AND (teacher_code IS NOT NULL) AND ((teacher_code)::text ~ '^[0-9]{8}$'::text))))"
+    },
+    {
+      "table_name": "organization_members",
+      "name": "organization_members_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_members",
+      "name": "organization_members_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "organization_members",
+      "name": "organization_members_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_members",
+      "name": "uq_org_member",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id, user_id)"
+    },
+    {
+      "table_name": "organization_members",
+      "name": "uq_org_member_identity",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id, id)"
+    },
+    {
+      "table_name": "organization_payment_accounts",
+      "name": "organization_payment_accounts_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_payment_accounts",
+      "name": "organization_payment_accounts_organization_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id)"
+    },
+    {
+      "table_name": "organization_payment_accounts",
+      "name": "organization_payment_accounts_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "organization_settings",
+      "name": "fk_default_zoom_host",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id, default_zoom_host_member_id) REFERENCES organization_members(organization_id, id)"
+    },
+    {
+      "table_name": "organization_settings",
+      "name": "organization_settings_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_settings",
+      "name": "organization_settings_organization_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id)"
+    },
+    {
+      "table_name": "organization_settings",
+      "name": "organization_settings_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "organization_students",
+      "name": "fk_student_teacher_same_studio",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id, teacher_member_id) REFERENCES organization_members(organization_id, id)"
+    },
+    {
+      "table_name": "organization_students",
+      "name": "organization_students_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_students",
+      "name": "organization_students_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "organization_students",
+      "name": "organization_students_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_students",
+      "name": "uq_org_student",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id, user_id)"
+    },
+    {
+      "table_name": "organization_subscriptions",
+      "name": "organization_subscriptions_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_subscriptions",
+      "name": "organization_subscriptions_organization_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id)"
+    },
+    {
+      "table_name": "organization_subscriptions",
+      "name": "organization_subscriptions_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "organization_subscriptions",
+      "name": "organization_subscriptions_plan_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (plan_id) REFERENCES plans(id)"
+    },
+    {
+      "table_name": "organization_websites",
+      "name": "organization_websites_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "organization_websites",
+      "name": "organization_websites_organization_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id)"
+    },
+    {
+      "table_name": "organization_websites",
+      "name": "organization_websites_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "organization_websites",
+      "name": "organization_websites_template_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (template_id) REFERENCES website_templates(id)"
+    },
+    {
+      "table_name": "organizations",
+      "name": "organizations_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "payment_webhook_events",
+      "name": "payment_webhook_events_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "payments",
+      "name": "payments_idempotency_key_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (idempotency_key)"
+    },
+    {
+      "table_name": "payments",
+      "name": "payments_order_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "payments",
+      "name": "payments_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "pending_material_changes",
+      "name": "pending_material_changes_class_occurrence_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (class_occurrence_id) REFERENCES class_occurrences(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "pending_material_changes",
+      "name": "pending_material_changes_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "plan_features",
+      "name": "plan_features_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "plan_features",
+      "name": "plan_features_plan_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (plan_id) REFERENCES plans(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "plans",
+      "name": "plans_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "platform_communication_settings",
+      "name": "platform_communication_settings_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "platform_communication_settings",
+      "name": "platform_communication_settings_updated_by_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (updated_by_user_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "platform_invoices",
+      "name": "platform_invoices_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "table_name": "platform_invoices",
+      "name": "platform_invoices_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "platform_invoices",
+      "name": "uq_platform_invoice_studio_month",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id, month)"
+    },
+    {
+      "table_name": "saas_checkouts",
+      "name": "ck_saas_positive_total",
+      "type": "c",
+      "validated": true,
+      "definition": "CHECK ((total_paise > 0))"
+    },
+    {
+      "table_name": "saas_checkouts",
+      "name": "saas_checkouts_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "table_name": "saas_checkouts",
+      "name": "saas_checkouts_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "saas_checkouts",
+      "name": "saas_checkouts_plan_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (plan_id) REFERENCES plans(id)"
+    },
+    {
+      "table_name": "saas_checkouts",
+      "name": "saas_checkouts_provider_order_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (provider_order_id)"
+    },
+    {
+      "table_name": "saas_checkouts",
+      "name": "saas_checkouts_provider_payment_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (provider_payment_id)"
+    },
+    {
+      "table_name": "saas_checkouts",
+      "name": "saas_checkouts_purchaser_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (purchaser_id) REFERENCES users(id)"
+    },
+    {
+      "table_name": "saas_checkouts",
+      "name": "uq_saas_checkout_retry",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id, idempotency_key)"
+    },
+    {
+      "table_name": "saas_webhook_events",
+      "name": "saas_webhook_events_event_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (event_id)"
+    },
+    {
+      "table_name": "saas_webhook_events",
+      "name": "saas_webhook_events_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "session_enrollments",
+      "name": "fk_enrollment_purchase",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (purchase_order_id) REFERENCES orders(id)"
+    },
+    {
+      "table_name": "session_enrollments",
+      "name": "session_enrollments_order_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "session_enrollments",
+      "name": "session_enrollments_order_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (order_id)"
+    },
+    {
+      "table_name": "session_enrollments",
+      "name": "session_enrollments_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "session_enrollments",
+      "name": "session_enrollments_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "session_enrollments",
+      "name": "session_enrollments_session_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "session_enrollments",
+      "name": "session_enrollments_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "session_instructors",
+      "name": "session_instructors_member_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (member_id) REFERENCES organization_members(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "session_instructors",
+      "name": "session_instructors_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "session_instructors",
+      "name": "session_instructors_session_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "session_pricing",
+      "name": "session_pricing_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "session_pricing",
+      "name": "session_pricing_session_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "session_pricing",
+      "name": "session_pricing_session_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (session_id)"
+    },
+    {
+      "table_name": "session_requirements",
+      "name": "session_requirements_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "session_requirements",
+      "name": "session_requirements_session_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "session_requirements",
+      "name": "session_requirements_session_id_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (session_id)"
+    },
+    {
+      "table_name": "session_schedule_rules",
+      "name": "session_schedule_rules_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "session_schedule_rules",
+      "name": "session_schedule_rules_session_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "sessions",
+      "name": "sessions_class_type_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (class_type_id) REFERENCES class_types(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "sessions",
+      "name": "sessions_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "sessions",
+      "name": "sessions_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "student_join_events",
+      "name": "student_join_events_enrollment_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (enrollment_id) REFERENCES session_enrollments(id)"
+    },
+    {
+      "table_name": "student_join_events",
+      "name": "student_join_events_occurrence_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (occurrence_id) REFERENCES class_occurrences(id)"
+    },
+    {
+      "table_name": "student_join_events",
+      "name": "student_join_events_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "table_name": "student_join_events",
+      "name": "student_join_events_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "student_join_events",
+      "name": "student_join_events_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id)"
+    },
+    {
+      "table_name": "student_join_teachers",
+      "name": "student_join_teachers_event_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (event_id) REFERENCES student_join_events(id)"
+    },
+    {
+      "table_name": "student_join_teachers",
+      "name": "student_join_teachers_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (event_id, teacher_id)"
+    },
+    {
+      "table_name": "student_join_teachers",
+      "name": "student_join_teachers_teacher_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (teacher_id) REFERENCES organization_members(id)"
+    },
+    {
+      "table_name": "studio_communication_budgets",
+      "name": "studio_communication_budgets_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "studio_communication_budgets",
+      "name": "studio_communication_budgets_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "support_messages",
+      "name": "support_messages_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "support_messages",
+      "name": "support_messages_sender_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (sender_user_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "support_messages",
+      "name": "support_messages_ticket_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES support_tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "support_tickets",
+      "name": "support_tickets_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "support_tickets",
+      "name": "support_tickets_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "support_tickets",
+      "name": "support_tickets_resolved_by_member_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (resolved_by_member_id) REFERENCES organization_members(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "support_tickets",
+      "name": "support_tickets_student_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "teacher_attendance",
+      "name": "ck_teacher_attendance_status",
+      "type": "c",
+      "validated": true,
+      "definition": "CHECK (((status)::text = ANY ((ARRAY['PRESENT'::character varying, 'ABSENT'::character varying, 'CANCELLED'::character varying])::text[])))"
+    },
+    {
+      "table_name": "teacher_attendance",
+      "name": "teacher_attendance_class_occurrence_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (class_occurrence_id) REFERENCES class_occurrences(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "teacher_attendance",
+      "name": "teacher_attendance_marked_by_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (marked_by_user_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "teacher_attendance",
+      "name": "teacher_attendance_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "teacher_attendance",
+      "name": "teacher_attendance_teacher_member_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (teacher_member_id) REFERENCES organization_members(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "teacher_attendance",
+      "name": "uq_teacher_occurrence_attendance",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (class_occurrence_id, teacher_member_id)"
+    },
+    {
+      "table_name": "teacher_zoom_connections",
+      "name": "fk_zoom_member_tenant",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id, member_id) REFERENCES organization_members(organization_id, id)"
+    },
+    {
+      "table_name": "teacher_zoom_connections",
+      "name": "teacher_zoom_connections_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "teacher_zoom_connections",
+      "name": "uq_zoom_connection_tenant",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id, id)"
+    },
+    {
+      "table_name": "teacher_zoom_connections",
+      "name": "uq_zoom_member",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (organization_id, member_id)"
+    },
+    {
+      "table_name": "user_communication_preferences",
+      "name": "user_communication_preferences_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "user_communication_preferences",
+      "name": "user_communication_preferences_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "user_otps",
+      "name": "user_otps_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "user_otps",
+      "name": "user_otps_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "user_sessions",
+      "name": "user_sessions_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "user_sessions",
+      "name": "user_sessions_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "users",
+      "name": "ck_users_role",
+      "type": "c",
+      "validated": true,
+      "definition": "CHECK (((role)::text = ANY ((ARRAY['SUPER_ADMIN'::character varying, 'STUDIO'::character varying, 'TEACHER'::character varying, 'STUDENT'::character varying])::text[])))"
+    },
+    {
+      "table_name": "users",
+      "name": "ck_users_superadmin_consistent",
+      "type": "c",
+      "validated": true,
+      "definition": "CHECK ((is_superadmin = ((role)::text = 'SUPER_ADMIN'::text)))"
+    },
+    {
+      "table_name": "users",
+      "name": "uq_users_username",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (username)"
+    },
+    {
+      "table_name": "users",
+      "name": "users_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "website_templates",
+      "name": "website_templates_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "zoom_oauth_attempts",
+      "name": "fk_zoom_attempt_member_tenant",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id, member_id) REFERENCES organization_members(organization_id, id)"
+    },
+    {
+      "table_name": "zoom_oauth_attempts",
+      "name": "zoom_oauth_attempts_actor_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (actor_id) REFERENCES users(id)"
+    },
+    {
+      "table_name": "zoom_oauth_attempts",
+      "name": "zoom_oauth_attempts_intended_user_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (intended_user_id) REFERENCES users(id)"
+    },
+    {
+      "table_name": "zoom_oauth_attempts",
+      "name": "zoom_oauth_attempts_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "table_name": "zoom_oauth_attempts",
+      "name": "zoom_oauth_attempts_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "zoom_oauth_attempts",
+      "name": "zoom_oauth_attempts_state_hash_key",
+      "type": "u",
+      "validated": true,
+      "definition": "UNIQUE (state_hash)"
+    },
+    {
+      "table_name": "zoom_revocations",
+      "name": "zoom_revocations_organization_id_fkey",
+      "type": "f",
+      "validated": true,
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "table_name": "zoom_revocations",
+      "name": "zoom_revocations_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "zoom_webhook_receipts",
+      "name": "zoom_webhook_receipts_pkey",
+      "type": "p",
+      "validated": true,
+      "definition": "PRIMARY KEY (digest)"
+    }
+  ]
+}

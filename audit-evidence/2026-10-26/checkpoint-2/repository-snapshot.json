@@ -1,0 +1,22 @@
+{
+  ".": {
+    "branch": "dev",
+    "head": "27c2a838986af4ed65b0677887f2327278fb3bb8",
+    "status": " ? progressrooms\n?? AUDIT_REPORT.md\n?? audit-evidence/\n"
+  },
+  "progressrooms": {
+    "branch": "dev",
+    "head": "bbb87722ae9b53caf84343d6c7d48518cb6b7eb7",
+    "status": "?? tracker/features/FEAT-20-super-admin-management-and-health.md\n?? tracker/features/FEAT-21-environment-targets-and-uat-bootstrap.md\n"
+  },
+  "progressrooms/progressrooms-api": {
+    "branch": "dev",
+    "head": "21f8ed6a938c4cf6e83ceb26bde5bd22f1812fa6",
+    "status": " M .github/workflows/ci-uat.yaml\n M app/core/config.py\n M app/core/email_service.py\n M app/models/__init__.py\n M app/models/communication.py\n M app/modules/admin/health.py\n M app/modules/attendance/calendar.py\n M app/modules/auth/service.py\n M app/modules/classes/router.py\n M app/modules/communication/billing_engine.py\n M app/modules/communication/reminder_engine.py\n M app/modules/communication/router.py\n M app/modules/communication/service.py\n M app/modules/scheduling/router.py\n M app/modules/student/router.py\n M app/modules/websites/router.py\n M app/modules/zoom/provider.py\n M app/modules/zoom/service.py\n M deploy/README.md\n M deploy/compose.api.yaml\n M deploy/uat.sh\n M tests/test_attendance_status.py\n M tests/test_billing_and_budgets.py\n M tests/test_communication.py\n M tests/test_communication_migration.py\n M tests/test_query_improvements.py\n M tests/test_reminder_engine_acceptance.py\n?? alembic/versions/032_zoom_meeting_mail.py\n?? app/modules/communication/worker.py\n?? app/modules/communication/zoom_mail.py\n?? scripts/reconcile_local_communication_schema.py\n?? tests/test_audit_public_queries.py\n?? tests/test_audit_resources.py\n?? tests/test_audit_route_guards.py\n?? tests/test_full_audit_auth.py\n?? tests/test_local_schema_reconciliation.py\n?? tests/test_zoom_mail.py\n"
+  },
+  "progressrooms/progressrooms-web": {
+    "branch": "dev",
+    "head": "629913b8f4619417f7b8b2b860677bb5370e703f",
+    "status": " M .github/workflows/ci.yml\n M package.json\n M src/app/(dashboard)/dashboard/page.tsx\n M src/app/(student)/student/page.tsx\n M src/app/login/page.tsx\n M src/app/page.tsx\n M src/app/register/page.tsx\n M src/components/AdminPeople.tsx\n M src/components/AdminStudios.tsx\n M src/components/AttendanceCalendar.tsx\n M src/components/CommunicationChannelsControl.tsx\n M src/components/CommunicationChannelsPanel.tsx\n M src/components/CommunicationSettingsProvider.tsx\n M src/components/InitialZoomSetup.tsx\n M src/components/MeetingAction.tsx\n M src/components/StudentDetails.tsx\n M src/components/StudioClasses.tsx\n M src/components/TeacherZoomControl.tsx\n M src/components/WhatsAppNotificationHint.tsx\n M src/lib/api.ts\n M src/types/index.ts\n M tsconfig.json\n?? .next-uat-email-test/\n?? src/app/meetings/\n?? src/components/PasswordInput.tsx\n?? tests/\n"
+  }
+}

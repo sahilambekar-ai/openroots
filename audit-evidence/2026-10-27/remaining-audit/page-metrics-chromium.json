@@ -1,0 +1,30 @@
+{
+  "production": true,
+  "local": true,
+  "samples": [
+    {
+      "path": "/login",
+      "lcp": 76,
+      "cls": 0.000006849500868055556,
+      "ttfb": 1.2000000476837158,
+      "domContentLoaded": 24.300000071525574,
+      "transferBytes": 3372
+    },
+    {
+      "path": "/register?role=STUDENT",
+      "lcp": 52,
+      "cls": 0.010968487209743924,
+      "ttfb": 1.100000023841858,
+      "domContentLoaded": 23.600000023841858,
+      "transferBytes": 3390
+    },
+    {
+      "path": "/privacy",
+      "lcp": 56,
+      "cls": 0,
+      "ttfb": 5.600000023841858,
+      "domContentLoaded": 34.60000002384186,
+      "transferBytes": 7782
+    }
+  ]
+}

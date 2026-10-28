@@ -1,0 +1,44 @@
+✔ fetchPublicOrganization: sends the public route and returns response data (22.6705ms)
+✔ fetchPublicOrganization: maps absent resources to null (2.677458ms)
+⚠ fetchPublicOrganization: exposes service outages to the error boundary (2.508666ms) # AUD-009: upstream 503 currently becomes null and the page renders 404
+✔ fetchPublicSession: sends the public route and returns response data (3.09725ms)
+✔ fetchPublicSession: maps absent resources to null (1.776042ms)
+⚠ fetchPublicSession: exposes service outages to the error boundary (1.711708ms) # AUD-009: upstream 503 currently becomes null and the page renders 404
+ℹ tests 6
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 2
+ℹ duration_ms 168.744667
+
+✖ failing tests:
+
+test at tests/public-api.test.cjs:39:3
+⚠ fetchPublicOrganization: exposes service outages to the error boundary (2.508666ms) # AUD-009: upstream 503 currently becomes null and the page renders 404
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-web/tests/public-api.test.cjs:42:7)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/public-api.test.cjs:39:3
+⚠ fetchPublicSession: exposes service outages to the error boundary (1.711708ms) # AUD-009: upstream 503 currently becomes null and the page renders 404
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-web/tests/public-api.test.cjs:42:7)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }

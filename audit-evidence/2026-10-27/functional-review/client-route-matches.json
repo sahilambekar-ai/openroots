@@ -1,0 +1,2286 @@
+[
+  {
+    "file": "src/app/(tenant)/[orgSlug]/route.ts",
+    "line": 10,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/public/organizations/{}/website-html",
+      "/api/v1/public/organizations/{}/website-html"
+    ],
+    "matches": [
+      "GET /public/organizations/{org_slug}/website-html"
+    ]
+  },
+  {
+    "file": "src/app/api/communication/[...path]/route.ts",
+    "line": 15,
+    "helper": "fetch",
+    "methods": [
+      "{DYNAMIC}"
+    ],
+    "patterns": [
+      "/admin/communication/{}{}"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/lib/api.ts",
+    "line": 8,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/public/organizations/{}",
+      "/api/v1/public/organizations/{}"
+    ],
+    "matches": [
+      "GET /public/organizations/{org_slug}"
+    ]
+  },
+  {
+    "file": "src/lib/api.ts",
+    "line": 23,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/public/organizations/{}/classes/{}",
+      "/api/v1/public/organizations/{}/classes/{}"
+    ],
+    "matches": [
+      "GET /public/organizations/{org_slug}/classes/{session_slug}"
+    ]
+  },
+  {
+    "file": "src/lib/auth-session.ts",
+    "line": 6,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/auth/logout",
+      "/api/v1/auth/logout"
+    ],
+    "matches": [
+      "POST /auth/logout"
+    ]
+  },
+  {
+    "file": "src/lib/communication-api.ts",
+    "line": 17,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/api/communication{}"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/lib/staff-api.ts",
+    "line": 3,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "{}{}",
+      "/api/v1{}"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/components/DashboardTypographyProvider.tsx",
+    "line": 40,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/me/preferences"
+    ],
+    "matches": [
+      "GET /auth/me/preferences"
+    ]
+  },
+  {
+    "file": "src/components/DashboardTypographyProvider.tsx",
+    "line": 66,
+    "helper": "staffApi",
+    "methods": [
+      "PATCH"
+    ],
+    "patterns": [
+      "/auth/me/preferences"
+    ],
+    "matches": [
+      "PATCH /auth/me/preferences"
+    ]
+  },
+  {
+    "file": "src/components/AdminPeople.tsx",
+    "line": 11,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/admin/people"
+    ],
+    "matches": [
+      "GET /admin/people"
+    ]
+  },
+  {
+    "file": "src/components/AdminPeople.tsx",
+    "line": 16,
+    "helper": "staffApi",
+    "methods": [
+      "DELETE"
+    ],
+    "patterns": [
+      "/admin/people/{}"
+    ],
+    "matches": [
+      "DELETE /admin/people/{user_id}"
+    ]
+  },
+  {
+    "file": "src/components/AdminHealth.tsx",
+    "line": 60,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/admin/health"
+    ],
+    "matches": [
+      "GET /admin/health"
+    ]
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 36,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/students/{}/enrollments"
+    ],
+    "matches": [
+      "GET /students/{record_id}/enrollments"
+    ]
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 55,
+    "helper": "staffApi",
+    "methods": [
+      "PATCH"
+    ],
+    "patterns": [
+      "/students/{}"
+    ],
+    "matches": [
+      "PATCH /students/{record_id}"
+    ]
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 63,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/students/{}/enrollments/{}/resume",
+      "/students/{}/enrollments/{}/pause"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 72,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/students/{}/enrollments/{}/cancel"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 20,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "{}{}"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 65,
+    "helper": "request",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/website"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/website"
+    ]
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 77,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/public/website-templates"
+    ],
+    "matches": [
+      "GET /public/website-templates"
+    ]
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 81,
+    "helper": "request",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/website-workspace"
+    ],
+    "matches": [
+      "GET /website-workspace"
+    ]
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 128,
+    "helper": "request",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/organizations/{}/website"
+    ],
+    "matches": [
+      "PUT /organizations/{org_id}/website"
+    ]
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 130,
+    "helper": "request",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/website/publish"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/website/publish"
+    ]
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 151,
+    "helper": "request",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/website/preview"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/website/preview"
+    ]
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 162,
+    "helper": "request",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/website/download/{}"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/website/download/{version}"
+    ]
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 178,
+    "helper": "request",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/website/image"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/website/image"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 39,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/teachers/{member_id}/zoom"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 45,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom/impact"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/teachers/{member_id}/zoom/impact"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 48,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom/connect"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/teachers/{member_id}/zoom/connect"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 52,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/teachers/{member_id}/zoom"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 68,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom/studio-connect"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/teachers/{member_id}/zoom/studio-connect"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 80,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom/authorization-request"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/teachers/{member_id}/zoom/authorization-request"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 81,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/teachers/{member_id}/zoom"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 84,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/settings"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/zoom/settings"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 85,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom/impact"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/teachers/{member_id}/zoom/impact"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 90,
+    "helper": "staffApi",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/settings"
+    ],
+    "matches": [
+      "PUT /organizations/{org_id}/zoom/settings"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 93,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom/impact"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/teachers/{member_id}/zoom/impact"
+    ]
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 95,
+    "helper": "staffApi",
+    "methods": [
+      "DELETE"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom"
+    ],
+    "matches": [
+      "DELETE /organizations/{org_id}/teachers/{member_id}/zoom"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 155,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/classes"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/classes"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 156,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/classes"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/classes"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 166,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/context"
+    ],
+    "matches": [
+      "GET /auth/context"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 171,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/teacher-agenda"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/occurrences/teacher-agenda"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 187,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/context"
+    ],
+    "matches": [
+      "GET /auth/context"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 193,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/members"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/members"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 199,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/students"
+    ],
+    "matches": [
+      "GET /students"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 228,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/students"
+    ],
+    "matches": [
+      "GET /students"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 304,
+    "helper": "staffApi",
+    "methods": [
+      "DELETE"
+    ],
+    "patterns": [
+      "/organizations/{}/classes/{}"
+    ],
+    "matches": [
+      "DELETE /organizations/{org_id}/classes/{class_id}"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 317,
+    "helper": "staffApi",
+    "methods": [
+      "PATCH"
+    ],
+    "patterns": [
+      "/organizations/{}/classes/{}/toggle-status"
+    ],
+    "matches": [
+      "PATCH /organizations/{org_id}/classes/{class_id}/toggle-status"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 374,
+    "helper": "staffApi",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/organizations/{}/classes/{}"
+    ],
+    "matches": [
+      "PUT /organizations/{org_id}/classes/{class_id}"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 404,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/class-types"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/class-types"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 407,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/class-types"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/class-types"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 412,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/classes"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/classes"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 464,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/one-on-one-classes"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/one-on-one-classes"
+    ]
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 595,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/join-link"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/join-link"
+    ]
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 122,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/membership-tiers"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/membership-tiers"
+    ]
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 123,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/membership-tiers"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/membership-tiers"
+    ]
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 135,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/classes"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/classes"
+    ]
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 158,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/context"
+    ],
+    "matches": [
+      "GET /auth/context"
+    ]
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 227,
+    "helper": "staffApi",
+    "methods": [
+      "DELETE"
+    ],
+    "patterns": [
+      "/organizations/{}/membership-tiers/{}"
+    ],
+    "matches": [
+      "DELETE /organizations/{org_id}/membership-tiers/{tier_id}"
+    ]
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 240,
+    "helper": "staffApi",
+    "methods": [
+      "PATCH"
+    ],
+    "patterns": [
+      "/organizations/{}/membership-tiers/{}/toggle-status"
+    ],
+    "matches": [
+      "PATCH /organizations/{org_id}/membership-tiers/{tier_id}/toggle-status"
+    ]
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 312,
+    "helper": "staffApi",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/organizations/{}/membership-tiers/{}"
+    ],
+    "matches": [
+      "PUT /organizations/{org_id}/membership-tiers/{tier_id}"
+    ]
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 318,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/membership-tiers"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/membership-tiers"
+    ]
+  },
+  {
+    "file": "src/components/ProgressRoomsBilling.tsx",
+    "line": 31,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/admin/organizations/{}/teachers",
+      "/organizations/{}/billing/teachers"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/billing/teachers",
+      "GET /admin/organizations/{org_id}/teachers"
+    ]
+  },
+  {
+    "file": "src/components/ProgressRoomsBilling.tsx",
+    "line": 42,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/admin/organizations/{}/progressrooms",
+      "/organizations/{}/billing/progressrooms"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/billing/progressrooms",
+      "GET /admin/organizations/{org_id}/progressrooms"
+    ]
+  },
+  {
+    "file": "src/components/AdminStudios.tsx",
+    "line": 56,
+    "helper": "staffApi",
+    "methods": [
+      "PATCH",
+      "DELETE"
+    ],
+    "patterns": [
+      "/admin/organizations/{}/status",
+      "/admin/organizations/{}"
+    ],
+    "matches": [
+      "PATCH /admin/organizations/{org_id}/status",
+      "DELETE /admin/organizations/{org_id}"
+    ]
+  },
+  {
+    "file": "src/components/AdminStudios.tsx",
+    "line": 66,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/admin/organizations"
+    ],
+    "matches": [
+      "GET /admin/organizations"
+    ]
+  },
+  {
+    "file": "src/components/AdminStudios.tsx",
+    "line": 74,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/admin/organizations/{}"
+    ],
+    "matches": [
+      "GET /admin/organizations/{org_id}"
+    ]
+  },
+  {
+    "file": "src/components/StudioAccessNotice.tsx",
+    "line": 18,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/saas-billing/access"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/saas-billing/access"
+    ]
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 48,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/saas-billing"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/saas-billing"
+    ]
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 50,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "{}"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 60,
+    "helper": "post",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/saas-billing/quote"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/saas-billing/quote"
+    ]
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 68,
+    "helper": "post",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/saas-billing/checkouts/{}/reconcile"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/saas-billing/checkouts/{checkout_id}/reconcile"
+    ]
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 83,
+    "helper": "post",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/saas-billing/checkouts"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/saas-billing/checkouts"
+    ]
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 97,
+    "helper": "post",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/saas-billing/checkouts/{}/verify"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/saas-billing/checkouts/{checkout_id}/verify"
+    ]
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 58,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/billing/summary"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/billing/summary"
+    ]
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 63,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/billing/teachers"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/billing/teachers"
+    ]
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 89,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/billing/export.csv",
+      "/api/v1/organizations/{}/billing/export.csv"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/billing/export.csv"
+    ]
+  },
+  {
+    "file": "src/components/StudioAnalytics.tsx",
+    "line": 28,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/analytics"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/analytics"
+    ]
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 21,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/settings"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/zoom/settings"
+    ]
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 21,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/host-key"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/zoom/host-key"
+    ]
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 39,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom/connect"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/teachers/{member_id}/zoom/connect"
+    ]
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 50,
+    "helper": "staffApi",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/host-key"
+    ],
+    "matches": [
+      "PUT /organizations/{org_id}/zoom/host-key"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 93,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/settings"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/zoom/settings"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 93,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/meetings"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/zoom/meetings"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 101,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom/impact"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/teachers/{member_id}/zoom/impact"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 106,
+    "helper": "staffApi",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/settings"
+    ],
+    "matches": [
+      "PUT /organizations/{org_id}/zoom/settings"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 136,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/apply-future-settings"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/zoom/apply-future-settings"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 137,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/apply-future-settings"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/zoom/apply-future-settings"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 150,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/zoom/reconcile"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/zoom/reconcile"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 152,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/zoom/reconcile"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/zoom/reconcile"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 154,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/zoom/reconcile"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/zoom/reconcile"
+    ]
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 158,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/zoom/retry-revocations"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/zoom/retry-revocations"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 245,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/me"
+    ],
+    "matches": [
+      "GET /auth/me"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 250,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/context"
+    ],
+    "matches": [
+      "GET /auth/context"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 557,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/teachers/{}/password",
+      "/api/v1/teachers/{}/password"
+    ],
+    "matches": [
+      "POST /teachers/{member_id}/password"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 573,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/teachers/{}/invitation",
+      "/api/v1/teachers/{}/invitation"
+    ],
+    "matches": [
+      "POST /teachers/{member_id}/invitation"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 675,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/context"
+    ],
+    "matches": [
+      "GET /auth/context"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 732,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/occurrences"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 762,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/attendance"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/occurrences/{occurrence_id}/attendance"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 790,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/attendance"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/attendance"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 817,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/attendance"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/attendance"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 847,
+    "helper": "staffApi",
+    "methods": [
+      "PATCH"
+    ],
+    "patterns": [
+      "/auth/me"
+    ],
+    "matches": [
+      "PATCH /auth/me"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 882,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/support-tickets"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/support-tickets"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 895,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/support-tickets/{}"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/support-tickets/{ticket_id}"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 907,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/support-tickets/{}/messages"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/support-tickets/{ticket_id}/messages"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 926,
+    "helper": "staffApi",
+    "methods": [
+      "PATCH"
+    ],
+    "patterns": [
+      "/organizations/{}/support-tickets/{}/status"
+    ],
+    "matches": [
+      "PATCH /organizations/{org_id}/support-tickets/{ticket_id}/status"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 947,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/teachers",
+      "/api/v1/teachers"
+    ],
+    "matches": [
+      "GET /teachers"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 968,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/teachers",
+      "/api/v1/teachers"
+    ],
+    "matches": [
+      "POST /teachers"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1032,
+    "helper": "fetch",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/teachers/{}",
+      "/api/v1/teachers/{}"
+    ],
+    "matches": [
+      "PUT /teachers/{member_id}"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1066,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/teachers/{}/zoom/impact",
+      "/api/v1/organizations/{}/teachers/{}/zoom/impact"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/teachers/{member_id}/zoom/impact"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1077,
+    "helper": "fetch",
+    "methods": [
+      "DELETE"
+    ],
+    "patterns": [
+      "/teachers/{}",
+      "/api/v1/teachers/{}"
+    ],
+    "matches": [
+      "DELETE /teachers/{member_id}"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1104,
+    "helper": "fetch",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/teachers/{}",
+      "/api/v1/teachers/{}"
+    ],
+    "matches": [
+      "PUT /teachers/{member_id}"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1126,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/students",
+      "/api/v1/students"
+    ],
+    "matches": [
+      "GET /students"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1154,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/students",
+      "/api/v1/students"
+    ],
+    "matches": [
+      "GET /students"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1174,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/classes",
+      "/organizations/65e82b8f-1494-4658-90d1-f450e21b20a5/classes"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/classes"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1185,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/students"
+    ],
+    "matches": [
+      "POST /students"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1207,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/profile",
+      "/api/v1/organizations/{}/profile"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/profile"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1334,
+    "helper": "fetch",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/organizations/{}/profile",
+      "/organizations/65e82b8f-1494-4658-90d1-f450e21b20a5/profile",
+      "/api/v1/organizations/{}/profile",
+      "/api/v1/organizations/65e82b8f-1494-4658-90d1-f450e21b20a5/profile"
+    ],
+    "matches": [
+      "PUT /organizations/{org_id}/profile"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1408,
+    "helper": "fetch",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/organizations/{}/profile",
+      "/organizations/65e82b8f-1494-4658-90d1-f450e21b20a5/profile",
+      "/api/v1/organizations/{}/profile",
+      "/api/v1/organizations/65e82b8f-1494-4658-90d1-f450e21b20a5/profile"
+    ],
+    "matches": [
+      "PUT /organizations/{org_id}/profile"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1545,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/teachers",
+      "/api/v1/teachers"
+    ],
+    "matches": [
+      "GET /teachers"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1558,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/students",
+      "/api/v1/students"
+    ],
+    "matches": [
+      "GET /students"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1692,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/organizations/{}/attendance/teachers/{}",
+      "/organizations/{}/attendance/students/{}"
+    ],
+    "matches": [
+      "GET /organizations/{org_id}/attendance/teachers/{teacher_id}",
+      "GET /organizations/{org_id}/attendance/students/{student_id}"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1704,
+    "helper": "staffApi",
+    "methods": [
+      "PUT"
+    ],
+    "patterns": [
+      "/organizations/{}/attendance/teachers/{}/occurrences/{}"
+    ],
+    "matches": [
+      "PUT /organizations/{org_id}/attendance/teachers/{teacher_id}/occurrences/{occurrence_id}"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1708,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/attendance"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/attendance"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3830,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/send-invite"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/send-invite"
+    ]
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3831,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/join-link"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/join-link"
+    ]
+  },
+  {
+    "file": "src/components/StoreCheckout.tsx",
+    "line": 23,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "{}{}",
+      "/api/v1{}"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/components/StoreCheckout.tsx",
+    "line": 36,
+    "helper": "request",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/commerce/payments/verify"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/components/StoreCheckout.tsx",
+    "line": 47,
+    "helper": "request",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/commerce/orders"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/components/StudioAccount.tsx",
+    "line": 13,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/me",
+      "/api/v1/auth/me"
+    ],
+    "matches": [
+      "GET /auth/me"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 558,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "{}{}",
+      "/api/v1{}"
+    ],
+    "matches": []
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 582,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/me"
+    ],
+    "matches": [
+      "GET /auth/me"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 583,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/enrollments"
+    ],
+    "matches": [
+      "GET /student/enrollments"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 584,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/upcoming-classes"
+    ],
+    "matches": [
+      "GET /student/upcoming-classes"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 585,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/studios"
+    ],
+    "matches": [
+      "GET /student/studios"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 618,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/teachers/public/lookup",
+      "/api/v1/teachers/public/lookup"
+    ],
+    "matches": [
+      "GET /teachers/public/lookup"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 659,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/student/classes/{}/cancel",
+      "/api/v1/student/classes/{}/cancel"
+    ],
+    "matches": [
+      "POST /student/classes/{occurrence_id}/cancel"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 700,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/classes/{}/available-reschedule-slots"
+    ],
+    "matches": [
+      "GET /student/classes/{occurrence_id}/available-reschedule-slots"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 715,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/student/classes/{}/reschedule",
+      "/api/v1/student/classes/{}/reschedule"
+    ],
+    "matches": [
+      "POST /student/classes/{occurrence_id}/reschedule"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 782,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/attendance"
+    ],
+    "matches": [
+      "GET /student/attendance"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 798,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/support-tickets"
+    ],
+    "matches": [
+      "GET /student/support-tickets"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 815,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/support-tickets/{}"
+    ],
+    "matches": [
+      "GET /student/support-tickets/{ticket_id}"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 826,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/student/support-tickets/{}/messages",
+      "/api/v1/student/support-tickets/{}/messages"
+    ],
+    "matches": [
+      "POST /student/support-tickets/{ticket_id}/messages"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 853,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/student/support-tickets",
+      "/api/v1/student/support-tickets"
+    ],
+    "matches": [
+      "POST /student/support-tickets"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 885,
+    "helper": "fetch",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/public/organizations/{}",
+      "/api/v1/public/organizations/{}"
+    ],
+    "matches": [
+      "GET /public/organizations/{org_slug}"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1117,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/classes/{}/meeting-url"
+    ],
+    "matches": [
+      "GET /student/classes/{occurrence_id}/meeting-url"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1212,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/classes/{}/meeting-url"
+    ],
+    "matches": [
+      "GET /student/classes/{occurrence_id}/meeting-url"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1701,
+    "helper": "get",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/student/classes/{}/send-invite"
+    ],
+    "matches": [
+      "POST /student/classes/{occurrence_id}/send-invite"
+    ]
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1702,
+    "helper": "get",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/classes/{}/meeting-url"
+    ],
+    "matches": [
+      "GET /student/classes/{occurrence_id}/meeting-url"
+    ]
+  },
+  {
+    "file": "src/components/ZoomAuthorizationLanding.tsx",
+    "line": 27,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/integrations/zoom/request"
+    ],
+    "matches": [
+      "POST /integrations/zoom/request"
+    ]
+  },
+  {
+    "file": "src/components/ZoomAuthorizationLanding.tsx",
+    "line": 30,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/integrations/zoom/callback"
+    ],
+    "matches": [
+      "POST /integrations/zoom/callback"
+    ]
+  },
+  {
+    "file": "src/components/ZoomAuthorizationLanding.tsx",
+    "line": 38,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/integrations/zoom/confirm"
+    ],
+    "matches": [
+      "POST /integrations/zoom/confirm"
+    ]
+  },
+  {
+    "file": "src/components/OtpVerificationCard.tsx",
+    "line": 70,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/auth/request-otp",
+      "/api/v1/auth/request-otp"
+    ],
+    "matches": [
+      "POST /auth/request-otp"
+    ]
+  },
+  {
+    "file": "src/components/OtpVerificationCard.tsx",
+    "line": 104,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/auth/verify-otp",
+      "/api/v1/auth/verify-otp"
+    ],
+    "matches": [
+      "POST /auth/verify-otp"
+    ]
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 60,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/auth/login",
+      "/api/v1/auth/login"
+    ],
+    "matches": [
+      "POST /auth/login"
+    ]
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 121,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/auth/forgot-password",
+      "/api/v1/auth/forgot-password"
+    ],
+    "matches": [
+      "POST /auth/forgot-password"
+    ]
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 152,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/auth/reset-password",
+      "/api/v1/auth/reset-password"
+    ],
+    "matches": [
+      "POST /auth/reset-password"
+    ]
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 178,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/auth/dev-login",
+      "/api/v1/auth/dev-login"
+    ],
+    "matches": [
+      "POST /auth/dev-login"
+    ]
+  },
+  {
+    "file": "src/app/meetings/[occurrenceId]/page.tsx",
+    "line": 18,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/auth/me"
+    ],
+    "matches": [
+      "GET /auth/me"
+    ]
+  },
+  {
+    "file": "src/app/meetings/[occurrenceId]/page.tsx",
+    "line": 26,
+    "helper": "staffApi",
+    "methods": [
+      "GET"
+    ],
+    "patterns": [
+      "/student/classes/{}/meeting-url"
+    ],
+    "matches": [
+      "GET /student/classes/{occurrence_id}/meeting-url"
+    ]
+  },
+  {
+    "file": "src/app/meetings/[occurrenceId]/page.tsx",
+    "line": 28,
+    "helper": "staffApi",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/organizations/{}/occurrences/{}/join-link"
+    ],
+    "matches": [
+      "POST /organizations/{org_id}/occurrences/{occurrence_id}/join-link"
+    ]
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 118,
+    "helper": "fetch",
+    "methods": [
+      "POST"
+    ],
+    "patterns": [
+      "/auth/register",
+      "/api/v1/auth/register"
+    ],
+    "matches": [
+      "POST /auth/register"
+    ]
+  }
+]

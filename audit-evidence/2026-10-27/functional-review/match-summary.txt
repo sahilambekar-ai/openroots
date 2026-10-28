@@ -1,0 +1,12 @@
+Calls 161 matched 150
+src/app/api/communication/[...path]/route.ts:15 ["{DYNAMIC}"] ["/admin/communication/{}{}"]
+src/lib/communication-api.ts:17 ["GET"] ["/api/communication{}"]
+src/lib/staff-api.ts:3 ["GET"] ["{}{}","/api/v1{}"]
+src/components/StudentDetails.tsx:63 ["POST"] ["/students/{}/enrollments/{}/resume","/students/{}/enrollments/{}/pause"]
+src/components/StudentDetails.tsx:72 ["POST"] ["/students/{}/enrollments/{}/cancel"]
+src/components/website/WebsiteEditor.tsx:20 ["GET"] ["{}{}"]
+src/components/SaaSBilling.tsx:50 ["POST"] ["{}"]
+src/components/StoreCheckout.tsx:23 ["POST"] ["{}{}","/api/v1{}"]
+src/components/StoreCheckout.tsx:36 ["GET"] ["/commerce/payments/verify"]
+src/components/StoreCheckout.tsx:47 ["GET"] ["/commerce/orders"]
+src/app/(student)/student/page.tsx:558 ["GET"] ["{}{}","/api/v1{}"]

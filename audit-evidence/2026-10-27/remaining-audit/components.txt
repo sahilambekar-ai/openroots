@@ -1,0 +1,13 @@
+
+> progressrooms-web@0.1.0 test:components
+> vitest run
+
+
+ RUN  v5.0.5 /Users/sahil/Documents/work/openroots/progressrooms/progressrooms-web
+
+
+ Test Files  3 passed (3)
+      Tests  9 passed (9)
+   Start at  21:20:00
+   Duration  982ms (environment 58%, tests 17%, setup 17%, import 6%, transform 2%)
+

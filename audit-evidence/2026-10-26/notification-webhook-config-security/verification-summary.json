@@ -1,0 +1,18 @@
+{
+  "backend_passed": 616,
+  "backend_failed": 0,
+  "backend_xfailed": 0,
+  "backend_skipped": 0,
+  "postgres_tests": 13,
+  "notification_security_tests": 63,
+  "webhook_security_tests": 51,
+  "configuration_security_tests": 51,
+  "frontend_helper_tests": 13,
+  "frontend_typecheck": "passed",
+  "shell_syntax": "passed",
+  "ci_settings_validation": "passed",
+  "postgres_version_tested": "18.4",
+  "deployment_performed": false,
+  "proxy_configuration_verified": false,
+  "linux_image_executed": false
+}

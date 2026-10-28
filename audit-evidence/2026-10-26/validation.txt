@@ -1,0 +1,3 @@
+negative class duration and reversed ages : ACCEPTED by SessionCreate
+invalid pass limits and type : ACCEPTED by MembershipTierCreate
+overlength support subject : ACCEPTED by CreateTicketPayload

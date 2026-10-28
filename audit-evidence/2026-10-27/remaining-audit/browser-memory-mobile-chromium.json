@@ -1,0 +1,29 @@
+{
+  "cycles": 30,
+  "before": {
+    "heap": {
+      "usedSize": 11688924,
+      "totalSize": 12402688,
+      "embedderHeapUsedSize": 1090480,
+      "backingStorageSize": 7658794
+    },
+    "dom": {
+      "documents": 1,
+      "nodes": 30,
+      "jsEventListeners": 157
+    }
+  },
+  "after": {
+    "heap": {
+      "usedSize": 12087488,
+      "totalSize": 13189120,
+      "embedderHeapUsedSize": 1768128,
+      "backingStorageSize": 7658794
+    },
+    "dom": {
+      "documents": 1,
+      "nodes": 30,
+      "jsEventListeners": 157
+    }
+  }
+}

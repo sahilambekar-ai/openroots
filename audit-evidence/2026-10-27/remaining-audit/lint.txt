@@ -1,0 +1,32 @@
+
+> progressrooms-web@0.1.0 lint
+> next lint
+
+`next lint` is deprecated and will be removed in Next.js 16.
+For new projects, use create-next-app to choose your preferred linter.
+For existing projects, migrate to the ESLint CLI:
+npx @next/codemod@canary next-lint-to-eslint-cli .
+
+
+./src/app/(dashboard)/dashboard/page.tsx
+753:6  Warning: React Hook useEffect has missing dependencies: 'loadLiveRoster' and 'selectedLiveClassId'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+1511:6  Warning: React Hook useEffect has a missing dependency: 'fetchStudioProfile'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1519:6  Warning: React Hook useEffect has a missing dependency: 'fetchStudioTeachers'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1526:6  Warning: React Hook useEffect has a missing dependency: 'fetchStudents'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1533:6  Warning: React Hook useEffect has a missing dependency: 'fetchQueries'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1596:6  Warning: React Hook useEffect has missing dependencies: 'students' and 'studioTeachers'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setAttendanceTeachers' needs the current value of 'studioTeachers'.  react-hooks/exhaustive-deps
+
+./src/app/(student)/student/page.tsx
+1570:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/StudioClasses.tsx
+211:6  Warning: React Hook useEffect has a missing dependency: 'org'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/StudioMemberships.tsx
+172:6  Warning: React Hook useEffect has a missing dependency: 'org'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/website/WebsiteEditor.tsx
+258:156  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+260:521  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules

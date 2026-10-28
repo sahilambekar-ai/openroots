@@ -1,0 +1,192 @@
+[
+  {
+    "file": "alembic/versions/001_initial_schema.py",
+    "downgrade_source": "def downgrade() -> None:\n    # Reverse drops\n    op.drop_table('audit_logs')\n    op.drop_table('notifications')\n    op.drop_table('organization_integrations')\n    op.drop_table('media_assets')\n    op.drop_table('organization_domains')\n    op.drop_table('organization_websites')\n    op.drop_table('website_templates')\n    op.drop_table('attendance_records')\n    op.drop_table('session_enrollments')\n    op.drop_table('organization_payment_accounts')\n    op.drop_table('payment_webhook_events')\n    op.drop_table('payments')\n    op.drop_table('order_items')\n    op.drop_table('orders')\n    op.drop_index('ix_class_occurrences_org_time', table_name='class_occurrences')\n    op.drop_table('class_occurrence_changes')\n    op.drop_table('class_occurrences')\n    op.drop_table('session_schedule_rules')\n    op.drop_table('session_requirements')\n    op.drop_table('session_pricing')\n    op.drop_table('session_instructors')\n    op.drop_table('sessions')\n    op.drop_table('class_types')\n    op.drop_table('organization_subscriptions')\n    op.drop_table('plan_features')\n    op.drop_table('plans')\n    op.drop_table('organization_settings')\n    op.drop_table('organization_students')\n    op.drop_table('organization_members')\n    op.drop_table('organizations')\n    op.drop_table('user_sessions')\n    op.drop_table('user_auth_methods')\n    op.drop_table('users')"
+  },
+  {
+    "file": "alembic/versions/002_studio_profile_and_zoom.py",
+    "downgrade_source": "def downgrade() -> None:\n    columns = [\n        'phone', 'studio_tagline', 'disciplines', 'teaching_mode',\n        'address_line1', 'address_line2', 'city', 'state', 'pincode', 'country',\n        'has_gst', 'gst_number', 'legal_business_name', 'pan_number',\n        'bank_name', 'account_holder_name', 'account_number_enc', 'ifsc_code', 'upi_id',\n        'settlement_cycle', 'zoom_account_email', 'zoom_auto_meeting_enabled',\n        'zoom_waiting_room', 'zoom_host_video', 'account_completed', 'completion_step'\n    ]\n    for col in columns:\n        op.drop_column('organization_settings', col)"
+  },
+  {
+    "file": "alembic/versions/003_completion_percentage.py",
+    "downgrade_source": "def downgrade() -> None:\n    op.drop_column('organization_settings', 'completion_percentage')\n    op.drop_column('organization_settings', 'whatsapp_number')"
+  },
+  {
+    "revision": "004_account_roles",
+    "down_revision": "003_completion_percentage",
+    "file": "alembic/versions/004_account_roles.py",
+    "downgrade_source": "def downgrade():\n    op.drop_constraint('fk_student_teacher_same_studio', 'organization_students', type_='foreignkey')\n    op.drop_index('ix_organization_students_teacher_member_id', 'organization_students')\n    op.drop_column('organization_students', 'teacher_member_id')\n    for table, name in [('organization_students','uq_org_student'), ('organization_members','uq_org_member_identity'), ('organization_members','uq_org_member'), ('users','uq_users_username')]:\n        op.drop_constraint(name, table, type_='unique')\n    op.drop_index('uq_users_single_super_admin', 'users')\n    op.drop_index('ix_users_role', 'users')\n    op.drop_constraint('ck_users_superadmin_consistent', 'users', type_='check')\n    op.drop_constraint('ck_users_role', 'users', type_='check')\n    for name in ['role','username','address','location']:\n        op.drop_column('users', name)\n    op.execute(\"UPDATE organization_members SET role=CASE WHEN role='STUDIO' THEN 'OWNER' WHEN role='TEACHER' THEN 'INSTRUCTOR' ELSE role END\")"
+  },
+  {
+    "revision": "005_auth_schema_parity",
+    "down_revision": "004_account_roles",
+    "file": "alembic/versions/005_auth_schema_parity.py",
+    "downgrade_source": "def downgrade():\n    # Preserve authentication data that may predate this repair migration.\n    pass"
+  },
+  {
+    "revision": "006_membership_tiers",
+    "down_revision": "005_auth_schema_parity",
+    "file": "alembic/versions/006_membership_tiers.py",
+    "downgrade_source": "def downgrade():\n    op.drop_table('membership_tier_classes')\n    op.drop_table('membership_tiers')"
+  },
+  {
+    "revision": "007_student_profiles_pause",
+    "down_revision": "006_membership_tiers",
+    "file": "alembic/versions/007_student_profiles_pause.py",
+    "downgrade_source": "def downgrade():\n    op.drop_column(\"session_enrollments\", \"paused_at\")\n    op.drop_column(\"users\", \"whatsapp_number\")"
+  },
+  {
+    "revision": "008_query_indexes",
+    "down_revision": "007_student_profiles_pause",
+    "file": "alembic/versions/008_query_indexes.py",
+    "downgrade_source": "def downgrade():\n    for name, table, _ in reversed(INDEXES):\n        op.drop_index(name, table_name=table)"
+  },
+  {
+    "revision": "009_enrollment_billing_snapshot",
+    "down_revision": "008_query_indexes",
+    "file": "alembic/versions/009_enrollment_billing_snapshot.py",
+    "downgrade_source": "def downgrade():\n    op.drop_column(\"session_enrollments\", \"billing_label\")\n    op.drop_column(\"session_enrollments\", \"billing_type\")\n    op.drop_column(\"session_enrollments\", \"billing_currency\")\n    op.drop_column(\"session_enrollments\", \"billing_value\")"
+  },
+  {
+    "revision": "010_teacher_codes",
+    "down_revision": "009_enrollment_billing_snapshot",
+    "file": "alembic/versions/010_teacher_codes.py",
+    "downgrade_source": "def downgrade():\n    op.drop_constraint(\"ck_organization_members_teacher_code\", \"organization_members\", type_=\"check\")\n    op.drop_index(\"ix_organization_members_teacher_code\", table_name=\"organization_members\")\n    op.drop_column(\"organization_members\", \"teacher_code\")"
+  },
+  {
+    "revision": "011_require_teacher_codes",
+    "down_revision": "010_teacher_codes",
+    "file": "alembic/versions/011_require_teacher_codes.py",
+    "downgrade_source": "def downgrade():\n    op.drop_constraint(\"ck_organization_members_teacher_code\", \"organization_members\", type_=\"check\")\n    op.create_check_constraint(\n        \"ck_organization_members_teacher_code\",\n        \"organization_members\",\n        \"teacher_code IS NULL OR teacher_code ~ '^[0-9]{8}$'\",\n    )"
+  },
+  {
+    "revision": "012_public_storefront",
+    "down_revision": "011_require_teacher_codes",
+    "file": "alembic/versions/012_public_storefront.py",
+    "downgrade_source": "def downgrade():\n    op.drop_index(\"ix_session_enrollments_purchase_order_id\", \"session_enrollments\")\n    op.drop_constraint(\"fk_enrollment_purchase\", \"session_enrollments\", type_=\"foreignkey\")\n    op.drop_column(\"session_enrollments\", \"purchase_order_id\")\n    op.drop_constraint(\"uq_orders_provider_order_id\", \"orders\", type_=\"unique\")\n    for name in [\"provider_order_id\", \"offering_label\", \"offering_type\", \"credit_limit\", \"validity_days\"]:\n        op.drop_column(\"orders\", name)"
+  },
+  {
+    "revision": "013_membership_offer_price",
+    "down_revision": "012_public_storefront",
+    "file": "alembic/versions/013_membership_offer_price.py",
+    "downgrade_source": "def downgrade():\n    with op.batch_alter_table(\"membership_tiers\") as batch:\n        batch.drop_constraint(\"ck_membership_tiers_offer_price\", type_=\"check\")\n        batch.drop_constraint(\"ck_membership_tiers_price_nonnegative\", type_=\"check\")\n        batch.drop_column(\"offer_price\")"
+  },
+  {
+    "revision": "014_teacher_attendance",
+    "down_revision": "013_membership_offer_price",
+    "file": "alembic/versions/014_teacher_attendance.py",
+    "downgrade_source": "def downgrade():\n    op.drop_table(\"teacher_attendance\")"
+  },
+  {
+    "revision": "015_meetings_and_support",
+    "down_revision": "014_teacher_attendance",
+    "file": "alembic/versions/015_meetings_and_support.py",
+    "downgrade_source": "def downgrade():\n    op.drop_table(\"support_messages\")\n    op.drop_table(\"support_tickets\")\n    op.drop_column(\"class_occurrences\", \"provider_meeting_id\")\n    op.drop_column(\"class_occurrences\", \"meeting_provider\")\n    op.drop_column(\"class_occurrences\", \"host_url\")"
+  },
+  {
+    "revision": "016_consolidate_passwords",
+    "down_revision": "015_meetings_and_support",
+    "file": "alembic/versions/016_consolidate_password_credentials.py",
+    "downgrade_source": "def downgrade():\n    legacy = op.create_table(\n        \"user_auth_methods\",\n        sa.Column(\"id\", sa.Uuid(), primary_key=True),\n        sa.Column(\"user_id\", sa.Uuid(), sa.ForeignKey(\"users.id\", ondelete=\"CASCADE\"), nullable=False),\n        sa.Column(\"auth_type\", sa.String(50), nullable=False),\n        sa.Column(\"credential_hash\", sa.String(255), nullable=True),\n        sa.Column(\"otp_code\", sa.String(10), nullable=True),\n        sa.Column(\"otp_expires_at\", sa.DateTime(timezone=True), nullable=True),\n        sa.Column(\"created_at\", sa.DateTime(timezone=True), nullable=False),\n        sa.Column(\"updated_at\", sa.DateTime(timezone=True), nullable=False),\n    )\n    op.create_index(\"ix_user_auth_methods_user_id\", \"user_auth_methods\", [\"user_id\"])\n    bind = op.get_bind()\n    users = sa.Table(\"users\", sa.MetaData(), autoload_with=bind)\n    for row in bind.execute(sa.select(users.c.id, users.c.password_hash, users.c.created_at, users.c.updated_at).where(\n        users.c.password_hash.is_not(None), users.c.password_hash != \"\",\n    )).mappings():\n        bind.execute(legacy.insert().values(\n            id=uuid.uuid4(), user_id=uuid.UUID(str(row[\"id\"])), auth_type=\"PASSWORD\",\n            credential_hash=row[\"password_hash\"], created_at=row[\"created_at\"], updated_at=row[\"updated_at\"],\n        ))"
+  },
+  {
+    "file": "alembic/versions/018_zoom_settings.py",
+    "downgrade_source": "def downgrade() -> None:\n    bind = op.get_bind()\n    inspector = sa.inspect(bind)\n    tables = inspector.get_table_names()\n    if \"organization_settings\" in tables:\n        existing_cols = {c[\"name\"] for c in inspector.get_columns(\"organization_settings\")}\n        for col_name, _ in reversed(NEW_COLUMNS):\n            if col_name in existing_cols:\n                op.drop_column(\"organization_settings\", col_name)"
+  },
+  {
+    "revision": "019_class_packages",
+    "down_revision": "018_zoom_settings",
+    "file": "alembic/versions/019_class_packages.py",
+    "downgrade_source": "def downgrade():\n    op.drop_column(\"order_items\", \"total_classes\")\n    op.drop_column(\"membership_tiers\", \"class_packages\")\n    op.drop_column(\"session_pricing\", \"packages\")"
+  },
+  {
+    "revision": "020_teaching_capability",
+    "down_revision": "019_class_packages",
+    "file": "alembic/versions/020_teaching_capability.py",
+    "downgrade_source": "def downgrade():\n    op.drop_constraint(\"ck_organization_members_teacher_code\", \"organization_members\", type_=\"check\")\n    op.execute(\"UPDATE organization_members SET teacher_code = NULL WHERE role <> 'TEACHER'\")\n    op.create_check_constraint(\"ck_organization_members_teacher_code\", \"organization_members\",\n                               \"(role <> 'TEACHER' AND teacher_code IS NULL) OR (role = 'TEACHER' AND teacher_code ~ '^[0-9]{8}$')\")\n    op.drop_column(\"organization_members\", \"can_teach\")"
+  },
+  {
+    "revision": "021_teacher_zoom_oauth",
+    "down_revision": "020_teaching_capability",
+    "file": "alembic/versions/021_teacher_zoom_oauth.py",
+    "downgrade_source": "def downgrade():\n    op.drop_constraint(\"fk_occ_zoom_host\", \"class_occurrences\", type_=\"foreignkey\")\n    op.drop_constraint(\"fk_occ_zoom_connection\", \"class_occurrences\", type_=\"foreignkey\")\n    for name in (\"zoom_connection_id\", \"zoom_connection_version\", \"zoom_host_member_id\", \"zoom_host_email\", \"zoom_provisioning_status\", \"zoom_operation_key\", \"zoom_settings_snapshot\"):\n        op.drop_column(\"class_occurrences\", name)\n    op.drop_constraint(\"fk_default_zoom_host\", \"organization_settings\", type_=\"foreignkey\")\n    for name in (\"default_zoom_host_member_id\", \"zoom_fallback_enabled\", \"zoom_settings_version\"):\n        op.drop_column(\"organization_settings\", name)\n    for name in (\"zoom_revocations\", \"zoom_webhook_receipts\", \"zoom_oauth_attempts\", \"teacher_zoom_connections\"):\n        op.drop_table(name)"
+  },
+  {
+    "revision": "022_teacher_credentials",
+    "down_revision": "021_teacher_zoom_oauth",
+    "file": "alembic/versions/022_teacher_credentials.py",
+    "downgrade_source": "def downgrade():\n    op.drop_column(\"zoom_oauth_attempts\", \"expected_email\")\n    op.drop_column(\"users\", \"teacher_invitation_fingerprint\")\n    op.drop_column(\"users\", \"managed_password_enc\")"
+  },
+  {
+    "revision": "023_flexible_class_capacity",
+    "down_revision": "022_teacher_credentials",
+    "file": "alembic/versions/023_flexible_class_capacity.py",
+    "downgrade_source": "def downgrade():\n    op.execute(\"UPDATE sessions SET capacity = 20 WHERE capacity IS NULL\")\n    op.alter_column(\"sessions\", \"capacity\", existing_type=sa.Integer(), nullable=False)"
+  },
+  {
+    "revision": "024_studio_onboarding",
+    "down_revision": "023_flexible_class_capacity",
+    "file": "alembic/versions/024_studio_onboarding.py",
+    "downgrade_source": "def downgrade():\n    op.execute(\"UPDATE organization_settings SET studio_tagline = LEFT(studio_tagline, 255)\")\n    op.alter_column(\"organization_settings\", \"studio_tagline\", existing_type=sa.Text(), type_=sa.String(255))"
+  },
+  {
+    "revision": "025_zoom_host_key",
+    "down_revision": "024_studio_onboarding",
+    "file": "alembic/versions/025_zoom_host_key.py",
+    "downgrade_source": "def downgrade():\n    op.drop_column(\"teacher_zoom_connections\", \"host_key_enc\")"
+  },
+  {
+    "revision": "026_active_student_billing",
+    "down_revision": "025_zoom_host_key",
+    "file": "alembic/versions/026_active_student_billing.py",
+    "downgrade_source": "def downgrade():\n    op.drop_table(\"platform_invoices\")\n    op.drop_table(\"student_join_teachers\")\n    op.drop_table(\"student_join_events\")"
+  },
+  {
+    "revision": "027_saas_checkout",
+    "down_revision": "026_active_student_billing",
+    "file": "alembic/versions/027_saas_checkout.py",
+    "downgrade_source": "def downgrade():\n    op.drop_table(\"saas_webhook_events\")\n    op.drop_table(\"saas_checkouts\")\n    op.drop_column(\"organization_subscriptions\", \"trial_grace_ends_at\")\n    op.drop_column(\"organization_subscriptions\", \"saas_managed\")"
+  },
+  {
+    "revision": "028_usage_pricing_region",
+    "down_revision": "027_saas_checkout",
+    "file": "alembic/versions/028_usage_pricing_region.py",
+    "downgrade_source": "def downgrade():\n    op.drop_column(\"student_join_events\", \"pricing_region\")\n    op.drop_column(\"users\", \"billing_country\")"
+  },
+  {
+    "revision": "029_dashboard_font",
+    "down_revision": "028_usage_pricing_region",
+    "file": "alembic/versions/029_dashboard_font.py",
+    "downgrade_source": "def downgrade():\n    op.drop_column(\"users\", \"dashboard_font\")"
+  },
+  {
+    "revision": "030_zoom_host_identity",
+    "down_revision": "029_dashboard_font",
+    "file": "alembic/versions/030_zoom_host_identity.py",
+    "downgrade_source": "def downgrade():\n    op.drop_column(\"zoom_oauth_attempts\", \"expected_host_id\")"
+  },
+  {
+    "revision": "031_communication_schema",
+    "down_revision": "030_zoom_host_identity",
+    "file": "alembic/versions/031_communication_schema.py",
+    "downgrade_source": "def downgrade():\n    op.drop_table('studio_communication_budgets')\n    op.drop_table('pending_material_changes')\n    op.drop_table('class_reminder_schedules')\n    op.drop_table('user_communication_preferences')\n    op.drop_table('communication_logs')\n    op.drop_table('communication_channel_audit_logs')\n    op.drop_table('platform_communication_settings')"
+  },
+  {
+    "revision": "032_zoom_meeting_mail",
+    "down_revision": "031_communication_schema",
+    "file": "alembic/versions/032_zoom_meeting_mail.py",
+    "downgrade_source": "def downgrade():\n    op.drop_table(\"meeting_email_deliveries\")"
+  },
+  {
+    "revision": "033_auth_security",
+    "down_revision": "032_zoom_meeting_mail",
+    "file": "alembic/versions/033_auth_security.py",
+    "downgrade_source": "def downgrade():\n    raise RuntimeError(\n        \"Auth security cannot be safely downgraded: old code cannot verify Argon2 \"\n        \"and would accept revoked tokens. Use a compatible forward fix; disaster \"\n        \"recovery requires a coherent backup and signing-key rotation.\"\n    )"
+  },
+  {
+    "revision": "034_support_indexes",
+    "down_revision": "033_auth_security",
+    "file": "alembic/versions/034_support_indexes.py",
+    "downgrade_source": "def downgrade():\n    _bounds()\n    op.drop_index('ix_support_tickets_student_id', table_name='support_tickets')\n    _rename('ix_support_tickets_organization_id', 'ix_support_tickets_org_id')"
+  }
+]

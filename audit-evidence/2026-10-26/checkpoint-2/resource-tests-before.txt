@@ -1,0 +1,110 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+________________ test_telemetry_closes_sqlite_connections[save] ________________
+
+tmp_path = PosixPath('/private/var/folders/4v/24w3__8n7z55frfxpfk8hhlc0000gp/T/pytest-of-sahil/pytest-48/test_telemetry_closes_sqlite_c0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109c59f90>
+operation = 'save'
+
+    @pytest.mark.parametrize("operation", ["save", "report", "failure"])
+    def test_telemetry_closes_sqlite_connections(tmp_path, monkeypatch, operation):
+        opened = []
+        connect = sqlite3.connect
+    
+        def track(*args, **kwargs):
+            connection = connect(*args, **kwargs)
+            opened.append(connection)
+            return connection
+    
+        monkeypatch.setattr(health, "DB_PATH", tmp_path / "health.sqlite3")
+        monkeypatch.setattr(health.sqlite3, "connect", track)
+        monkeypatch.setattr(health, "host_sample", lambda: (10, 20, 30, 1))
+        if operation == "save":
+            health.save_sample((1, 0, 5.0))
+        elif operation == "report":
+            assert health.report("day", "UTC")["samples"] == 0
+        else:
+            with pytest.raises(sqlite3.ProgrammingError):
+                health.save_sample((1,))  # Wrong number of bindings forces rollback.
+        assert len(opened) == 1
+        try:
+>           with pytest.raises(sqlite3.ProgrammingError, match="closed"):
+E           Failed: DID NOT RAISE <class 'sqlite3.ProgrammingError'>
+
+tests/test_audit_resources.py:31: Failed
+_______________ test_telemetry_closes_sqlite_connections[report] _______________
+
+tmp_path = PosixPath('/private/var/folders/4v/24w3__8n7z55frfxpfk8hhlc0000gp/T/pytest-of-sahil/pytest-48/test_telemetry_closes_sqlite_c1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109c58e10>
+operation = 'report'
+
+    @pytest.mark.parametrize("operation", ["save", "report", "failure"])
+    def test_telemetry_closes_sqlite_connections(tmp_path, monkeypatch, operation):
+        opened = []
+        connect = sqlite3.connect
+    
+        def track(*args, **kwargs):
+            connection = connect(*args, **kwargs)
+            opened.append(connection)
+            return connection
+    
+        monkeypatch.setattr(health, "DB_PATH", tmp_path / "health.sqlite3")
+        monkeypatch.setattr(health.sqlite3, "connect", track)
+        monkeypatch.setattr(health, "host_sample", lambda: (10, 20, 30, 1))
+        if operation == "save":
+            health.save_sample((1, 0, 5.0))
+        elif operation == "report":
+            assert health.report("day", "UTC")["samples"] == 0
+        else:
+            with pytest.raises(sqlite3.ProgrammingError):
+                health.save_sample((1,))  # Wrong number of bindings forces rollback.
+        assert len(opened) == 1
+        try:
+>           with pytest.raises(sqlite3.ProgrammingError, match="closed"):
+E           Failed: DID NOT RAISE <class 'sqlite3.ProgrammingError'>
+
+tests/test_audit_resources.py:31: Failed
+______________ test_telemetry_closes_sqlite_connections[failure] _______________
+
+tmp_path = PosixPath('/private/var/folders/4v/24w3__8n7z55frfxpfk8hhlc0000gp/T/pytest-of-sahil/pytest-48/test_telemetry_closes_sqlite_c2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109cc2450>
+operation = 'failure'
+
+    @pytest.mark.parametrize("operation", ["save", "report", "failure"])
+    def test_telemetry_closes_sqlite_connections(tmp_path, monkeypatch, operation):
+        opened = []
+        connect = sqlite3.connect
+    
+        def track(*args, **kwargs):
+            connection = connect(*args, **kwargs)
+            opened.append(connection)
+            return connection
+    
+        monkeypatch.setattr(health, "DB_PATH", tmp_path / "health.sqlite3")
+        monkeypatch.setattr(health.sqlite3, "connect", track)
+        monkeypatch.setattr(health, "host_sample", lambda: (10, 20, 30, 1))
+        if operation == "save":
+            health.save_sample((1, 0, 5.0))
+        elif operation == "report":
+            assert health.report("day", "UTC")["samples"] == 0
+        else:
+            with pytest.raises(sqlite3.ProgrammingError):
+                health.save_sample((1,))  # Wrong number of bindings forces rollback.
+        assert len(opened) == 1
+        try:
+>           with pytest.raises(sqlite3.ProgrammingError, match="closed"):
+E           Failed: DID NOT RAISE <class 'sqlite3.ProgrammingError'>
+
+tests/test_audit_resources.py:31: Failed
+=============================== warnings summary ===============================
+.venv/lib/python3.11/site-packages/pydantic/_internal/_config.py:295
+.venv/lib/python3.11/site-packages/pydantic/_internal/_config.py:295
+  /Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/.venv/lib/python3.11/site-packages/pydantic/_internal/_config.py:295: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_audit_resources.py::test_telemetry_closes_sqlite_connections[save]
+FAILED tests/test_audit_resources.py::test_telemetry_closes_sqlite_connections[report]
+FAILED tests/test_audit_resources.py::test_telemetry_closes_sqlite_connections[failure]
+3 failed, 2 warnings in 0.04s

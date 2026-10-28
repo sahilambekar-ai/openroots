@@ -1,0 +1,612 @@
+[
+  {
+    "repository": ".",
+    "mode": "dir",
+    "exit_code": 1,
+    "findings": [
+      {
+        "RuleID": "generic-api-key",
+        "File": "AGENT_HELPER.md",
+        "StartLine": 68,
+        "EndLine": 68,
+        "Commit": "",
+        "Fingerprint": "AGENT_HELPER.md:generic-api-key:68"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 13,
+        "EndLine": 13,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:generic-api-key:13"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 14,
+        "EndLine": 14,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:generic-api-key:14"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 15,
+        "EndLine": 15,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:generic-api-key:15"
+      },
+      {
+        "RuleID": "sendinblue-api-token",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 6,
+        "EndLine": 6,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:sendinblue-api-token:6"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/private-validation/prod.env",
+        "StartLine": 3,
+        "EndLine": 3,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/private-validation/prod.env:generic-api-key:3"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/private-validation/uat.env",
+        "StartLine": 3,
+        "EndLine": 3,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/private-validation/uat.env:generic-api-key:3"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/tests/test_commerce.py",
+        "StartLine": 7,
+        "EndLine": 7,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/tests/test_commerce.py:generic-api-key:7"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/server/server-reference-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/standalone/.next/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/standalone/.next/server/server-reference-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-audit-billing/server/server-reference-manifest.json",
+        "StartLine": 4,
+        "EndLine": 4,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-audit-billing/server/server-reference-manifest.json:generic-api-key:4"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-dev/server/server-reference-manifest.json",
+        "StartLine": 4,
+        "EndLine": 4,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-dev/server/server-reference-manifest.json:generic-api-key:4"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat/server/server-reference-manifest.json",
+        "StartLine": 4,
+        "EndLine": 4,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat/server/server-reference-manifest.json:generic-api-key:4"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/server/server-reference-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/server/server-reference-manifest.json:generic-api-key:1"
+      }
+    ]
+  },
+  {
+    "repository": "progressrooms",
+    "mode": "dir",
+    "exit_code": 1,
+    "findings": [
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 13,
+        "EndLine": 13,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:generic-api-key:13"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 14,
+        "EndLine": 14,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:generic-api-key:14"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 15,
+        "EndLine": 15,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:generic-api-key:15"
+      },
+      {
+        "RuleID": "sendinblue-api-token",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 6,
+        "EndLine": 6,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:sendinblue-api-token:6"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/private-validation/uat.env",
+        "StartLine": 3,
+        "EndLine": 3,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/private-validation/uat.env:generic-api-key:3"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/private-validation/prod.env",
+        "StartLine": 3,
+        "EndLine": 3,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/private-validation/prod.env:generic-api-key:3"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/tests/test_commerce.py",
+        "StartLine": 7,
+        "EndLine": 7,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/tests/test_commerce.py:generic-api-key:7"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/server/server-reference-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/standalone/.next/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/standalone/.next/server/server-reference-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-audit-billing/server/server-reference-manifest.json",
+        "StartLine": 4,
+        "EndLine": 4,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-audit-billing/server/server-reference-manifest.json:generic-api-key:4"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-dev/server/server-reference-manifest.json",
+        "StartLine": 4,
+        "EndLine": 4,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-dev/server/server-reference-manifest.json:generic-api-key:4"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat/server/server-reference-manifest.json",
+        "StartLine": 4,
+        "EndLine": 4,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat/server/server-reference-manifest.json:generic-api-key:4"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/server/server-reference-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/server/server-reference-manifest.json:generic-api-key:1"
+      }
+    ]
+  },
+  {
+    "repository": "progressrooms/progressrooms-api",
+    "mode": "dir",
+    "exit_code": 1,
+    "findings": [
+      {
+        "RuleID": "sendinblue-api-token",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 6,
+        "EndLine": 6,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:sendinblue-api-token:6"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 13,
+        "EndLine": 13,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:generic-api-key:13"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 14,
+        "EndLine": 14,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:generic-api-key:14"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/.env",
+        "StartLine": 15,
+        "EndLine": 15,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/.env:generic-api-key:15"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/private-validation/uat.env",
+        "StartLine": 3,
+        "EndLine": 3,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/private-validation/uat.env:generic-api-key:3"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/private-validation/prod.env",
+        "StartLine": 3,
+        "EndLine": 3,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/private-validation/prod.env:generic-api-key:3"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-api/tests/test_commerce.py",
+        "StartLine": 7,
+        "EndLine": 7,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-api/tests/test_commerce.py:generic-api-key:7"
+      }
+    ]
+  },
+  {
+    "repository": "progressrooms/progressrooms-web",
+    "mode": "dir",
+    "exit_code": 1,
+    "findings": [
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/server/server-reference-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/standalone/.next/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next/standalone/.next/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next/standalone/.next/server/server-reference-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-audit-billing/server/server-reference-manifest.json",
+        "StartLine": 4,
+        "EndLine": 4,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-audit-billing/server/server-reference-manifest.json:generic-api-key:4"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-dev/server/server-reference-manifest.json",
+        "StartLine": 4,
+        "EndLine": 4,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-dev/server/server-reference-manifest.json:generic-api-key:4"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat/server/server-reference-manifest.json",
+        "StartLine": 4,
+        "EndLine": 4,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat/server/server-reference-manifest.json:generic-api-key:4"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/server/server-reference-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/prerender-manifest.json:generic-api-key:1"
+      },
+      {
+        "RuleID": "generic-api-key",
+        "File": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/server/server-reference-manifest.json",
+        "StartLine": 1,
+        "EndLine": 1,
+        "Commit": "",
+        "Fingerprint": "progressrooms/progressrooms-web/.next-uat-email-test/standalone/.next-uat-email-test/server/server-reference-manifest.json:generic-api-key:1"
+      }
+    ]
+  },
+  {
+    "repository": ".",
+    "mode": "git",
+    "scope": "all locally available refs",
+    "exit_code": 1,
+    "findings": [
+      {
+        "RuleID": "generic-api-key",
+        "File": "AGENT_HELPER.md",
+        "StartLine": 68,
+        "EndLine": 68,
+        "Commit": "2c3c1eb43d7589d9bc7cccf4574d50e37805fe59",
+        "Fingerprint": "2c3c1eb43d7589d9bc7cccf4574d50e37805fe59:AGENT_HELPER.md:generic-api-key:68"
+      }
+    ]
+  },
+  {
+    "repository": "progressrooms",
+    "mode": "git",
+    "scope": "all locally available refs",
+    "exit_code": 0,
+    "findings": []
+  },
+  {
+    "repository": "progressrooms/progressrooms-api",
+    "mode": "git",
+    "scope": "all locally available refs",
+    "exit_code": 1,
+    "findings": [
+      {
+        "RuleID": "generic-api-key",
+        "File": "tests/test_commerce.py",
+        "StartLine": 7,
+        "EndLine": 7,
+        "Commit": "5d1615c01b568cd259fd383e11c49e46613bae02",
+        "Fingerprint": "5d1615c01b568cd259fd383e11c49e46613bae02:tests/test_commerce.py:generic-api-key:7"
+      }
+    ]
+  },
+  {
+    "repository": "progressrooms/progressrooms-web",
+    "mode": "git",
+    "scope": "all locally available refs",
+    "exit_code": 0,
+    "findings": []
+  }
+]

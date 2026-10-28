@@ -1,0 +1,42 @@
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 001_initial_schema, Initial Progress Rooms Schema
+INFO  [alembic.runtime.migration] Running upgrade 001_initial_schema -> 002_studio_profile_and_zoom, Add Studio Profile, Location, GST, Bank and Zoom fields to organization_settings
+INFO  [alembic.runtime.migration] Running upgrade 002_studio_profile_and_zoom -> 003_completion_percentage, Add completion_percentage and whatsapp_number
+INFO  [alembic.runtime.migration] Running upgrade 003_completion_percentage -> 004_account_roles, Explicit account roles, singleton administrator, and studio-scoped teacher assignments.
+INFO  [alembic.runtime.migration] Running upgrade 004_account_roles -> 005_auth_schema_parity, Make historical manually-added authentication fields reproducible on fresh databases.
+INFO  [alembic.runtime.migration] Running upgrade 005_auth_schema_parity -> 006_membership_tiers, Create membership_tiers and membership_tier_classes tables.
+INFO  [alembic.runtime.migration] Running upgrade 006_membership_tiers -> 007_student_profiles_pause, Student WhatsApp contact and resumable enrollment validity.
+INFO  [alembic.runtime.migration] Running upgrade 007_student_profiles_pause -> 008_query_indexes, Composite indexes for existing schedule and enrollment access paths.
+INFO  [alembic.runtime.migration] Running upgrade 008_query_indexes -> 009_enrollment_billing_snapshot, Snapshot subscription values on enrollments for stable billing statements.
+INFO  [alembic.runtime.migration] Running upgrade 009_enrollment_billing_snapshot -> 010_teacher_codes, Add immutable unique eight-digit teacher codes.
+INFO  [alembic.runtime.migration] Running upgrade 010_teacher_codes -> 011_require_teacher_codes, Require codes for teachers and reserve null codes for non-teachers.
+INFO  [alembic.runtime.migration] Running upgrade 011_require_teacher_codes -> 012_public_storefront, Snapshot storefront purchases and share pass credits across classes.
+INFO  [alembic.runtime.migration] Running upgrade 012_public_storefront -> 013_membership_offer_price, Add optional membership offer prices with database validation.
+INFO  [alembic.runtime.migration] Running upgrade 013_membership_offer_price -> 014_teacher_attendance, Persist owner-managed teacher attendance per class occurrence.
+INFO  [alembic.runtime.migration] Running upgrade 014_teacher_attendance -> 015_meetings_and_support, Add meeting details to class occurrences and create support ticket tables.
+INFO  [alembic.runtime.migration] Running upgrade 015_meetings_and_support -> 016_consolidate_passwords, Consolidate password credentials in users; retire the legacy auth mirror.
+INFO  [alembic.runtime.migration] Running upgrade 016_consolidate_passwords -> 018_zoom_settings, Add zoom settings and host key columns to organization_settings.
+INFO  [alembic.runtime.migration] Running upgrade 018_zoom_settings -> 019_class_packages, Configurable class packages and membership package snapshots.
+INFO  [alembic.runtime.migration] Running upgrade 019_class_packages -> 020_teaching_capability, Separate teaching eligibility from studio permissions without new memberships.
+INFO  [alembic.runtime.migration] Running upgrade 020_teaching_capability -> 021_teacher_zoom_oauth, Private teacher OAuth grants, scoped attempts and persisted meeting hosts.
+INFO  [alembic.runtime.migration] Running upgrade 021_teacher_zoom_oauth -> 022_teacher_credentials, Studio-managed teacher credentials.
+INFO  [alembic.runtime.migration] Running upgrade 022_teacher_credentials -> 023_flexible_class_capacity, Allow unlimited class capacity.
+INFO  [alembic.runtime.migration] Running upgrade 023_flexible_class_capacity -> 024_studio_onboarding, Multiline studio introduction and onboarding defaults.
+INFO  [alembic.runtime.migration] Running upgrade 024_studio_onboarding -> 025_zoom_host_key, Encrypted host key tied to the authenticated Zoom account.
+INFO  [alembic.runtime.migration] Running upgrade 025_zoom_host_key -> 026_active_student_billing, Qualifying student joins and monthly platform invoices.
+INFO  [alembic.runtime.migration] Running upgrade 026_active_student_billing -> 027_saas_checkout, SaaS checkout snapshots and trial management; legacy access is unchanged.
+INFO  [alembic.runtime.migration] Running upgrade 027_saas_checkout -> 028_usage_pricing_region, Capture declared billing country and join-time pricing eligibility.
+INFO  [alembic.runtime.migration] Running upgrade 028_usage_pricing_region -> 029_dashboard_font, Persist each user's dashboard font, with IBM Plex Sans as the default.
+INFO  [alembic.runtime.migration] Running upgrade 029_dashboard_font -> 030_zoom_host_identity, Verify a requested Zoom Host ID independently of the account email.
+INFO  [alembic.runtime.migration] Running upgrade 030_zoom_host_identity -> 031_communication_schema, Create the missing operational communication tables (frozen schema).
+INFO  [alembic.runtime.migration] Running upgrade 031_communication_schema -> 032_zoom_meeting_mail, Durable per-recipient Zoom Mail queue; retain historical WhatsApp data.
+INFO  [alembic.runtime.migration] Running upgrade 032_zoom_meeting_mail -> 033_auth_security, Account session revocation and shared authentication abuse counters.
+INFO  [alembic.runtime.migration] Running upgrade 033_auth_security -> 034_support_indexes, Align support indexes with metadata and immutable student ownership queries.
+student_support: 0.015 ms; root=Sort
+studio_open_support: 0.051 ms; root=Sort
+studio_month_schedule: 0.091 ms; root=Sort
+session_active_enrollment_count: 0.016 ms; root=Aggregate
+student_studio_enrollments: 0.008 ms; root=Index Scan
+studio_collected_payments: 4.261 ms; root=Aggregate
+due_meeting_email_batch: 0.545 ms; root=Limit

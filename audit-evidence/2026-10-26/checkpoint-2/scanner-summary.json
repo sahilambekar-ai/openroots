@@ -1,0 +1,16 @@
+{
+  "npm": {
+    "info": 0,
+    "low": 0,
+    "moderate": 3,
+    "high": 7,
+    "critical": 1,
+    "total": 11
+  },
+  "python_reported_records": 93,
+  "python_unique_package_and_id_records": 72,
+  "python_affected_packages": 8,
+  "bandit_diagnostics": 7,
+  "gitleaks_history_findings": 2,
+  "gitleaks_history_triage": "Truncated documentation example and synthetic commerce-test secret; no confirmed active secret in scanned history. Directory scans include ignored local secrets and generated Next build keys; counts overlap nested scans."
+}

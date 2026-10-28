@@ -1,0 +1,1012 @@
+[
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 1818,
+    "tag": "<select\n                  id=\"studio-switcher-select\"\n                  value={currentUser.organization_id}\n                  onChange={async (e) => {\n                    const targetId = e.target.value;\n                    if (zoomNavigationGuard.current && !await zoomNavigationGuard.current()) return;\n                    const targetOrg = currentUser.organizations.find((o: any) => o.id === targetId);\n                    if (targetOrg) {\n                      const updatedUser = {\n                        ...currentUser,\n                        organization_id: targetOrg.id,\n                        organization_name: targetOrg.name,\n                        organization_slug: targetOrg.slug,\n                        teacher_code: targetOrg.teacher_code || currentUser.teacher_code,\n                      };\n                      localStorage.setItem(\"pr_user\", JSON.stringify(updatedUser));\n                      localStorage.setItem(\"pr_active_studio_id\", targetOrg.id);\n                      setCurrentUser(updatedUser);\n                      window.location.reload();\n                    }\n                  }}\n                  className=\"w-full text-xs bg-black/40 hover:bg-black/60 text-[#e8f5e9] rounded-xl px-2.5 py-1.5 border border-white/20 focus:outline-none focus:ring-1 focus:ring-[#81A882]\"\n                >"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2390,
+    "tag": "<input id=\"dashboard-page-field-1\"\n                      type=\"text\"\n                      required\n                      placeholder=\"e.g. Sahil Teaching Studio\"\n                      value={setupStudioName}\n                      onChange={(e) => setSetupStudioName(e.target.value)}\n                      className=\"w-full px-3.5 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2406,
+    "tag": "<input\n                        type=\"tel\"\n                        required\n                        placeholder=\"+91 98765 43210\"\n                        value={setupPhone}\n                        onChange={(e) => {\n                          setSetupPhone(e.target.value);\n                          if (!setupWhatsappNumber) setSetupWhatsappNumber(e.target.value);\n                        }}\n                        className=\"w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2430,
+    "tag": "<input\n                        type=\"tel\"\n                        placeholder=\"+91 98765 43210\"\n                        value={setupWhatsappNumber}\n                        onChange={(e) => setSetupWhatsappNumber(e.target.value)}\n                        className=\"w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2447,
+    "tag": "<input\n                        type=\"email\"\n                        required\n                        placeholder=\"support@example.com\"\n                        value={setupSupportEmail}\n                        onChange={(e) => setSetupSupportEmail(e.target.value)}\n                        className=\"w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2463,
+    "tag": "<textarea rows={4} maxLength={5000}\n                    placeholder=\"e.g. Music, dance, art and academic tutoring\"\n                    value={setupStudioTagline}\n                    onChange={(e) => setSetupStudioTagline(e.target.value)}\n                    className=\"w-full px-3.5 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                  />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2567,
+    "tag": "<input\n                        type=\"text\"\n                        placeholder=\"e.g. Level 3, Central Learning Centre, 108 North Main Road\"\n                        value={setupAddressLine1}\n                        onChange={(e) => setSetupAddressLine1(e.target.value)}\n                        className=\"w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2582,
+    "tag": "<input id=\"dashboard-page-field-3\"\n                        type=\"text\"\n                        placeholder=\"e.g. Koregaon Park, Opp Osho Garden\"\n                        value={setupAddressLine2}\n                        onChange={(e) => setSetupAddressLine2(e.target.value)}\n                        className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9]\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2595,
+    "tag": "<input id=\"dashboard-page-field-4\"\n                        type=\"text\"\n                        placeholder=\"e.g. Pune\"\n                        value={setupCity}\n                        onChange={(e) => setSetupCity(e.target.value)}\n                        className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9]\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2608,
+    "tag": "<input id=\"dashboard-page-field-5\"\n                        type=\"text\"\n                        placeholder=\"e.g. Maharashtra\"\n                        value={setupState}\n                        onChange={(e) => setSetupState(e.target.value)}\n                        className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9]\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2623,
+    "tag": "<input id=\"dashboard-page-field-6\"\n                        type=\"text\"\n                        placeholder=\"e.g. 411001\"\n                        value={setupPincode}\n                        onChange={(e) => setSetupPincode(e.target.value)}\n                        className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9]\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2636,
+    "tag": "<input id=\"dashboard-page-field-7\"\n                        type=\"text\"\n                        value={setupCountry}\n                        disabled\n                        className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-slate-100 text-slate-500\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2709,
+    "tag": "<input\n                        type=\"checkbox\"\n                        checked={setupHasGst}\n                        onChange={(e) => setSetupHasGst(e.target.checked)}\n                        className=\"sr-only peer\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2725,
+    "tag": "<input id=\"dashboard-page-field-8\"\n                          type=\"text\"\n                          placeholder=\"e.g. 27AABCU9603R1ZM\"\n                          maxLength={15}\n                          value={setupGstNumber}\n                          onChange={(e) => setSetupGstNumber(e.target.value.toUpperCase())}\n                          className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-white font-mono uppercase\"\n                        />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2739,
+    "tag": "<input id=\"dashboard-page-field-9\"\n                          type=\"text\"\n                          placeholder=\"As per GST certificate\"\n                          value={setupLegalBusinessName}\n                          onChange={(e) => setSetupLegalBusinessName(e.target.value)}\n                          className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-white\"\n                        />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2752,
+    "tag": "<input id=\"dashboard-page-field-10\"\n                          type=\"text\"\n                          placeholder=\"e.g. AABCU9603R\"\n                          maxLength={10}\n                          value={setupPanNumber}\n                          onChange={(e) => setSetupPanNumber(e.target.value.toUpperCase())}\n                          className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-white font-mono uppercase\"\n                        />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2772,
+    "tag": "<input\n                          type=\"text\"\n                          placeholder=\"e.g. AABCU9603R\"\n                          maxLength={10}\n                          value={setupPanNumber}\n                          onChange={(e) => setSetupPanNumber(e.target.value.toUpperCase())}\n                          className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-white font-mono uppercase\"\n                        />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2850,
+    "tag": "<input id=\"dashboard-page-field-11\"\n                      type=\"text\"\n                      placeholder=\"As registered with your bank\"\n                      value={setupAccountHolderName}\n                      onChange={(e) => setSetupAccountHolderName(e.target.value)}\n                      className=\"w-full px-3.5 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2863,
+    "tag": "<input id=\"dashboard-page-field-12\"\n                      type=\"text\"\n                      placeholder=\"e.g. HDFC Bank, ICICI Bank, State Bank of India\"\n                      value={setupBankName}\n                      onChange={(e) => setSetupBankName(e.target.value)}\n                      className=\"w-full px-3.5 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2878,
+    "tag": "<PasswordInput visibilityLabel=\"bank account number\" id=\"dashboard-page-field-13\"\n                      type=\"password\"\n                      placeholder=\"Enter account number\"\n                      value={setupAccountNumber}\n                      onChange={(e) => setSetupAccountNumber(e.target.value)}\n                      className=\"w-full px-3.5 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] font-mono focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2891,
+    "tag": "<input id=\"dashboard-page-field-14\"\n                      type=\"text\"\n                      placeholder=\"Re-enter account number\"\n                      value={setupConfirmAccountNumber}\n                      onChange={(e) => setSetupConfirmAccountNumber(e.target.value)}\n                      className={`w-full px-3.5 py-2.5 rounded-xl border text-xs bg-[#F9FAF9] font-mono focus:outline-none focus:ring-2 ${\n                        setupConfirmAccountNumber && setupAccountNumber !== setupConfirmAccountNumber\n                          ? \"border-red-400 focus:ring-red-400\"\n                          : \"border-[#CEDECF] focus:ring-[#133623]\"\n                      }`}\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2913,
+    "tag": "<input id=\"dashboard-page-field-15\"\n                      type=\"text\"\n                      placeholder=\"e.g. HDFC0001234\"\n                      maxLength={11}\n                      value={setupIfscCode}\n                      onChange={(e) => setSetupIfscCode(e.target.value.toUpperCase())}\n                      className=\"w-full px-3.5 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] font-mono uppercase focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 2929,
+    "tag": "<input\n                        type=\"text\"\n                        placeholder=\"e.g. learningstudio@okhdfcbank\"\n                        value={setupUpiId}\n                        onChange={(e) => setSetupUpiId(e.target.value.toLowerCase())}\n                        className=\"w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9] font-mono focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                      />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3261,
+    "tag": "<input\n                  type=\"text\"\n                  placeholder=\"Search teachers by name, email, or title...\"\n                  value={teacherSearch}\n                  onChange={(e) => { setTeacherSearch(e.target.value); setTeacherPage(1); }}\n                  className=\"w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3269,
+    "tag": "<select value={teacherSortBy} onChange={(e) => { setTeacherSortBy(e.target.value as typeof teacherSortBy); setTeacherPage(1); }} className=\"rounded-xl border border-[#CEDECF] bg-white px-3 py-2 text-xs font-medium\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3398,
+    "tag": "<select value={teacherPageSize} onChange={(e) => { setTeacherPageSize(Number(e.target.value)); setTeacherPage(1); }} className=\"rounded-lg border border-[#CEDECF] bg-white px-2 py-1\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3442,
+    "tag": "<input\n                  type=\"text\"\n                  placeholder=\"Search student by name, email, or phone...\"\n                  value={studentSearch}\n                  onChange={(e) => {\n                    setStudentSearch(e.target.value);\n                    setCurrentPage(1);\n                  }}\n                  className=\"w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3454,
+    "tag": "<select\n                  value={studentStatusFilter}\n                  onChange={(e) => {\n                    setStudentStatusFilter(e.target.value);\n                    setCurrentPage(1);\n                  }}\n                  className=\"px-3 py-2 text-xs rounded-xl border border-[#CEDECF] bg-white text-slate-700 font-medium\"\n                >"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3468,
+    "tag": "<select value={studentSortBy} onChange={(e) => { setStudentSortBy(e.target.value as typeof studentSortBy); setCurrentPage(1); }} className=\"px-3 py-2 text-xs rounded-xl border border-[#CEDECF] bg-white text-slate-700 font-medium\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3563,
+    "tag": "<select\n                      value={pageSize}\n                      onChange={(e) => {\n                        setPageSize(Number(e.target.value));\n                        setCurrentPage(1);\n                      }}\n                      className=\"px-2 py-1 rounded-lg border border-[#CEDECF] bg-white font-medium text-[#0C2417]\"\n                    >"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3706,
+    "tag": "<input\n                      id=\"attendance-person-search\"\n                      value={displayPersonSearch}\n                      onFocus={() => {\n                        setAttendancePersonSearch(selectedAttendancePerson?.name || \"\");\n                        setAttendanceSuggestionsOpen(true);\n                      }}\n                      onChange={(event) => {\n                        setAttendancePersonSearch(event.target.value);\n                        setAttendanceSuggestionsOpen(true);\n                      }}\n                      placeholder={`Search ${attendanceType} by name or email…`}\n                      autoComplete=\"off\"\n                      role=\"combobox\"\n                      aria-expanded={attendanceSuggestionsOpen}\n                      aria-controls=\"attendance-person-options\"\n                      className=\"w-full rounded-xl border border-[#CEDECF] py-2.5 pl-10 pr-20 text-sm focus:outline-none focus:ring-2 focus:ring-[#81A882]\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3878,
+    "tag": "<select\n                        aria-label=\"Class Occurrence\"\n                        value={selectedLiveClassId}\n                        onChange={(e) => loadLiveRoster(e.target.value)}\n                        className=\"w-full sm:w-80 border border-[#CEDECF] rounded-xl p-2.5 text-xs font-semibold text-slate-900 focus:ring-2 focus:ring-[#133623] bg-white\"\n                      >"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 3992,
+    "tag": "<input\n                            id=\"attendance-roster-search\"\n                            value={rosterSearch}\n                            onChange={(e) => setRosterSearch(e.target.value)}\n                            placeholder=\"Find student in roster…\"\n                            className=\"w-full rounded-xl border border-[#CEDECF] py-2 pl-9 pr-8 text-xs focus:ring-2 focus:ring-[#133623] focus:outline-none\"\n                          />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 4369,
+    "tag": "<textarea\n                      id=\"ticket-reply\"\n                      rows={3}\n                      value={ticketReplyMessage}\n                      onChange={(e) => setTicketReplyMessage(e.target.value)}\n                      placeholder=\"Type your response to the student…\"\n                      className=\"w-full p-3 rounded-xl border border-[#CEDECF] text-xs focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white text-slate-900\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 4454,
+    "tag": "<form onSubmit={handleSaveTeacherProfile} className=\"bg-white p-6 rounded-3xl border border-[#CEDECF] shadow-sm space-y-4 max-w-2xl\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 4458,
+    "tag": "<input\n                          required\n                          value={teacherProfileName}\n                          onChange={(e) => setTeacherProfileName(e.target.value)}\n                          className=\"w-full border border-[#CEDECF] rounded-xl p-2.5 text-xs text-slate-900 focus:ring-2 focus:ring-[#133623] focus:outline-none\"\n                        />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 4468,
+    "tag": "<input\n                          value={teacherProfilePhone}\n                          onChange={(e) => setTeacherProfilePhone(e.target.value)}\n                          placeholder=\"+91 98765 43210\"\n                          className=\"w-full border border-[#CEDECF] rounded-xl p-2.5 text-xs text-slate-900 focus:ring-2 focus:ring-[#133623] focus:outline-none\"\n                        />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 4478,
+    "tag": "<input\n                          value={teacherProfileAddress}\n                          onChange={(e) => setTeacherProfileAddress(e.target.value)}\n                          placeholder=\"Studio Road or Residential Address\"\n                          className=\"w-full border border-[#CEDECF] rounded-xl p-2.5 text-xs text-slate-900 focus:ring-2 focus:ring-[#133623] focus:outline-none\"\n                        />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 4488,
+    "tag": "<input\n                          value={teacherProfileLocation}\n                          onChange={(e) => setTeacherProfileLocation(e.target.value)}\n                          placeholder=\"e.g. Pune, Mumbai, Bengaluru\"\n                          className=\"w-full border border-[#CEDECF] rounded-xl p-2.5 text-xs text-slate-900 focus:ring-2 focus:ring-[#133623] focus:outline-none\"\n                        />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 4999,
+    "tag": "<form id=\"modal-src-app--dashboard--dashboard-page-tsx-2\" onSubmit={handleCreateBatch} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5005,
+    "tag": "<input id=\"dashboard-page-field-19\"\n                  type=\"text\"\n                  required\n                  placeholder=\"e.g. Sunset Performing Arts, Aerial Silks Beginner\"\n                  value={newBatchName}\n                  onChange={(e) => setNewBatchName(e.target.value)}\n                  className=\"w-full px-3.5 py-2.5 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#133623] text-xs placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5020,
+    "tag": "<select id=\"dashboard-page-field-20\"\n                    value={newBatchType}\n                    onChange={(e) => setNewBatchType(e.target.value)}\n                    className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-white\"\n                  >"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5038,
+    "tag": "<select id=\"dashboard-page-field-21\"\n                    value={newBatchInstructor}\n                    onChange={(e) => setNewBatchInstructor(e.target.value)}\n                    className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-white\"\n                  >"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5106,
+    "tag": "<input id=\"dashboard-page-field-24\"\n                    type=\"number\"\n                    min={1}\n                    max={100}\n                    value={newBatchCap}\n                    onChange={(e) => setNewBatchCap(Number(e.target.value))}\n                    className=\"w-full px-2.5 py-2 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9]\"\n                  />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5120,
+    "tag": "<input id=\"dashboard-page-field-25\"\n                    type=\"text\"\n                    value={newBatchPrice}\n                    onChange={(e) => setNewBatchPrice(e.target.value)}\n                    className=\"w-full px-2.5 py-2 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9]\"\n                  />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5155,
+    "tag": "<input\n                      type=\"url\"\n                      placeholder=\"Optional custom meeting URL (leave empty for auto-provisioned Zoom room)\"\n                      value={newBatchUrl}\n                      onChange={(e) => setNewBatchUrl(e.target.value)}\n                      className=\"w-full px-3 py-2 rounded-xl border border-blue-200 text-xs bg-white text-blue-950 font-mono\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5165,
+    "tag": "<input\n                      type=\"url\"\n                      placeholder=\"https://meet.progressrooms.com/your-batch\"\n                      value={newBatchUrl}\n                      onChange={(e) => setNewBatchUrl(e.target.value)}\n                      className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs bg-[#F9FAF9]\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5221,
+    "tag": "<form id=\"modal-src-app--dashboard--dashboard-page-tsx-3\" onSubmit={handleAddStudent} className=\"p-6 space-y-4\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5224,
+    "tag": "<input\n                type=\"email\"\n                required\n                value={studentAdmissionEmail}\n                onChange={(event) => setStudentAdmissionEmail(event.target.value)}\n                placeholder=\"student@example.com\"\n                className=\"mt-1.5 w-full rounded-xl border border-[#CEDECF] bg-[#F9FAF9] px-3 py-2.5 text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n              />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5235,
+    "tag": "<select\n                required\n                value={studentAdmissionClassId}\n                onChange={(event) => setStudentAdmissionClassId(event.target.value)}\n                className=\"mt-1.5 w-full rounded-xl border border-[#CEDECF] bg-white px-3 py-2.5 text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n              >"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5278,
+    "tag": "<form id=\"modal-src-app--dashboard--dashboard-page-tsx-4\" onSubmit={handleCreateTeacher} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5279,
+    "tag": "<input value={teacherUsername} minLength={3} onChange={e => setTeacherUsername(e.target.value)} className=\"block border rounded-xl p-2 w-full\" placeholder=\"Generated if blank\" />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5280,
+    "tag": "<PasswordInput type=\"password\" autoComplete=\"new-password\" minLength={8} value={teacherPassword} onChange={e => setTeacherPassword(e.target.value)} className=\"block border rounded-xl p-2 w-full\" placeholder=\"Secure password generated if blank\" />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5281,
+    "tag": "<input value={teacherAddress} onChange={e => setTeacherAddress(e.target.value)} className=\"block border rounded-xl p-2 w-full\" />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5282,
+    "tag": "<input value={teacherLocation} onChange={e => setTeacherLocation(e.target.value)} className=\"block border rounded-xl p-2 w-full\" />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5283,
+    "tag": "<select value={teacherBillingCountry} onChange={e => setTeacherBillingCountry(e.target.value)} className=\"mt-1 block w-full rounded-xl border bg-white p-2\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5289,
+    "tag": "<input id=\"dashboard-page-field-26\"\n                  type=\"text\"\n                  required\n                  placeholder=\"e.g. Priya Sharma, Vikram Adani\"\n                  value={teacherName}\n                  onChange={(e) => setTeacherName(e.target.value)}\n                  className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5304,
+    "tag": "<input id=\"dashboard-page-field-27\"\n                    type=\"email\"\n                    required\n                    placeholder=\"teacher@studio.com\"\n                    value={teacherEmail}\n                    onChange={(e) => setTeacherEmail(e.target.value)}\n                    className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                  />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5321,
+    "tag": "<input id=\"dashboard-page-field-29\"\n                  type=\"text\"\n                  required\n                  placeholder=\"e.g. Senior music teacher or academic tutor\"\n                  value={teacherTitle}\n                  onChange={(e) => setTeacherTitle(e.target.value)}\n                  className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5337,
+    "tag": "<input id=\"dashboard-page-field-28\"\n                    type=\"tel\"\n                    placeholder=\"+91 98765 43210\"\n                    value={teacherPhone}\n                    onChange={(e) => setTeacherPhone(e.target.value)}\n                    className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                  />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5348,
+    "tag": "<textarea id=\"dashboard-page-field-30\"\n                  rows={3}\n                  placeholder=\"Qualifications, teaching experience, and specializations...\"\n                  value={teacherBio}\n                  onChange={(e) => setTeacherBio(e.target.value)}\n                  className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5391,
+    "tag": "<form className=\"p-6 space-y-4\" onSubmit={e => { e.preventDefault(); finishStudioPassword(studioPasswordInput); }}>"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5392,
+    "tag": "<PasswordInput aria-label=\"Studio password\" type=\"password\" autoComplete=\"current-password\" autoFocus required value={studioPasswordInput} onChange={e => setStudioPasswordInput(e.target.value)} className=\"border rounded-xl p-3 w-full\" />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5424,
+    "tag": "<form id=\"modal-src-app--dashboard--dashboard-page-tsx-6\" onSubmit={handleUpdateTeacher} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5426,
+    "tag": "<input required minLength={3} pattern=\"[a-zA-Z0-9_.-]+\" value={teacherUsername} onChange={e => setTeacherUsername(e.target.value)} className=\"block border rounded-xl p-2 w-full text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400\" />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5428,
+    "tag": "<input value={teacherAddress} onChange={e => setTeacherAddress(e.target.value)} className=\"block border rounded-xl p-2 w-full text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400\" />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5429,
+    "tag": "<input value={teacherLocation} onChange={e => setTeacherLocation(e.target.value)} className=\"block border rounded-xl p-2 w-full text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400\" />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5430,
+    "tag": "<select value={teacherBillingCountry} onChange={e => setTeacherBillingCountry(e.target.value)} className=\"mt-1 block w-full rounded-xl border bg-white p-2\">"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5437,
+    "tag": "<input id=\"dashboard-page-field-31\"\n                  type=\"text\"\n                  required\n                  value={teacherName}\n                  onChange={(e) => setTeacherName(e.target.value)}\n                  className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5451,
+    "tag": "<input id=\"dashboard-page-field-32\"\n                    type=\"email\"\n                    required\n                    value={teacherEmail}\n                    onChange={e => setTeacherEmail(e.target.value)}\n                    className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm\"\n                  />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5464,
+    "tag": "<input id=\"dashboard-page-field-33\"\n                    type=\"tel\"\n                    value={teacherPhone}\n                    onChange={(e) => setTeacherPhone(e.target.value)}\n                    className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                  />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5477,
+    "tag": "<input id=\"dashboard-page-field-34\"\n                  type=\"text\"\n                  required\n                  value={teacherTitle}\n                  onChange={(e) => setTeacherTitle(e.target.value)}\n                  className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5490,
+    "tag": "<textarea id=\"dashboard-page-field-35\"\n                  rows={3}\n                  value={teacherBio}\n                  onChange={(e) => setTeacherBio(e.target.value)}\n                  className=\"w-full px-3 py-2 rounded-xl border border-[#CEDECF] text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 bg-[#F9FAF9]\"\n                />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5504,
+    "tag": "<input\n                      type=\"radio\"\n                      name=\"teacher_status\"\n                      disabled={editingTeacher.is_owner}\n                      checked={teacherIsActive}\n                      onChange={() => setTeacherIsActive(true)}\n                      className=\"text-[#133623] focus:ring-[#133623]\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5515,
+    "tag": "<input\n                      type=\"radio\"\n                      name=\"teacher_status\"\n                      disabled={editingTeacher.is_owner}\n                      checked={!teacherIsActive}\n                      onChange={() => setTeacherIsActive(false)}\n                      className=\"text-[#133623] focus:ring-[#133623]\"\n                    />"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "line": 5529,
+    "tag": "<PasswordInput type=\"password\" revealed={teacherPasswordVisible} onRevealChange={show => {\n                  if (show) { if (teacherPasswordChanged) setTeacherPasswordVisible(true); else void manageTeacherPassword(false); }\n                  else { setTeacherPasswordVisible(false); if (!teacherPasswordChanged) setTeacherPassword(\"\"); }\n                }} autoComplete=\"new-password\" readOnly={!teacherPasswordChanged} required={teacherPasswordChanged} minLength={8} value={teacherPassword} placeholder=\"••••••••\" onChange={e => setTeacherPassword(e.target.value)} className=\"block border rounded-xl p-2 w-full\" />"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 231,
+    "tag": "<input\n                type=\"text\"\n                placeholder=\"Filter classes by name…\"\n                value={classSearch}\n                onChange={(e) => {\n                  setClassSearch(e.target.value);\n                  setVisibleClassLimit(6);\n                }}\n                className=\"w-full pl-8 pr-3 py-1.5 text-xs bg-white border border-[#CEDECF] rounded-xl focus:outline-none focus:ring-1 focus:ring-[#133623]\"\n              />"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 242,
+    "tag": "<select\n              value={modeFilter}\n              onChange={(e) => {\n                setModeFilter(e.target.value as any);\n                setVisibleClassLimit(6);\n              }}\n              className=\"px-3 py-1.5 text-xs bg-white border border-[#CEDECF] rounded-xl text-slate-700 focus:outline-none focus:ring-1 focus:ring-[#133623]\"\n            >"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 254,
+    "tag": "<select\n              value={dayFilter}\n              onChange={(e) => {\n                setDayFilter(e.target.value === 'ALL' ? 'ALL' : Number(e.target.value));\n                setVisibleClassLimit(6);\n              }}\n              className=\"px-3 py-1.5 text-xs bg-white border border-[#CEDECF] rounded-xl text-slate-700 focus:outline-none focus:ring-1 focus:ring-[#133623]\"\n            >"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1043,
+    "tag": "<form\n              onSubmit={(e) => {\n                e.preventDefault();\n                setTab('teacher');\n                void lookupTeacher(teacherQuery);\n              }}\n              className=\"flex flex-col sm:flex-row gap-3 max-w-xl\"\n            >"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1053,
+    "tag": "<input\n                  type=\"text\"\n                  placeholder=\"Enter 8-digit code (e.g. 11000001) or teacher name…\"\n                  value={teacherQuery}\n                  onChange={(e) => setTeacherQuery(e.target.value)}\n                  className=\"w-full pl-10 pr-4 py-3 rounded-2xl bg-white text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#81A882] shadow-sm font-medium\"\n                />"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1316,
+    "tag": "<input\n                    type=\"text\"\n                    placeholder=\"Search by pass, class, or studio name…\"\n                    value={passSearch}\n                    onChange={(e) => setPassSearch(e.target.value)}\n                    className=\"w-full pl-9 pr-3 py-2 border border-[#CEDECF] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white text-slate-900\"\n                  />"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1328,
+    "tag": "<select\n                      value={passStudio}\n                      onChange={(e) => setPassStudio(e.target.value)}\n                      className=\"border border-[#CEDECF] px-3 py-2 rounded-xl bg-white text-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                    >"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1481,
+    "tag": "<form onSubmit={handleTeacherSearchSubmit} className=\"flex flex-col sm:flex-row gap-3\">"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1484,
+    "tag": "<input\n                    type=\"text\"\n                    placeholder=\"Search by 8-digit teacher code (e.g. 11000001) or teacher name…\"\n                    value={teacherQuery}\n                    onChange={(e) => setTeacherQuery(e.target.value)}\n                    className=\"w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#CEDECF] text-xs sm:text-sm bg-[#F9FAF9] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                  />"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1675,
+    "tag": "<select\n                  value={attendanceStudio}\n                  onChange={(e) => setAttendanceStudio(e.target.value)}\n                  className=\"border border-[#CEDECF] px-3 py-1.5 rounded-xl bg-white text-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                >"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1721,
+    "tag": "<select\n                    id=\"explore-studio\"\n                    value={studio}\n                    onChange={(e) => chooseStudio(e.target.value)}\n                    className=\"w-full rounded-xl border border-[#CEDECF] bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n                  >"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1923,
+    "tag": "<textarea\n                      id=\"student-reply\"\n                      rows={3}\n                      value={supportReplyMessage}\n                      onChange={(e) => setSupportReplyMessage(e.target.value)}\n                      placeholder=\"Type your message…\"\n                      className=\"w-full p-3 rounded-xl border border-[#CEDECF] text-xs focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white text-slate-900\"\n                    />"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1955,
+    "tag": "<form id=\"modal-src-app--student--student-page-tsx-2\" onSubmit={handleCreateNewTicket} className=\"p-6 max-w-lg w-full space-y-4\">"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1960,
+    "tag": "<select\n                      id=\"ticket-studio\"\n                      required\n                      value={newTicketStudioId}\n                      onChange={(e) => setNewTicketStudioId(e.target.value)}\n                      className=\"w-full p-2.5 border border-[#CEDECF] rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                    >"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1979,
+    "tag": "<input\n                      id=\"ticket-subject\"\n                      required\n                      placeholder=\"e.g. Question about my monthly pass\"\n                      value={newTicketSubject}\n                      onChange={(e) => setNewTicketSubject(e.target.value)}\n                      className=\"w-full p-2.5 border border-[#CEDECF] rounded-xl text-xs placeholder:text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                    />"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 1993,
+    "tag": "<select\n                      id=\"ticket-category\"\n                      value={newTicketCategory}\n                      onChange={(e) => setNewTicketCategory(e.target.value)}\n                      className=\"w-full p-2.5 border border-[#CEDECF] rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                    >"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 2010,
+    "tag": "<textarea\n                      id=\"ticket-msg\"\n                      required\n                      rows={4}\n                      placeholder=\"Describe what you need help with…\"\n                      value={newTicketMessage}\n                      onChange={(e) => setNewTicketMessage(e.target.value)}\n                      className=\"w-full p-2.5 border border-[#CEDECF] rounded-xl text-xs placeholder:text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                    />"
+  },
+  {
+    "file": "src/app/(student)/student/page.tsx",
+    "line": 2105,
+    "tag": "<input\n                            type=\"radio\"\n                            name=\"reschedule_target_slot\"\n                            value={slot.id}\n                            checked={isSelected}\n                            onChange={() => setSelectedTargetSlotId(slot.id)}\n                            className=\"text-[#133623] focus:ring-[#133623]\"\n                          />"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 228,
+    "tag": "<form onSubmit={handleForgotPassword} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 235,
+    "tag": "<input\n                  type=\"email\"\n                  id=\"reset-email\"\n                  autoComplete=\"email\"\n                  required\n                  placeholder=\"you@example.com\"\n                  value={email}\n                  onChange={(e) => setEmail(e.target.value)}\n                  className=\"w-full pl-10 pr-4 py-3 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n                />"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 296,
+    "tag": "<form onSubmit={handleResetPassword} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 301,
+    "tag": "<input\n                type=\"text\"\n                id=\"reset-code\"\n                required\n                maxLength={6}\n                placeholder=\"123456\"\n                value={resetCode}\n                onChange={(e) => setResetCode(e.target.value.replace(/\\D/g, \"\"))}\n                className=\"w-full px-4 py-3 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-center tracking-widest font-mono text-lg bg-[#FAF7F2]\"\n              />"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 319,
+    "tag": "<PasswordInput\n                  type=\"password\"\n                  id=\"new-password\"\n                  required\n                  placeholder=\"••••••••\"\n                  value={newPassword}\n                  onChange={(e) => setNewPassword(e.target.value)}\n                  className=\"w-full pl-10 pr-4 py-3 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n                />"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 403,
+    "tag": "<form onSubmit={handlePasswordLogin} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 410,
+    "tag": "<input\n                  type=\"email\"\n                  id=\"login-email\" autoComplete=\"email\"\n                  required\n                  placeholder=\"teacher@example.com\"\n                  value={email}\n                  onChange={(e) => setEmail(e.target.value)}\n                  className=\"w-full pl-10 pr-4 py-3 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n                />"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "line": 441,
+    "tag": "<PasswordInput\n                  type=\"password\"\n                  id=\"login-password\" autoComplete=\"current-password\"\n                  required\n                  placeholder=\"••••••••\"\n                  value={password}\n                  onChange={(e) => setPassword(e.target.value)}\n                  className=\"w-full pl-10 pr-4 py-3 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n                />"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 222,
+    "tag": "<form onSubmit={handleRegister} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 267,
+    "tag": "<input id=\"register-page-field-1\"\n                type=\"text\"\n                required\n                placeholder=\"e.g. Sahil Sharma\"\n                value={fullName}\n                onChange={(e) => setFullName(e.target.value)}\n                className=\"w-full px-4 py-2.5 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n              />"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 283,
+    "tag": "<input\n                  type=\"email\"\n                  id=\"register-email\" autoComplete=\"email\"\n                  required\n                  placeholder=\"name@studio.com\"\n                  value={email}\n                  onChange={(e) => setEmail(e.target.value)}\n                  className=\"w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n                />"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 303,
+    "tag": "<PasswordInput\n                    type=\"password\"\n                    id=\"register-password\" autoComplete=\"new-password\"\n                    required\n                    placeholder=\"8–128 characters\"\n                    value={password}\n                    onChange={(e) => setPassword(e.target.value)}\n                    className=\"w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n                  />"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 321,
+    "tag": "<PasswordInput\n                    type=\"password\"\n                    id=\"register-confirm-password\" autoComplete=\"new-password\"\n                    required\n                    placeholder=\"Re-enter password\"\n                    value={confirmPassword}\n                    onChange={(e) => setConfirmPassword(e.target.value)}\n                    className=\"w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n                  />"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 341,
+    "tag": "<input\n                    type=\"tel\"\n                    id=\"register-phone\" autoComplete=\"tel\" required maxLength={50}\n                    placeholder=\"+91 98765 43210\"\n                    value={phone}\n                    onChange={(e) => setPhone(e.target.value)}\n                    className=\"w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n                  />"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 354,
+    "tag": "<input id=\"register-whatsapp\" type=\"tel\" maxLength={50} value={whatsappNumber} onChange={e => setWhatsappNumber(e.target.value)} placeholder=\"+91 98765 43210\" className=\"w-full px-4 py-2.5 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\" />"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 362,
+    "tag": "<input id=\"register-page-field-2\" required\n                    type=\"text\"\n                    placeholder=\"e.g. Creative Learning Studio\"\n                    value={studioName}\n                    onChange={(e) => setStudioName(e.target.value)}\n                    className=\"w-full px-4 py-2.5 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] text-sm bg-[#FAF7F2]\"\n                  />"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 374,
+    "tag": "<input required value={location} onChange={e => setLocation(e.target.value)} placeholder=\"City, state, country\" className=\"block w-full border rounded-xl p-3 mt-2\" />"
+  },
+  {
+    "file": "src/app/register/page.tsx",
+    "line": 377,
+    "tag": "<select required value={billingCountry} onChange={e => setBillingCountry(e.target.value)} className=\"mt-2 block w-full rounded-xl border bg-white p-3\">"
+  },
+  {
+    "file": "src/components/AdminPeople.tsx",
+    "line": 20,
+    "tag": "<input aria-label=\"Search accounts\" placeholder=\"Search name or email…\" value={search} onChange={e => {setSearch(e.target.value); setPage(1);}} className=\"w-full rounded-xl border p-3 text-sm\"/>"
+  },
+  {
+    "file": "src/components/AdminStudios.tsx",
+    "line": 96,
+    "tag": "<select value={selected} onChange={event => chooseStudio(event.target.value)} className=\"mt-2 block w-full rounded-xl border p-3 text-sm\">"
+  },
+  {
+    "file": "src/components/AdminStudios.tsx",
+    "line": 106,
+    "tag": "<input value={search} onChange={event => { setSearch(event.target.value); setPage(1); }} placeholder=\"Search studio, owner, email or location…\" className=\"w-full rounded-xl border border-[#DDE6DF] bg-[#FAFCFA] py-2.5 pl-9 pr-3 text-xs\" />"
+  },
+  {
+    "file": "src/components/AdminStudios.tsx",
+    "line": 106,
+    "tag": "<select value={status} onChange={event => { setStatus(event.target.value); setPage(1); }} className=\"rounded-xl border border-[#DDE6DF] px-3 py-2.5 text-xs text-slate-700\">"
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 129,
+    "tag": "<select value={teacherId} onChange={event => setTeacherId(event.target.value)} className=\"mt-1 block min-w-56 rounded-xl border border-[#CEDECF] bg-white px-3 py-2 font-medium\">"
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 144,
+    "tag": "<select value={sortBy} onChange={event => { setSortBy(event.target.value as typeof sortBy); setPage(1); }} className=\"rounded-lg border px-2 py-1.5 text-xs\">"
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 144,
+    "tag": "<select value={pageSize} onChange={event => { setPageSize(Number(event.target.value)); setPage(1); }} className=\"rounded-lg border px-2 py-1\">"
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 149,
+    "tag": "<select value={selectedFinancialYear} onChange={event => { const year = Number(event.target.value); setSelectedFinancialYear(year); const selected = financialYear(year); setStartDate(selected.start); setEndDate(selected.end); }} className=\"mt-1 w-full rounded-xl border border-[#CEDECF] bg-white px-3 py-2\">"
+  },
+  {
+    "file": "src/components/BillingCenter.tsx",
+    "line": 150,
+    "tag": "<select value={monthRange} onChange={event => applyMonthRange(event.target.value)} className=\"mt-1 w-full rounded-xl border border-[#CEDECF] bg-white px-3 py-2\">"
+  },
+  {
+    "file": "src/components/ClassPackageEditor.tsx",
+    "line": 67,
+    "tag": "<input\n                  required={field !== \"offer_price\"}\n                  type=\"number\"\n                  min={min}\n                  max={field === \"offer_price\" ? pkg.price || 0 : field === \"total_classes\" ? 10000 : field === \"validity_days\" ? 3650 : undefined}\n                  step={field === \"price\" || field === \"offer_price\" ? \"0.01\" : \"1\"}\n                  value={pkg[field]}\n                  placeholder={field === \"offer_price\" ? \"Optional\" : \"\"}\n                  onChange={e => setPackages(prev => prev.map(p => p.id === pkg.id ? { ...p, [field]: e.target.value } : p))}\n                  className=\"mt-1 w-full rounded-lg border border-[#CEDECF] p-2 text-sm font-normal\"\n                />"
+  },
+  {
+    "file": "src/components/CommunicationChannelsPanel.tsx",
+    "line": 39,
+    "tag": "<input type=\"email\" aria-label=\"Test recipient email\" value={recipient} onChange={e => setRecipient(e.target.value)} className=\"rounded-lg border p-2\" />"
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 36,
+    "tag": "<form className=\"space-y-3\" onSubmit={async event => {\n      event.preventDefault(); setBusy(true); setMessage(\"\");\n      try {\n        await openMeetingTab(async () => (await staffApi(`/organizations/${org}/teachers/${member}/zoom/connect?zoom_host_id=${encodeURIComponent(hostId.trim())}`, { method: \"POST\" })).authorization_url);\n      } catch (error) { setMessage((error as Error).message); } finally { setBusy(false); }\n    }}>"
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 42,
+    "tag": "<input required type=\"text\" maxLength={255} pattern=\"[A-Za-z0-9_-]+\" value={hostId} onChange={event => setHostId(event.target.value)} className=\"mt-2 block w-full rounded-xl border border-[#CEDECF] p-3 text-sm\" />"
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 47,
+    "tag": "<form className=\"space-y-3 border-t border-[#E1E9E2] pt-4\" onSubmit={async event => {\n      event.preventDefault(); setSavingHostKey(true); setHostKeyMessage(\"\");\n      try {\n        await staffApi(`/organizations/${org}/zoom/host-key`, { method: \"PUT\", body: JSON.stringify({ host_key: hostKey }) });\n        setHostKeySaved(true); setHostKey(\"\"); setHostKeyMessage(\"Host key saved securely.\");\n      } catch (error) { setHostKeyMessage((error as Error).message); }\n      finally { setSavingHostKey(false); }\n    }}>"
+  },
+  {
+    "file": "src/components/InitialZoomSetup.tsx",
+    "line": 57,
+    "tag": "<PasswordInput visibilityLabel=\"Zoom host key\" aria-label=\"Zoom host key\" type=\"password\" autoComplete=\"off\" inputMode=\"numeric\" pattern=\"[0-9]{6}\" minLength={6} maxLength={6} required disabled={!connected} value={hostKey} onChange={event => setHostKey(event.target.value.replace(/\\D/g, \"\"))} placeholder={hostKeySaved ? \"Saved · enter a new key to replace\" : \"6-digit host key\"} className=\"block w-full rounded-lg border border-[#CEDECF] bg-white p-3 disabled:bg-slate-50 disabled:opacity-60\" />"
+  },
+  {
+    "file": "src/components/OtpVerificationCard.tsx",
+    "line": 151,
+    "tag": "<form onSubmit={handleVerify} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/components/OtpVerificationCard.tsx",
+    "line": 168,
+    "tag": "<input\n            type=\"text\"\n            required\n            maxLength={6} inputMode=\"numeric\" autoComplete=\"one-time-code\" pattern=\"[0-9]{6}\" aria-label=\"Six-digit verification code\"\n            value={otp}\n            onChange={(e) => setOtp(e.target.value.replace(/\\D/g, \"\"))}\n            placeholder=\"123456\"\n            autoFocus\n            className=\"w-full text-center tracking-widest text-2xl font-mono py-3 rounded-xl border border-[#CEDECF] focus:outline-none focus:ring-2 focus:ring-[#1b4332] bg-[#FAF7F2]\"\n          />"
+  },
+  {
+    "file": "src/components/PasswordInput.tsx",
+    "line": 21,
+    "tag": "<input {...props} ref={ref} id={inputId} disabled={disabled} type={shown ? 'text' : 'password'} className={`${className} !pr-10`} />"
+  },
+  {
+    "file": "src/components/PrivacyPolicy.tsx",
+    "line": 25,
+    "tag": "<input id=\"registration-privacy-consent\" type=\"checkbox\" required checked={accepted}\n        onChange={e => onChange(e.target.checked)} className=\"mt-1 h-4 w-4 shrink-0 accent-[#133623]\" />"
+  },
+  {
+    "file": "src/components/ProgressRoomsBilling.tsx",
+    "line": 56,
+    "tag": "<input type=\"month\" value={month || data?.month.slice(0, 7) || \"\"} onChange={event => setMonth(event.target.value)} className=\"mt-2 block rounded-xl border p-2 text-sm\" />"
+  },
+  {
+    "file": "src/components/ProgressRoomsBilling.tsx",
+    "line": 57,
+    "tag": "<select value={teacher} onChange={event => setTeacher(event.target.value)} className=\"mt-2 block min-w-48 rounded-xl border p-2 text-sm\">"
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 125,
+    "tag": "<select ref={countrySelect} value={country} onChange={e => { setCountry(e.target.value); setQuote(null); setConsent(false); setMessage(\"\"); }} className=\"mt-2 block w-full rounded-xl border bg-white p-3 sm:max-w-sm\">"
+  },
+  {
+    "file": "src/components/SaaSBilling.tsx",
+    "line": 138,
+    "tag": "<input type=\"checkbox\" checked={consent} onChange={e => setConsent(e.target.checked)} className=\"mt-1\"/>"
+  },
+  {
+    "file": "src/components/ScheduleInput.tsx",
+    "line": 83,
+    "tag": "<input {...props} ref={input} type={type} value={value} min={min} max={max} disabled={disabled}\n        onChange={event => onValueChange(event.target.value)}\n        onPointerDown={event => { event.preventDefault(); input.current?.focus({ preventScroll: true }); }}\n        onClick={event => { event.preventDefault(); show(); }}\n        onKeyDown={event => {\n          if ([\"Enter\", \" \", \"ArrowDown\"].includes(event.key)) { event.preventDefault(); show(); }\n          props.onKeyDown?.(event);\n        }}\n        role=\"combobox\" aria-haspopup=\"dialog\" aria-expanded={open} aria-controls={open ? id : undefined}\n        className={`schedule-input ${className}`} />"
+  },
+  {
+    "file": "src/components/ScheduleInput.tsx",
+    "line": 132,
+    "tag": "<select aria-label=\"Hour\" value={hours % 12 || 12} onChange={event => setTime(Number(event.target.value) % 12 + (hours >= 12 ? 12 : 0), minutes)}>"
+  },
+  {
+    "file": "src/components/ScheduleInput.tsx",
+    "line": 133,
+    "tag": "<select aria-label=\"Minute\" value={minutes} onChange={event => setTime(hours, event.target.value)}>"
+  },
+  {
+    "file": "src/components/ScheduleInput.tsx",
+    "line": 134,
+    "tag": "<select aria-label=\"AM or PM\" value={hours >= 12 ? \"PM\" : \"AM\"} onChange={event => setTime(hours % 12 + (event.target.value === \"PM\" ? 12 : 0), minutes)}>"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 79,
+    "tag": "<form id=\"student-details-form\" onSubmit={save} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 81,
+    "tag": "<input className={inputClass} required maxLength={255} value={form.full_name} onChange={e => setForm({ ...form, full_name: e.target.value })} />"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 82,
+    "tag": "<input className={inputClass} type=\"tel\" autoComplete=\"tel\" required maxLength={50} value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 83,
+    "tag": "<select className={inputClass} value={form.status} onChange={e => setForm({ ...form, status: e.target.value as typeof form.status })}>"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 85,
+    "tag": "<input id=\"student-whatsapp-number\" aria-label=\"WhatsApp number (optional)\" className={inputClass} type=\"tel\" maxLength={50} value={form.whatsapp_number} onChange={e => setForm({ ...form, whatsapp_number: e.target.value })} />"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 86,
+    "tag": "<input className={inputClass} maxLength={255} value={form.location} onChange={e => setForm({ ...form, location: e.target.value })} />"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 88,
+    "tag": "<textarea className={inputClass} maxLength={1000} rows={2} value={form.address} onChange={e => setForm({ ...form, address: e.target.value })} />"
+  },
+  {
+    "file": "src/components/StudentDetails.tsx",
+    "line": 89,
+    "tag": "<textarea className={inputClass} maxLength={5000} rows={3} value={form.student_notes} onChange={e => setForm({ ...form, student_notes: e.target.value })} />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 636,
+    "tag": "<input\n              type=\"text\"\n              placeholder=\"Search classes by name, description, or teacher...\"\n              value={searchQuery}\n              onChange={(e) => {\n                setSearchQuery(e.target.value);\n                setClassPage(1);\n              }}\n              className=\"w-full pl-10 pr-9 py-2 text-xs border border-[#CEDECF] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white text-slate-900 placeholder:text-slate-400\"\n            />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 666,
+    "tag": "<select\n              value={teacherFilter}\n              onChange={(e) => {\n                setTeacherFilter(e.target.value);\n                setClassPage(1);\n              }}\n              className=\"border border-[#CEDECF] px-2.5 py-1.5 rounded-xl bg-white text-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n            >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 683,
+    "tag": "<select\n              value={dayFilter}\n              onChange={(e) => {\n                setDayFilter(e.target.value);\n                setClassPage(1);\n              }}\n              className=\"border border-[#CEDECF] px-2.5 py-1.5 rounded-xl bg-white text-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n            >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 702,
+    "tag": "<select\n              value={statusFilter}\n              onChange={(e) => {\n                setStatusFilter(e.target.value);\n                setClassPage(1);\n              }}\n              className=\"border border-[#CEDECF] px-2.5 py-1.5 rounded-xl bg-white text-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n            >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 716,
+    "tag": "<select\n              value={typeFilter}\n              onChange={(e) => {\n                setTypeFilter(e.target.value);\n                setClassPage(1);\n              }}\n              className=\"border border-[#CEDECF] px-2.5 py-1.5 rounded-xl bg-white text-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n            >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 893,
+    "tag": "<select\n                        value={classPageSize}\n                        onChange={(e) => {\n                          setClassPageSize(Number(e.target.value));\n                          setClassPage(1);\n                        }}\n                        className=\"px-2 py-1 rounded-lg border border-[#CEDECF] bg-white font-medium text-[#0C2417]\"\n                      >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 972,
+    "tag": "<form id=\"modal-src-components-StudioClasses-tsx-1\" onSubmit={handleSubmit} className=\"p-6 space-y-4\">"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1008,
+    "tag": "<form id=\"modal-src-components-StudioClasses-tsx-2\" onSubmit={handleSubmit} className=\"relative space-y-4\">"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1017,
+    "tag": "<input\n                    required\n                    value={name}\n                    onChange={(e) => setName(e.target.value)}\n                    placeholder=\"e.g. Sunrise Performing Arts\"\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1028,
+    "tag": "<select\n                    required\n                    value={teacher}\n                    onChange={(e) => setTeacher(e.target.value)}\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1075,
+    "tag": "<input\n                    placeholder=\"No capacity limit\"\n                    type=\"number\"\n                    min=\"1\"\n                    value={capacity}\n                    onChange={(e) => setCapacity(e.target.value)}\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1096,
+    "tag": "<input\n                        type=\"checkbox\"\n                        checked={days.includes(i)}\n                        onChange={(e) =>\n                          setDays(e.target.checked ? [...days, i] : days.filter((d) => d !== i))\n                        }\n                        className=\"rounded text-[#133623] focus:ring-[#133623]\"\n                      />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1122,
+    "tag": "<select\n                      value={skillLevel}\n                      onChange={(e) => setSkillLevel(e.target.value)}\n                      className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                    >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1136,
+    "tag": "<select\n                      value={sessionType}\n                      onChange={(e) => setSessionType(e.target.value)}\n                      className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                    >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1150,
+    "tag": "<input\n                    value={shortDescription}\n                    onChange={(e) => setShortDescription(e.target.value)}\n                    placeholder=\"e.g. A practical class with guided exercises and individual feedback.\"\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1163,
+    "tag": "<input\n                      value={prerequisites}\n                      onChange={(e) => setPrerequisites(e.target.value)}\n                      placeholder=\"e.g. Empty stomach 2 hours prior.\"\n                      className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                    />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1173,
+    "tag": "<input\n                      value={requiredEquipment}\n                      onChange={(e) => setRequiredEquipment(e.target.value)}\n                      placeholder=\"e.g. Notebook, instrument, or other class materials.\"\n                      className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                    />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1184,
+    "tag": "<input\n                    value={preparationInstructions}\n                    onChange={(e) => setPreparationInstructions(e.target.value)}\n                    placeholder=\"e.g. Join Zoom 5 minutes early in a quiet, well-lit room.\"\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1221,
+    "tag": "<input className=\"mt-0.5 shrink-0\" type=\"checkbox\" checked={acknowledgeZoomHostImpact} onChange={event => setAcknowledgeZoomHostImpact(event.target.checked)} />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1260,
+    "tag": "<form id=\"modal-src-components-StudioClasses-tsx-3\" onSubmit={handleOneOnOneSubmit} className=\"relative space-y-4\">"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1265,
+    "tag": "<input\n                  required\n                  value={oneOnOneTitle}\n                  onChange={(e) => setOneOnOneTitle(e.target.value)}\n                  placeholder=\"e.g. 1-on-1 Private Session\"\n                  className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1280,
+    "tag": "<select\n                    required\n                    value={oneOnOneTeacher}\n                    onChange={(e) => setOneOnOneTeacher(e.target.value)}\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1296,
+    "tag": "<select\n                    required\n                    value={oneOnOneStudent}\n                    onChange={(e) => setOneOnOneStudent(e.target.value)}\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  >"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1346,
+    "tag": "<input\n                    type=\"number\"\n                    min=\"0\"\n                    step=\"0.01\"\n                    value={oneOnOnePrice}\n                    onChange={(e) => setOneOnOnePrice(e.target.value)}\n                    placeholder=\"0\"\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1361,
+    "tag": "<input type=\"number\" min=\"0\" max={oneOnOnePrice || \"0\"} step=\"0.01\" value={oneOnOneOfferPrice} onChange={event => setOneOnOneOfferPrice(event.target.value)} className=\"mt-1 block w-full rounded-xl border p-3\" />"
+  },
+  {
+    "file": "src/components/StudioClasses.tsx",
+    "line": 1375,
+    "tag": "<input className=\"mt-0.5 shrink-0\" type=\"checkbox\" checked={acknowledgeZoomHostImpact} onChange={event => setAcknowledgeZoomHostImpact(event.target.checked)} />"
+  },
+  {
+    "file": "src/components/StudioExplore.tsx",
+    "line": 89,
+    "tag": "<input\n            aria-label=\"Search classes and passes\"\n            value={query}\n            onChange={e => setQuery(e.target.value)}\n            placeholder=\"Search classes or passes…\"\n            className=\"rounded-full border border-[#CEDECF] bg-white px-5 py-2.5 text-xs sm:text-sm w-full sm:w-72 focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n          />"
+  },
+  {
+    "file": "src/components/StudioExplore.tsx",
+    "line": 101,
+    "tag": "<select\n              value={dayFilter}\n              onChange={e => setDayFilter(e.target.value)}\n              className=\"border border-[#CEDECF] px-2.5 py-1.5 rounded-xl bg-white text-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n            >"
+  },
+  {
+    "file": "src/components/StudioExplore.tsx",
+    "line": 112,
+    "tag": "<select\n              value={levelFilter}\n              onChange={e => setLevelFilter(e.target.value)}\n              className=\"border border-[#CEDECF] px-2.5 py-1.5 rounded-xl bg-white text-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n            >"
+  },
+  {
+    "file": "src/components/StudioExplore.tsx",
+    "line": 124,
+    "tag": "<select\n              value={modeFilter}\n              onChange={e => setModeFilter(e.target.value)}\n              className=\"border border-[#CEDECF] px-2.5 py-1.5 rounded-xl bg-white text-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-[#133623]\"\n            >"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 541,
+    "tag": "<select\n                          value={membershipsPageSize}\n                          onChange={(e) => {\n                            setMembershipsPageSize(Number(e.target.value));\n                            setMembershipsPage(1);\n                          }}\n                          className=\"px-2 py-1 rounded-lg border border-[#CEDECF] bg-white font-medium text-[#0C2417]\"\n                        >"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 651,
+    "tag": "<form id=\"modal-src-components-StudioMemberships-tsx-1\" onSubmit={handleSubmit} className=\"space-y-4\">"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 660,
+    "tag": "<input\n                    required\n                    value={name}\n                    onChange={(e) => setName(e.target.value)}\n                    placeholder=\"e.g. Monthly Music Pass, 10-Class Learning Pack\"\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 671,
+    "tag": "<select\n                    value={selectedPackages.length ? \"PACKAGE\" : tierType}\n                    disabled={selectedPackages.length > 0}\n                    onChange={(e) => setTierType(e.target.value as any)}\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  >"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 685,
+    "tag": "<input\n                    required\n                    type=\"number\"\n                    min=\"0\"\n                    step=\"0.01\"\n                    value={price}\n                    onChange={(e) => setPrice(e.target.value)}\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 700,
+    "tag": "<input\n                    required\n                    type=\"number\"\n                    min=\"1\"\n                    value={validityDays}\n                    onChange={(e) => setValidityDays(e.target.value)}\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 712,
+    "tag": "<input\n                    type=\"number\"\n                    min=\"1\"\n                    required={tierType === \"PACKAGE\" && !selectedPackages.length}\n                    placeholder={tierType === \"MONTHLY\" ? \"Unlimited (Leave blank)\" : \"e.g. 10\"}\n                    value={selectedPackages.length ? includedSessions : totalClasses}\n                    readOnly={selectedPackages.length > 0}\n                    onChange={(e) => setTotalClasses(e.target.value)}\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 731,
+    "tag": "<input type=\"radio\" name=\"membership-selection-mode\" checked={selectionMode === mode.value} onChange={() => setSelectionMode(mode.value)} className=\"mt-0.5 accent-[#133623]\" />"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 771,
+    "tag": "<input\n                      type=\"text\"\n                      placeholder=\"Search classes to attach…\"\n                      value={classFilter}\n                      onChange={(e) => setClassFilter(e.target.value)}\n                      className=\"w-full pl-8 pr-3 py-1.5 text-xs placeholder:text-xs placeholder:text-slate-400 rounded-xl border border-[#CEDECF] bg-[#F9FAF9] focus:outline-none focus:ring-1 focus:ring-[#133623]\"\n                    />"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 808,
+    "tag": "<input\n                              type=\"checkbox\"\n                              checked={isChecked}\n                              onChange={() => handleToggleClass(cls.id)}\n                              className=\"rounded text-[#133623] focus:ring-[#133623] h-4 w-4\"\n                            />"
+  },
+  {
+    "file": "src/components/StudioMemberships.tsx",
+    "line": 841,
+    "tag": "<input\n                    type=\"number\"\n                    min=\"0\"\n                    max={price || \"0\"}\n                    step=\"0.01\"\n                    value={offerPrice}\n                    onChange={(e) => setOfferPrice(e.target.value)}\n                    placeholder=\"Leave blank for regular price\"\n                    className=\"mt-1 block w-full border border-[#CEDECF] p-2.5 rounded-xl text-xs sm:text-sm placeholder:text-xs placeholder:text-slate-400 font-normal text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#133623] bg-white\"\n                  />"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 65,
+    "tag": "<form className=\"space-y-3 rounded-xl border p-4\" onSubmit={event => {\n          event.preventDefault(); void run(async () => {\n            const password = studioPassword; setStudioPassword(\"\");\n            await openMeetingTab(async () => (await staffApi(path + \"/studio-connect\", { method: \"POST\", body: JSON.stringify({ studio_password: password, zoom_host_id: zoomHostId.trim() || null }) })).authorization_url);\n          });\n        }}>"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 72,
+    "tag": "<input type=\"text\" maxLength={255} pattern=\"[A-Za-z0-9_-]+\" value={zoomHostId} onChange={event => setZoomHostId(event.target.value)} className=\"mt-1 w-full rounded-lg border p-2\" />"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 73,
+    "tag": "<PasswordInput required type=\"password\" autoComplete=\"current-password\" value={studioPassword} onChange={event => setStudioPassword(event.target.value)} className=\"mt-1 w-full rounded-lg border p-2\" />"
+  },
+  {
+    "file": "src/components/TeacherZoomControl.tsx",
+    "line": 99,
+    "tag": "<input id={`zoom-request-${member}`} readOnly value={requestLink} className=\"my-2 w-full rounded-lg border p-2\" onFocus={event => event.target.select()} />"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 114,
+    "tag": "<input className=\"h-4 w-4 shrink-0 accent-emerald-800\" type=\"checkbox\" disabled={busy} checked={Boolean(prefs[\"zoom_\" + key])} onChange={event => { setPrefs({ ...prefs, [\"zoom_\" + key]: event.target.checked }); setResults(null); }} />"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 143,
+    "tag": "<select disabled={busy} value={prefs.default_host_member_id || \"\"} onChange={event => setPrefs({ ...prefs, default_host_member_id: event.target.value || null })} className=\"mt-2 block w-full rounded-lg border p-3 font-normal\">"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 144,
+    "tag": "<input type=\"checkbox\" disabled={busy} checked={prefs.fallback_enabled} onChange={event => setPrefs({ ...prefs, fallback_enabled: event.target.checked })} />"
+  },
+  {
+    "file": "src/components/ZoomSettings.tsx",
+    "line": 150,
+    "tag": "<select aria-label={`Replacement host for ${meeting.class_name}`} className=\"min-w-0 max-w-full rounded-lg border p-2\" value={replacement[meeting.id] || \"\"} onChange={event => setReplacement({ ...replacement, [meeting.id]: event.target.value })}>"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 36,
+    "tag": "<textarea className={inputStyle} rows={4} value={value} maxLength={max} onChange={e => onChange(e.target.value)}/>"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 36,
+    "tag": "<input className={inputStyle} value={value} maxLength={max} onChange={e => onChange(e.target.value)}/>"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 203,
+    "tag": "<select value={org?.id} disabled={busy || dirty} onChange={async e => { const studio = studios.find(s => s.id === e.target.value); if (studio) { setLoading(true); try { await loadStudio(studio); } catch (error) { setError((error as Error).message); } finally { setLoading(false); } } }} className={`${inputStyle} mt-2 max-w-sm`}>"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 258,
+    "tag": "<input aria-label={`Image ${index+1} description`} value={image.alt} maxLength={200} onChange={e => changeImages(content.images.map((item,i) => i === index ? {...item, alt:e.target.value} : item))} className={`${inputStyle} mt-1 !p-2 !text-xs`}/>"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 259,
+    "tag": "<input aria-label=\"Upload website images\" type=\"file\" multiple accept=\"image/png,image/jpeg,image/webp\" className=\"mt-3 w-full text-xs\" onChange={e => { upload(e.target.files); e.target.value = ''; }}/>"
+  },
+  {
+    "file": "src/components/website/WebsiteEditor.tsx",
+    "line": 268,
+    "tag": "<select value={card.image_id || ''} className={`${inputStyle} mt-2`} onChange={e => updateSection(index,{cards:section.cards.map((item,i) => i === cardIndex ? {...item,image_id:e.target.value || null} : item)})}>"
+  }
+]

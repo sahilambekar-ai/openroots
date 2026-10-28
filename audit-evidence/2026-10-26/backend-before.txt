@@ -1,0 +1,92 @@
+.........................................FF............................. [ 28%]
+...................................sssF................................. [ 56%]
+...........ss........................................................... [ 85%]
+................................sss..                                    [100%]
+=================================== FAILURES ===================================
+__________________ test_student_payment_received_notification __________________
+
+db_session = <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x10fb3fc10>
+
+    @pytest.mark.asyncio
+    async def test_student_payment_received_notification(db_session):
+        """
+        Verifies that successful payment triggers notifications via Progress Rooms Admin WhatsApp
+        and Brevo email, properly identifying studio and student.
+        """
+        org, owner, student, order, payment = await setup_billing_test_data(db_session)
+    
+        res = await notify_student_payment_received(db_session, order.id)
+        assert res["success"] is True
+        assert res["dispatched"]["whatsapp"] is False
+>       assert res["dispatched"]["email"] is True
+E       assert False is True
+
+tests/test_billing_and_budgets.py:161: AssertionError
+________________ test_studio_subscription_billing_notifications ________________
+
+db_session = <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x10fc61190>
+
+    @pytest.mark.asyncio
+    async def test_studio_subscription_billing_notifications(db_session):
+        """
+        Verifies studio subscription billing dispatches:
+        - Invoice issued
+        - Payment due soon (T-3 days)
+        - Payment overdue (T+3 days)
+        - Payment received
+        """
+        org, owner, student, order, payment = await setup_billing_test_data(db_session)
+    
+        due_date = datetime.now(timezone.utc) + timedelta(days=3)
+    
+        # 1. Invoice issued
+        inv_res = await notify_studio_invoice_issued(
+            db=db_session,
+            organization_id=org.id,
+            invoice_number="INV-2026-001",
+            amount_inr=4999.0,
+            billing_period="October 2026",
+            due_date=due_date
+        )
+        assert inv_res["success"] is True
+>       assert inv_res["dispatches_sent"] == 1  # WhatsApp + Email
+E       assert 0 == 1
+
+tests/test_billing_and_budgets.py:202: AssertionError
+__________ test_generation_is_bounded_idempotent_and_refreshes_rules ___________
+
+db_session = <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x1102765d0>
+
+    @pytest.mark.asyncio
+    async def test_generation_is_bounded_idempotent_and_refreshes_rules(db_session):
+        org, cls = await make_class(db_session)
+        today = datetime.now(timezone.utc).date()
+        for _ in range(2):  # Overlapping rules must not duplicate occurrences within one batch.
+            db_session.add(SessionScheduleRule(session_id=cls.id, day_of_week=today.weekday(),
+                start_time=time(10), end_time=time(11), effective_start_date=today))
+        await db_session.flush()
+        statements = []
+        def record(conn, cursor, statement, parameters, context, executemany):
+            if statement.lstrip().upper().startswith('SELECT'):
+                statements.append(statement)
+        event.listen(db_session.bind.sync_engine, 'before_cursor_execute', record)
+        try:
+            count = await SchedulingEngine.generate_occurrences_for_session(db_session, cls.id, 70)
+            assert count == 11
+>           assert len(statements) == 4  # parent, rules, instructors, existing starts
+E           AssertionError: assert 5 == 4
+E            +  where 5 = len(['SELECT sessions.id, sessions.organization_id, sessions.class_type_id, sessions.name, sessions.slug, sessions.short_d...d_at, organization_settings.updated_at \nFROM organization_settings \nWHERE organization_settings.organization_id = ?'])
+
+tests/test_query_improvements.py:47: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.11/site-packages/pydantic/_internal/_config.py:295
+.venv/lib/python3.11/site-packages/pydantic/_internal/_config.py:295
+  /Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/.venv/lib/python3.11/site-packages/pydantic/_internal/_config.py:295: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_billing_and_budgets.py::test_student_payment_received_notification
+FAILED tests/test_billing_and_budgets.py::test_studio_subscription_billing_notifications
+FAILED tests/test_query_improvements.py::test_generation_is_bounded_idempotent_and_refreshes_rules
+3 failed, 242 passed, 8 skipped, 2 warnings in 43.90s

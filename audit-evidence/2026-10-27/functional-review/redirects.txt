@@ -1,0 +1,4 @@
+/student/receipts/old-ref -> 307 /student?tab=passes
+/dashboard/billing/receipts/old-ref -> 307 /dashboard?tab=billing-saas
+/dashboard/billing/invoices/old-ref -> 307 /dashboard?tab=billing-progressrooms
+Verified against local production build on port 3109.

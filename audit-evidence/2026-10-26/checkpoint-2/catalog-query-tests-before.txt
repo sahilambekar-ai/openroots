@@ -1,0 +1,58 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+_________________ test_public_enrollment_counts_are_batched[6] _________________
+
+db_session = <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x10e4ebc10>
+class_count = 6
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("class_count", [1, 6])
+    async def test_public_enrollment_counts_are_batched(db_session, class_count):
+        org = Organization(name="Catalog", slug=uuid.uuid4().hex)
+        user = User(email=f"{uuid.uuid4().hex}@example.com", full_name="Learner")
+        db_session.add_all([org, user])
+        await db_session.flush()
+        kind = ClassType(organization_id=org.id, name="Yoga", slug="yoga")
+        db_session.add(kind)
+        await db_session.flush()
+        classes = [Session(organization_id=org.id, class_type_id=kind.id, name=f"Class {i}",
+            slug=f"class-{i}", capacity=10) for i in range(class_count)]
+        db_session.add_all(classes)
+        await db_session.flush()
+        for cls in classes:
+            db_session.add(SessionPricing(session_id=cls.id, price=0))
+        for status in ["ACTIVE", "ACTIVE", "EXPIRED"]:
+            db_session.add(SessionEnrollment(organization_id=org.id, session_id=classes[0].id,
+                user_id=user.id, status=status, valid_from=datetime.now(timezone.utc)))
+        await db_session.flush()
+        statements = []
+    
+        def record(conn, cursor, statement, parameters, context, executemany):
+            if "count(session_enrollments.id)" in statement.lower():
+                statements.append(statement)
+    
+        event.listen(db_session.bind.sync_engine, "before_cursor_execute", record)
+        try:
+            result = await get_public_organization_website(org.slug, db_session)
+        finally:
+            event.remove(db_session.bind.sync_engine, "before_cursor_execute", record)
+        assert len(result["sessions"]) == class_count
+        remaining = {row["slug"]: row["remaining_spots"] for row in result["sessions"]}
+        assert remaining["class-0"] == 8
+        assert all(remaining[f"class-{i}"] == 10 for i in range(1, class_count))
+>       assert len(statements) == 1, f"{class_count} classes required {len(statements)} enrollment queries"
+E       AssertionError: 6 classes required 6 enrollment queries
+E       assert 6 == 1
+E        +  where 6 = len(['SELECT count(session_enrollments.id) AS count_1 \nFROM session_enrollments \nWHERE session_enrollments.session_id = ...) AS count_1 \nFROM session_enrollments \nWHERE session_enrollments.session_id = ? AND session_enrollments.status = ?'])
+
+tests/test_audit_public_queries.py:50: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.11/site-packages/pydantic/_internal/_config.py:295
+.venv/lib/python3.11/site-packages/pydantic/_internal/_config.py:295
+  /Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/.venv/lib/python3.11/site-packages/pydantic/_internal/_config.py:295: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_audit_public_queries.py::test_public_enrollment_counts_are_batched[6]
+1 failed, 1 passed, 2 warnings in 0.13s

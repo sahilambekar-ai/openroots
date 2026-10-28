@@ -1,0 +1,168 @@
+[
+  {
+    "table": "communication_channel_audit_logs",
+    "columns": [
+      "changed_by_user_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "organization_websites",
+    "columns": [
+      "template_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "platform_communication_settings",
+    "columns": [
+      "updated_by_user_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "saas_checkouts",
+    "columns": [
+      "plan_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "saas_checkouts",
+    "columns": [
+      "purchaser_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "zoom_revocations",
+    "columns": [
+      "organization_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "organization_settings",
+    "columns": [
+      "organization_id",
+      "default_zoom_host_member_id"
+    ],
+    "constraint": "fk_default_zoom_host"
+  },
+  {
+    "table": "organization_students",
+    "columns": [
+      "organization_id",
+      "teacher_member_id"
+    ],
+    "constraint": "fk_student_teacher_same_studio"
+  },
+  {
+    "table": "support_tickets",
+    "columns": [
+      "resolved_by_member_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "zoom_oauth_attempts",
+    "columns": [
+      "actor_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "zoom_oauth_attempts",
+    "columns": [
+      "organization_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "zoom_oauth_attempts",
+    "columns": [
+      "intended_user_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "zoom_oauth_attempts",
+    "columns": [
+      "organization_id",
+      "member_id"
+    ],
+    "constraint": "fk_zoom_attempt_member_tenant"
+  },
+  {
+    "table": "class_occurrences",
+    "columns": [
+      "organization_id",
+      "zoom_connection_id"
+    ],
+    "constraint": "fk_occ_zoom_connection"
+  },
+  {
+    "table": "class_occurrences",
+    "columns": [
+      "organization_id",
+      "zoom_host_member_id"
+    ],
+    "constraint": "fk_occ_zoom_host"
+  },
+  {
+    "table": "support_messages",
+    "columns": [
+      "sender_user_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "attendance_records",
+    "columns": [
+      "marked_by_user_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "class_occurrence_changes",
+    "columns": [
+      "changed_by_user_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "meeting_email_deliveries",
+    "columns": [
+      "recipient_user_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "student_join_events",
+    "columns": [
+      "user_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "student_join_events",
+    "columns": [
+      "occurrence_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "student_join_events",
+    "columns": [
+      "enrollment_id"
+    ],
+    "constraint": null
+  },
+  {
+    "table": "teacher_attendance",
+    "columns": [
+      "marked_by_user_id"
+    ],
+    "constraint": null
+  }
+]

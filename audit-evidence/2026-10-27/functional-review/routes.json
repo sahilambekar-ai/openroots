@@ -1,0 +1,3805 @@
+[
+  {
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 40,
+    "handler": "get_state",
+    "dependencies": [
+      "get_state",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom/authorization-request",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 46,
+    "handler": "request_authorization",
+    "dependencies": [
+      "request_authorization",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom/connect",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 54,
+    "handler": "connect",
+    "dependencies": [
+      "connect",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "zoom_email",
+      "zoom_host_id"
+    ],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom/studio-connect",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 66,
+    "handler": "studio_connect",
+    "dependencies": [
+      "studio_connect",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.zoom.router.StudioConnectRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/integrations/zoom/request",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 80,
+    "handler": "redeem",
+    "dependencies": [
+      "redeem",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.zoom.router.RedeemRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/integrations/zoom/callback",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 90,
+    "handler": "oauth_callback",
+    "dependencies": [
+      "oauth_callback",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.zoom.router.CallbackRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/integrations/zoom/confirm",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 95,
+    "handler": "confirm",
+    "dependencies": [
+      "confirm",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.zoom.router.ConfirmRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom/impact",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 100,
+    "handler": "connection_impact",
+    "dependencies": [
+      "connection_impact",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom",
+    "methods": [
+      "DELETE"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 106,
+    "handler": "disconnect",
+    "dependencies": [
+      "disconnect",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "acknowledge_impact"
+    ],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/retry-revocations",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 182,
+    "handler": "retry_revocations",
+    "dependencies": [
+      "retry_revocations",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/apply-future-settings",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 192,
+    "handler": "apply_future",
+    "dependencies": [
+      "apply_future",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.zoom.router.ApplyRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).where(ClassOccurrence.organization_id == org_id, ClassOccurrence.actual_start_at > svc.now(), ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED']), ClassOccurrence.zoom_connection_id.is_not(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/zoom/reconcile",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 235,
+    "handler": "reconcile",
+    "dependencies": [
+      "reconcile",
+      "get_current_user",
+      "",
+      "get_db",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.zoom.router.ReconcileRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).where(ClassOccurrence.id == occurrence_id, ClassOccurrence.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/integrations/zoom/deauthorization",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 271,
+    "handler": "deauthorization",
+    "dependencies": [
+      "deauthorization",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(TeacherZoomConnection).where(TeacherZoomConnection.zoom_user_id == payload['user_id'], TeacherZoomConnection.zoom_account_id == payload['account_id'])",
+      "select(ZoomOAuthAttempt).where(ZoomOAuthAttempt.member_id == conn.member_id)",
+      "select(TeacherZoomConnection).where(TeacherZoomConnection.id == conn.id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/meetings",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/zoom/router.py",
+    "line": 339,
+    "handler": "saved_meetings",
+    "dependencies": [
+      "saved_meetings",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).where(ClassOccurrence.organization_id == org_id, ClassOccurrence.actual_start_at > svc.now(), ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED']), ClassOccurrence.zoom_connection_id.is_not(None) | (ClassOccurrence.meeting_provider == 'ZOOM'))"
+    ]
+  },
+  {
+    "path": "/auth/register",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 33,
+    "handler": "register",
+    "dependencies": [
+      "register",
+      "source_limit",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.schemas.RegisterRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/login",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 57,
+    "handler": "login",
+    "dependencies": [
+      "login",
+      "source_limit",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.schemas.LoginRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/dev-login",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 73,
+    "handler": "dev_login",
+    "dependencies": [
+      "dev_login",
+      "source_limit",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.schemas.DevLoginRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(OrganizationSetting).where(OrganizationSetting.organization_id == org.id)",
+      "select(User).where(User.email == email)",
+      "select(OrganizationMember, Organization).join(Organization).where(OrganizationMember.user_id == user.id, OrganizationMember.role == user.role, OrganizationMember.is_active == True, Organization.deleted_at.is_(None), Organization.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/auth/otp/generate",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 143,
+    "handler": "request_otp",
+    "dependencies": [
+      "request_otp",
+      "source_limit",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.schemas.RequestOTPRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/request-otp",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 143,
+    "handler": "request_otp",
+    "dependencies": [
+      "request_otp",
+      "source_limit",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.schemas.RequestOTPRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/otp/verify",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 159,
+    "handler": "verify_otp",
+    "dependencies": [
+      "verify_otp",
+      "source_limit",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.schemas.VerifyOTPRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(OrganizationSetting).where(OrganizationSetting.organization_id == org.id)",
+      "select(OrganizationMember, Organization).join(Organization, Organization.id == OrganizationMember.organization_id).where(OrganizationMember.user_id == user.id, OrganizationMember.is_active == True, Organization.deleted_at.is_(None), Organization.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/auth/verify-otp",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 159,
+    "handler": "verify_otp",
+    "dependencies": [
+      "verify_otp",
+      "source_limit",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.schemas.VerifyOTPRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(OrganizationSetting).where(OrganizationSetting.organization_id == org.id)",
+      "select(OrganizationMember, Organization).join(Organization, Organization.id == OrganizationMember.organization_id).where(OrganizationMember.user_id == user.id, OrganizationMember.is_active == True, Organization.deleted_at.is_(None), Organization.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/auth/me",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 248,
+    "handler": "get_me",
+    "dependencies": [
+      "get_me",
+      "get_current_user",
+      "",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/me",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 263,
+    "handler": "update_me",
+    "dependencies": [
+      "update_me",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.router.ProfileUpdate'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/context",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 272,
+    "handler": "auth_context",
+    "dependencies": [
+      "auth_context",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "studio_id"
+    ],
+    "filters": [
+      "select(OrganizationMember, Organization).join(Organization).where(OrganizationMember.user_id == current_user.id, OrganizationMember.role == current_user.role, OrganizationMember.is_active == True, Organization.deleted_at.is_(None), Organization.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/auth/forgot-password",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 319,
+    "handler": "forgot_password",
+    "dependencies": [
+      "forgot_password",
+      "source_limit",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.router.ForgotPasswordRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/reset-password",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 328,
+    "handler": "reset_password",
+    "dependencies": [
+      "reset_password",
+      "source_limit",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.router.ResetPasswordRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/me/preferences",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 334,
+    "handler": "get_preferences",
+    "dependencies": [
+      "get_preferences",
+      "get_current_user",
+      "",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/me/preferences",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 339,
+    "handler": "update_preferences",
+    "dependencies": [
+      "update_preferences",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.auth.schemas.DashboardPreferences'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/auth/logout",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/auth/router.py",
+    "line": 346,
+    "handler": "logout",
+    "dependencies": [
+      "logout",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 178,
+    "handler": "create_organization",
+    "dependencies": [
+      "create_organization",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.organizations.router.OrganizationCreate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(Organization).where(Organization.slug == payload.slug)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 229,
+    "handler": "get_organization",
+    "dependencies": [
+      "get_organization",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Organization).options(selectinload(Organization.subscription)).where(Organization.id == org_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/members",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 258,
+    "handler": "list_members",
+    "dependencies": [
+      "list_members",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(OrganizationMember).options(selectinload(OrganizationMember.user)).where(OrganizationMember.organization_id == org_id, OrganizationMember.is_active == True)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/profile",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 283,
+    "handler": "get_studio_profile",
+    "dependencies": [
+      "get_studio_profile",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(OrganizationSetting).where(OrganizationSetting.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/profile",
+    "methods": [
+      "PUT"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 362,
+    "handler": "update_studio_profile",
+    "dependencies": [
+      "update_studio_profile",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.organizations.router.StudioProfileUpdate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(OrganizationSetting).where(OrganizationSetting.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/connect",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 470,
+    "handler": "connect_zoom",
+    "dependencies": [
+      "connect_zoom",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.organizations.router.ZoomConnectRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/settings",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 476,
+    "handler": "get_zoom_settings",
+    "dependencies": [
+      "get_zoom_settings",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/settings",
+    "methods": [
+      "PUT"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 481,
+    "handler": "update_zoom_settings",
+    "dependencies": [
+      "update_zoom_settings",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.zoom.router.DefaultsRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/host-key",
+    "methods": [
+      "PUT"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 487,
+    "handler": "update_zoom_host_key",
+    "dependencies": [
+      "update_zoom_host_key",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.organizations.router.ZoomHostKeyUpdateRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/host-key",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 501,
+    "handler": "get_zoom_host_key_status",
+    "dependencies": [
+      "get_zoom_host_key_status",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/disconnect",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 511,
+    "handler": "disconnect_zoom",
+    "dependencies": [
+      "disconnect_zoom",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/zoom/generate-meeting",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 516,
+    "handler": "generate_zoom_meeting",
+    "dependencies": [
+      "generate_zoom_meeting",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.organizations.router.ZoomMeetingGenerateRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/analytics",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/organizations/router.py",
+    "line": 533,
+    "handler": "studio_analytics",
+    "dependencies": [
+      "studio_analytics",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(func.count(func.distinct(SessionEnrollment.user_id))).where(SessionEnrollment.organization_id == org_id, SessionEnrollment.status == 'ACTIVE', SessionEnrollment.valid_from <= now, SessionEnrollment.valid_until.is_(None) | (SessionEnrollment.valid_until >= now))",
+      "select(func.count(Session.id)).where(*classes, Session.id.in_(select(SessionScheduleRule.session_id).where(SessionScheduleRule.is_active.is_(True))))",
+      "select(func.sum(SessionPricing.price)).join(Session).where(*classes, SessionPricing.currency == org.currency)",
+      "select(func.sum(Payment.amount)).join(Order).where(Order.organization_id == org_id, Order.status == 'PAID', Payment.status == 'SUCCESS', Payment.currency == org.currency, Order.currency == org.currency)",
+      "select(func.sum(Order.total_amount)).where(Order.organization_id == org_id, Order.status.in_(['PENDING', 'PAID']), Order.currency == org.currency)",
+      "select(func.count(SupportTicket.id)).where(SupportTicket.organization_id == org_id)",
+      "select(SessionScheduleRule.session_id).where(SessionScheduleRule.is_active.is_(True))"
+    ]
+  },
+  {
+    "path": "/plans",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/plans/router.py",
+    "line": 10,
+    "handler": "list_plans",
+    "dependencies": [
+      "list_plans",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Plan).options(selectinload(Plan.features)).where(Plan.is_public == True)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/sessions/{class_id}",
+    "methods": [
+      "DELETE"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 32,
+    "handler": "delete_session",
+    "dependencies": [
+      "delete_session",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Session).where(Session.id == class_id, Session.organization_id == org_id, Session.deleted_at.is_(None))",
+      "update(SessionScheduleRule).where(SessionScheduleRule.session_id == class_id)",
+      "select(ClassOccurrence).where(ClassOccurrence.session_id == class_id, ClassOccurrence.organization_id == org_id, ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED']), ClassOccurrence.actual_start_at >= now)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/classes/{class_id}",
+    "methods": [
+      "DELETE"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 32,
+    "handler": "delete_session",
+    "dependencies": [
+      "delete_session",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Session).where(Session.id == class_id, Session.organization_id == org_id, Session.deleted_at.is_(None))",
+      "update(SessionScheduleRule).where(SessionScheduleRule.session_id == class_id)",
+      "select(ClassOccurrence).where(ClassOccurrence.session_id == class_id, ClassOccurrence.organization_id == org_id, ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED']), ClassOccurrence.actual_start_at >= now)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/class-types",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 66,
+    "handler": "list_class_types",
+    "dependencies": [
+      "list_class_types",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(ClassType).where(ClassType.organization_id == org_id, ClassType.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/class-types",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 77,
+    "handler": "create_class_type",
+    "dependencies": [
+      "create_class_type",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.classes.schemas.ClassTypeCreate'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/sessions",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 95,
+    "handler": "list_sessions",
+    "dependencies": [
+      "list_sessions",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "history"
+    ],
+    "filters": [
+      "select(Session).options(selectinload(Session.class_type), selectinload(Session.requirements), selectinload(Session.pricing), selectinload(Session.instructors).selectinload(SessionInstructor.member).selectinload(OrganizationMember.user), selectinload(Session.schedule_rules), selectinload(Session.occurrences)).where(Session.organization_id == org_id, Session.deleted_at.is_not(None) if history else Session.deleted_at.is_(None))",
+      "stmt.where(Session.id.in_(select(SessionInstructor.session_id).where(SessionInstructor.member_id == tenant[1].id)))",
+      "select(SessionInstructor.session_id).where(SessionInstructor.member_id == tenant[1].id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/classes",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 95,
+    "handler": "list_sessions",
+    "dependencies": [
+      "list_sessions",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "history"
+    ],
+    "filters": [
+      "select(Session).options(selectinload(Session.class_type), selectinload(Session.requirements), selectinload(Session.pricing), selectinload(Session.instructors).selectinload(SessionInstructor.member).selectinload(OrganizationMember.user), selectinload(Session.schedule_rules), selectinload(Session.occurrences)).where(Session.organization_id == org_id, Session.deleted_at.is_not(None) if history else Session.deleted_at.is_(None))",
+      "stmt.where(Session.id.in_(select(SessionInstructor.session_id).where(SessionInstructor.member_id == tenant[1].id)))",
+      "select(SessionInstructor.session_id).where(SessionInstructor.member_id == tenant[1].id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/one-on-one-classes",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 183,
+    "handler": "create_one_on_one_class",
+    "dependencies": [
+      "create_one_on_one_class",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.classes.schemas.OneOnOneSessionCreate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(OrganizationMember).where(OrganizationMember.id == payload.teacher_member_id, OrganizationMember.organization_id == org_id, OrganizationMember.is_active == True, OrganizationMember.can_teach.is_(True))",
+      "select(OrganizationStudent).where(OrganizationStudent.organization_id == org_id, (OrganizationStudent.user_id == payload.student_user_id) | (OrganizationStudent.id == payload.student_user_id))",
+      "select(User.id).where(User.id == actual_student_user_id, User.role == 'STUDENT', User.is_verified.is_(True), User.is_active.is_(True), User.account_status == 'ACTIVE', User.deleted_at.is_(None))",
+      "select(User).where(User.id == payload.student_user_id, User.role == 'STUDENT')",
+      "select(ClassType).where(ClassType.organization_id == org_id, ClassType.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/sessions",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 377,
+    "handler": "create_session",
+    "dependencies": [
+      "create_session",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.classes.schemas.SessionCreate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(ClassType.id).where(ClassType.id == payload.class_type_id, ClassType.organization_id == org_id)",
+      "select(OrganizationMember.id).where(OrganizationMember.id == member_id, OrganizationMember.organization_id == org_id, OrganizationMember.is_active == True, OrganizationMember.can_teach.is_(True))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/classes",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 377,
+    "handler": "create_session",
+    "dependencies": [
+      "create_session",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.classes.schemas.SessionCreate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(ClassType.id).where(ClassType.id == payload.class_type_id, ClassType.organization_id == org_id)",
+      "select(OrganizationMember.id).where(OrganizationMember.id == member_id, OrganizationMember.organization_id == org_id, OrganizationMember.is_active == True, OrganizationMember.can_teach.is_(True))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/sessions/{class_id}",
+    "methods": [
+      "PUT"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 470,
+    "handler": "update_session",
+    "dependencies": [
+      "update_session",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.classes.schemas.SessionUpdate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(Session).options(selectinload(Session.pricing), selectinload(Session.instructors), selectinload(Session.schedule_rules), selectinload(Session.requirements)).where(Session.id == class_id, Session.organization_id == org_id, Session.deleted_at.is_(None))",
+      "select(OrganizationMember.id).where(OrganizationMember.id == member_id, OrganizationMember.organization_id == org_id, OrganizationMember.is_active == True, OrganizationMember.can_teach.is_(True))",
+      "update(ClassOccurrence).where(ClassOccurrence.session_id == session.id, ClassOccurrence.status == OccurrenceStatus.SCHEDULED.value, ClassOccurrence.actual_start_at > now_utc)",
+      "select(ClassOccurrence.id).where(ClassOccurrence.session_id == session.id, ClassOccurrence.actual_start_at > datetime.now(timezone.utc), ClassOccurrence.zoom_connection_id.is_not(None), ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED']))",
+      "select(ClassOccurrence.id).where(ClassOccurrence.session_id == session.id, ClassOccurrence.actual_start_at > datetime.now(timezone.utc), ClassOccurrence.zoom_connection_id.is_not(None), ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED']))",
+      "select(ClassOccurrence).where(ClassOccurrence.session_id == session.id, ClassOccurrence.actual_end_at > datetime.now(timezone.utc), ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED', 'IN_PROGRESS']))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/classes/{class_id}",
+    "methods": [
+      "PUT"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 470,
+    "handler": "update_session",
+    "dependencies": [
+      "update_session",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.classes.schemas.SessionUpdate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(Session).options(selectinload(Session.pricing), selectinload(Session.instructors), selectinload(Session.schedule_rules), selectinload(Session.requirements)).where(Session.id == class_id, Session.organization_id == org_id, Session.deleted_at.is_(None))",
+      "select(OrganizationMember.id).where(OrganizationMember.id == member_id, OrganizationMember.organization_id == org_id, OrganizationMember.is_active == True, OrganizationMember.can_teach.is_(True))",
+      "update(ClassOccurrence).where(ClassOccurrence.session_id == session.id, ClassOccurrence.status == OccurrenceStatus.SCHEDULED.value, ClassOccurrence.actual_start_at > now_utc)",
+      "select(ClassOccurrence.id).where(ClassOccurrence.session_id == session.id, ClassOccurrence.actual_start_at > datetime.now(timezone.utc), ClassOccurrence.zoom_connection_id.is_not(None), ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED']))",
+      "select(ClassOccurrence.id).where(ClassOccurrence.session_id == session.id, ClassOccurrence.actual_start_at > datetime.now(timezone.utc), ClassOccurrence.zoom_connection_id.is_not(None), ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED']))",
+      "select(ClassOccurrence).where(ClassOccurrence.session_id == session.id, ClassOccurrence.actual_end_at > datetime.now(timezone.utc), ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED', 'IN_PROGRESS']))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/sessions/{class_id}/toggle-status",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 630,
+    "handler": "toggle_session_status",
+    "dependencies": [
+      "toggle_session_status",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "app.modules.classes.schemas.SessionToggleStatus | None"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(Session).where(Session.id == class_id, Session.organization_id == org_id, Session.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/classes/{class_id}/toggle-status",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/classes/router.py",
+    "line": 630,
+    "handler": "toggle_session_status",
+    "dependencies": [
+      "toggle_session_status",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "app.modules.classes.schemas.SessionToggleStatus | None"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(Session).where(Session.id == class_id, Session.organization_id == org_id, Session.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/membership-tiers",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 68,
+    "handler": "list_membership_tiers",
+    "dependencies": [
+      "list_membership_tiers",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "history"
+    ],
+    "filters": [
+      "select(MembershipTierClass.tier_id, Session.id, Session.name, Session.is_active).join(Session, Session.id == MembershipTierClass.session_id).where(MembershipTierClass.tier_id.in_(tier_ids))",
+      "select(MembershipTier).where(MembershipTier.organization_id == org_id, MembershipTier.deleted_at.is_not(None) if history else MembershipTier.deleted_at.is_(None))",
+      "c_stmt.where(Session.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/membership-tiers",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 125,
+    "handler": "create_membership_tier",
+    "dependencies": [
+      "create_membership_tier",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.membership_tiers.schemas.MembershipTierCreate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(Session.id).where(Session.id.in_(payload.class_ids), Session.organization_id == org_id, Session.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/membership-tiers/{tier_id}",
+    "methods": [
+      "PUT"
+    ],
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 171,
+    "handler": "update_membership_tier",
+    "dependencies": [
+      "update_membership_tier",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.membership_tiers.schemas.MembershipTierUpdate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(MembershipTier).where(MembershipTier.id == tier_id, MembershipTier.organization_id == org_id, MembershipTier.deleted_at.is_(None))",
+      "delete(MembershipTierClass).where(MembershipTierClass.tier_id == tier.id)",
+      "select(Session.id).where(Session.id.in_(payload.class_ids), Session.organization_id == org_id, Session.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/membership-tiers/{tier_id}/toggle-status",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 239,
+    "handler": "toggle_membership_tier_status",
+    "dependencies": [
+      "toggle_membership_tier_status",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "app.modules.membership_tiers.schemas.MembershipTierToggleStatus | None"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(MembershipTier).where(MembershipTier.id == tier_id, MembershipTier.organization_id == org_id, MembershipTier.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/membership-tiers/{tier_id}",
+    "methods": [
+      "DELETE"
+    ],
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 261,
+    "handler": "delete_membership_tier",
+    "dependencies": [
+      "delete_membership_tier",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(MembershipTier).where(MembershipTier.id == tier_id, MembershipTier.organization_id == org_id, MembershipTier.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/billing/progressrooms",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/billing/router.py",
+    "line": 28,
+    "handler": "progressrooms_billing",
+    "dependencies": [
+      "progressrooms_billing",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "month",
+      "teacher_id"
+    ],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/billing/teachers",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/billing/router.py",
+    "line": 131,
+    "handler": "billing_teachers",
+    "dependencies": [
+      "billing_teachers",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(OrganizationMember.id, User.full_name).join(User, User.id == OrganizationMember.user_id).where(OrganizationMember.organization_id == org_id, OrganizationMember.is_active.is_(True), OrganizationMember.role.in_(['STUDIO', 'TEACHER']))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/billing/summary",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/billing/router.py",
+    "line": 150,
+    "handler": "billing_summary",
+    "dependencies": [
+      "billing_summary",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "start_date",
+      "end_date",
+      "interval",
+      "teacher_id",
+      "page",
+      "page_size",
+      "sort_by",
+      "sort_order"
+    ],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/billing/export.csv",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/billing/router.py",
+    "line": 201,
+    "handler": "export_billing_csv",
+    "dependencies": [
+      "export_billing_csv",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "start_date",
+      "end_date",
+      "teacher_id"
+    ],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/saas-billing/access",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/billing/saas_router.py",
+    "line": 46,
+    "handler": "access",
+    "dependencies": [
+      "access",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(OrganizationSubscription).where(OrganizationSubscription.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/saas-billing",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/billing/saas_router.py",
+    "line": 54,
+    "handler": "summary",
+    "dependencies": [
+      "summary",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(OrganizationSubscription).where(OrganizationSubscription.organization_id == org_id)",
+      "select(Plan).where(Plan.slug.in_(['core', 'studio']), Plan.status == 'ACTIVE')",
+      "select(SaaSCheckout).where(SaaSCheckout.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/saas-billing/quote",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/billing/saas_router.py",
+    "line": 74,
+    "handler": "quote",
+    "dependencies": [
+      "quote",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.billing.saas_router.QuoteRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/saas-billing/checkouts",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/billing/saas_router.py",
+    "line": 83,
+    "handler": "checkout",
+    "dependencies": [
+      "checkout",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.billing.saas_router.CheckoutRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/saas-billing/checkouts/{checkout_id}/verify",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/billing/saas_router.py",
+    "line": 98,
+    "handler": "verify",
+    "dependencies": [
+      "verify",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.billing.saas_router.VerifyRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/saas-billing/checkouts/{checkout_id}/reconcile",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/billing/saas_router.py",
+    "line": 111,
+    "handler": "reconcile",
+    "dependencies": [
+      "reconcile",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/saas-billing/webhooks/razorpay",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/billing/saas_router.py",
+    "line": 127,
+    "handler": "webhook",
+    "dependencies": [
+      "webhook",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(SaaSWebhookEvent).where(SaaSWebhookEvent.event_id == event_id)",
+      "select(SaaSCheckout).where(SaaSCheckout.provider_order_id == order_id)",
+      "select(Order.id).where(Order.provider_order_id == order_id)",
+      "select(SaaSWebhookEvent).where(SaaSWebhookEvent.event_id == event_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/occurrences",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/scheduling/router.py",
+    "line": 38,
+    "handler": "get_calendar_occurrences",
+    "dependencies": [
+      "get_calendar_occurrences",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "start_date",
+      "end_date"
+    ],
+    "filters": [
+      "stmt.where(assigned_occurrence(tenant[1].id))",
+      "select(ClassOccurrence).options(selectinload(ClassOccurrence.session), selectinload(ClassOccurrence.instructor).selectinload(OrganizationMember.user)).where(ClassOccurrence.organization_id == org_id, ClassOccurrence.actual_start_at >= start_date, ClassOccurrence.actual_start_at <= end_date)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/reschedule",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/scheduling/router.py",
+    "line": 79,
+    "handler": "reschedule_occurrence",
+    "dependencies": [
+      "reschedule_occurrence",
+      "get_current_user",
+      "",
+      "get_db",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.scheduling.router.ReschedulePayload'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).where(ClassOccurrence.id == occurrence_id, ClassOccurrence.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/cancel",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/scheduling/router.py",
+    "line": 137,
+    "handler": "cancel_occurrence",
+    "dependencies": [
+      "cancel_occurrence",
+      "get_current_user",
+      "",
+      "get_db",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.scheduling.router.CancelPayload'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).where(ClassOccurrence.id == occurrence_id, ClassOccurrence.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/join-link",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/scheduling/router.py",
+    "line": 180,
+    "handler": "create_join_link",
+    "dependencies": [
+      "create_join_link",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/occurrences/teacher-agenda",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/scheduling/router.py",
+    "line": 204,
+    "handler": "teacher_agenda",
+    "dependencies": [
+      "teacher_agenda",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "stmt.where(assigned_occurrence(member.id))",
+      "select(ClassOccurrence).options(selectinload(ClassOccurrence.session)).where(ClassOccurrence.organization_id == org_id, ClassOccurrence.actual_start_at >= start, ClassOccurrence.actual_start_at < end, ClassOccurrence.status != 'CANCELLED')"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/send-invite",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/scheduling/router.py",
+    "line": 239,
+    "handler": "send_occurrence_invites",
+    "dependencies": [
+      "send_occurrence_invites",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/commerce/orders",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/commerce/router.py",
+    "line": 37,
+    "handler": "create_order",
+    "dependencies": [
+      "create_order",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.commerce.router.CreateOrderPayload'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/commerce/payments/verify",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/commerce/router.py",
+    "line": 62,
+    "handler": "verify_payment",
+    "dependencies": [
+      "verify_payment",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.commerce.router.VerifyPaymentPayload'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(Order).where(Order.id == payload.order_id, Order.user_id == current_user.id)",
+      "select(Payment.id).where(Payment.provider_payment_id == payload.razorpay_payment_id)",
+      "select(SessionEnrollment).where(SessionEnrollment.order_id == order.id)"
+    ]
+  },
+  {
+    "path": "/commerce/webhooks/razorpay",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/commerce/router.py",
+    "line": 140,
+    "handler": "razorpay_webhook",
+    "dependencies": [
+      "razorpay_webhook",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(PaymentWebhookEvent.id).where(PaymentWebhookEvent.event_id == event_id)",
+      "select(SaaSCheckout.id).where(SaaSCheckout.provider_order_id == entity.get('order_id'))",
+      "select(Order).where(Order.provider_order_id == entity.get('order_id'))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/attendance",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/attendance/router.py",
+    "line": 26,
+    "handler": "get_attendance_roster",
+    "dependencies": [
+      "get_attendance_roster",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(SessionEnrollment, User, AttendanceRecord.status).join(User, User.id == SessionEnrollment.user_id).outerjoin(AttendanceRecord, and_(AttendanceRecord.session_enrollment_id == SessionEnrollment.id, AttendanceRecord.class_occurrence_id == occurrence_id)).where(SessionEnrollment.organization_id == org_id, SessionEnrollment.session_id == occ.session_id, SessionEnrollment.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/attendance",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/attendance/router.py",
+    "line": 60,
+    "handler": "mark_attendance",
+    "dependencies": [
+      "mark_attendance",
+      "get_current_user",
+      "",
+      "get_db",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.attendance.router.MarkAttendancePayload'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(AttendanceRecord).where(AttendanceRecord.class_occurrence_id == occurrence_id, AttendanceRecord.session_enrollment_id == enr.id)",
+      "select(SessionEnrollment).where(SessionEnrollment.id == payload.enrollment_id, SessionEnrollment.organization_id == org_id, SessionEnrollment.session_id == occ.session_id, SessionEnrollment.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/attendance/teachers/{teacher_id}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/attendance/calendar.py",
+    "line": 50,
+    "handler": "teacher_calendar",
+    "dependencies": [
+      "teacher_calendar",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "month"
+    ],
+    "filters": [
+      "select(OrganizationMember).where(OrganizationMember.id == teacher_id, OrganizationMember.organization_id == org_id, OrganizationMember.can_teach.is_(True))",
+      "select(User.full_name).where(User.id == teacher.user_id)",
+      "select(ClassOccurrence, Session, TeacherAttendance).join(Session, Session.id == ClassOccurrence.session_id).outerjoin(TeacherAttendance, and_(TeacherAttendance.class_occurrence_id == ClassOccurrence.id, TeacherAttendance.teacher_member_id == teacher_id)).where(ClassOccurrence.organization_id == org_id, assigned_occurrence(teacher_id), ClassOccurrence.actual_start_at >= start, ClassOccurrence.actual_start_at < end)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/attendance/teachers/{teacher_id}/occurrences/{occurrence_id}",
+    "methods": [
+      "PUT"
+    ],
+    "file": "app/modules/attendance/calendar.py",
+    "line": 78,
+    "handler": "save_teacher_attendance",
+    "dependencies": [
+      "save_teacher_attendance",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.attendance.calendar.TeacherAttendanceUpdate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(OrganizationMember).where(OrganizationMember.id == teacher_id, OrganizationMember.organization_id == org_id, OrganizationMember.can_teach.is_(True))",
+      "select(TeacherAttendance).where(TeacherAttendance.class_occurrence_id == occurrence_id, TeacherAttendance.teacher_member_id == teacher_id)",
+      "select(ClassOccurrence).where(ClassOccurrence.id == occurrence_id, ClassOccurrence.organization_id == org_id, assigned_occurrence(teacher_id))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/attendance/students/{student_id}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/attendance/calendar.py",
+    "line": 101,
+    "handler": "student_calendar",
+    "dependencies": [
+      "student_calendar",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "month"
+    ],
+    "filters": [
+      "select(ClassOccurrence, Session, AttendanceRecord, SessionEnrollment).join(Session, Session.id == ClassOccurrence.session_id).join(SessionEnrollment, and_(SessionEnrollment.session_id == Session.id, SessionEnrollment.user_id == student_id, SessionEnrollment.organization_id == org_id)).outerjoin(AttendanceRecord, and_(AttendanceRecord.class_occurrence_id == ClassOccurrence.id, AttendanceRecord.session_enrollment_id == SessionEnrollment.id)).where(ClassOccurrence.organization_id == org_id, ClassOccurrence.actual_start_at >= start, ClassOccurrence.actual_start_at < end, ClassOccurrence.actual_start_at >= SessionEnrollment.valid_from, SessionEnrollment.valid_until.is_(None) | (ClassOccurrence.actual_start_at <= SessionEnrollment.valid_until))",
+      "stmt.where(assigned_occurrence(member.id))"
+    ]
+  },
+  {
+    "path": "/public/website-templates",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 54,
+    "handler": "website_templates",
+    "dependencies": [
+      "website_templates"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/public/website-templates/{code}/preview",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 59,
+    "handler": "template_preview",
+    "dependencies": [
+      "template_preview"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/public/website-assets/{filename}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 69,
+    "handler": "template_asset",
+    "dependencies": [
+      "template_asset"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/website-workspace",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 79,
+    "handler": "website_workspace",
+    "dependencies": [
+      "website_workspace",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Organization).join(OrganizationMember).where(OrganizationMember.user_id == user.id, OrganizationMember.is_active == True, OrganizationMember.role.in_([role.value for role in EDITOR_ROLES]), Organization.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/website",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 88,
+    "handler": "get_website_editor",
+    "dependencies": [
+      "get_website_editor",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/public/organizations/{org_slug}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 129,
+    "handler": "get_public_organization_website",
+    "dependencies": [
+      "get_public_organization_website",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Organization).options(selectinload(Organization.website).selectinload(OrganizationWebsite.template), selectinload(Organization.members).selectinload(OrganizationMember.user), selectinload(Organization.class_types), selectinload(Organization.sessions).selectinload(Session.pricing), selectinload(Organization.sessions).selectinload(Session.schedule_rules), selectinload(Organization.sessions).selectinload(Session.instructors).selectinload(SessionInstructor.member).selectinload(OrganizationMember.user)).where(Organization.slug == org_slug, Organization.status == 'ACTIVE', Organization.deleted_at.is_(None))",
+      "select(SessionEnrollment.session_id, func.count(SessionEnrollment.id)).where(SessionEnrollment.organization_id == org.id, SessionEnrollment.session_id.in_([s.id for s in active_public_sessions]), SessionEnrollment.status == 'ACTIVE')",
+      "select(MembershipTier).options(selectinload(MembershipTier.classes).selectinload(MembershipTierClass.session)).where(MembershipTier.organization_id == org.id, MembershipTier.is_active == True, MembershipTier.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/public/organizations/{org_slug}/sessions/{session_slug}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 243,
+    "handler": "get_public_session_detail",
+    "dependencies": [
+      "get_public_session_detail",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Session).join(Session.organization).options(selectinload(Session.organization), selectinload(Session.class_type), selectinload(Session.pricing), selectinload(Session.requirements), selectinload(Session.schedule_rules), selectinload(Session.instructors).selectinload(SessionInstructor.member).selectinload(OrganizationMember.user)).where(Organization.slug == org_slug, Organization.status == 'ACTIVE', Organization.deleted_at.is_(None), Session.slug == session_slug, Session.is_public == True, Session.is_active == True, Session.deleted_at.is_(None))",
+      "select(OrganizationSetting).where(OrganizationSetting.organization_id == session.organization_id)",
+      "select(ClassOccurrence).where(ClassOccurrence.session_id == session.id, ClassOccurrence.status == 'SCHEDULED', ClassOccurrence.actual_start_at >= now_utc)",
+      "select(func.count(SessionEnrollment.id)).where(SessionEnrollment.session_id == session.id, SessionEnrollment.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/public/organizations/{org_slug}/classes/{session_slug}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 243,
+    "handler": "get_public_session_detail",
+    "dependencies": [
+      "get_public_session_detail",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Session).join(Session.organization).options(selectinload(Session.organization), selectinload(Session.class_type), selectinload(Session.pricing), selectinload(Session.requirements), selectinload(Session.schedule_rules), selectinload(Session.instructors).selectinload(SessionInstructor.member).selectinload(OrganizationMember.user)).where(Organization.slug == org_slug, Organization.status == 'ACTIVE', Organization.deleted_at.is_(None), Session.slug == session_slug, Session.is_public == True, Session.is_active == True, Session.deleted_at.is_(None))",
+      "select(OrganizationSetting).where(OrganizationSetting.organization_id == session.organization_id)",
+      "select(ClassOccurrence).where(ClassOccurrence.session_id == session.id, ClassOccurrence.status == 'SCHEDULED', ClassOccurrence.actual_start_at >= now_utc)",
+      "select(func.count(SessionEnrollment.id)).where(SessionEnrollment.session_id == session.id, SessionEnrollment.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/website",
+    "methods": [
+      "PUT"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 386,
+    "handler": "update_organization_website",
+    "dependencies": [
+      "update_organization_website",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.websites.schemas.WebsiteUpdatePayload'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(WebsiteTemplate).where(WebsiteTemplate.code == payload.template_code)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/website/preview",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 405,
+    "handler": "preview_website",
+    "dependencies": [
+      "preview_website",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.websites.schemas.WebsiteUpdatePayload'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/website/publish",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 413,
+    "handler": "publish_website",
+    "dependencies": [
+      "publish_website",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(WebsiteTemplate).where(WebsiteTemplate.code == content.template_code)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/website/download/{version}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 442,
+    "handler": "download_website",
+    "dependencies": [
+      "download_website",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/public/organizations/{org_slug}/website-html",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 450,
+    "handler": "public_website_html",
+    "dependencies": [
+      "public_website_html",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Organization).options(selectinload(Organization.website).selectinload(OrganizationWebsite.template)).where(Organization.slug == org_slug, Organization.status == 'ACTIVE', Organization.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/website/image",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 474,
+    "handler": "upload_website_image",
+    "dependencies": [
+      "upload_website_image",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "file",
+        "type": "<class 'fastapi.datastructures.UploadFile'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/public/website-images/{filename}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/websites/router.py",
+    "line": 493,
+    "handler": "website_image",
+    "dependencies": [
+      "website_image"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/student/studios",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/student/router.py",
+    "line": 28,
+    "handler": "get_my_studios",
+    "dependencies": [
+      "get_my_studios",
+      "require_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(OrganizationStudent.organization_id).where(OrganizationStudent.user_id == current_user.id, OrganizationStudent.status == 'ACTIVE')",
+      "select(SessionEnrollment.organization_id).where(SessionEnrollment.user_id == current_user.id)",
+      "select(Organization).where(Organization.status == 'ACTIVE', Organization.deleted_at.is_(None), or_(Organization.id.in_(assigned), Organization.id.in_(enrolled)))"
+    ]
+  },
+  {
+    "path": "/student/enrollments",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/student/router.py",
+    "line": 41,
+    "handler": "get_my_enrollments",
+    "dependencies": [
+      "get_my_enrollments",
+      "require_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(SessionEnrollment).options(selectinload(SessionEnrollment.session).selectinload(Session.organization)).where(SessionEnrollment.user_id == current_user.id)",
+      "select(MembershipTier.id, MembershipTier.name, MembershipTier.organization_id, MembershipTier.description).where(MembershipTier.is_active == True, MembershipTier.deleted_at.is_(None))",
+      "select(Order.id, Order.credit_limit).where(Order.id.in_(purchase_ids))",
+      "select(AttendanceRecord.session_enrollment_id, func.count(AttendanceRecord.id)).where(AttendanceRecord.session_enrollment_id.in_(enrollment_ids), AttendanceRecord.status.in_(['EXCUSED', 'CANCELLED']))",
+      "select(SessionEnrollment.purchase_order_id, func.sum(SessionEnrollment.sessions_attended)).where(SessionEnrollment.purchase_order_id.in_(purchase_ids))"
+    ]
+  },
+  {
+    "path": "/student/upcoming-classes",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/student/router.py",
+    "line": 106,
+    "handler": "get_my_upcoming_classes",
+    "dependencies": [
+      "get_my_upcoming_classes",
+      "require_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(AttendanceRecord.class_occurrence_id).join(SessionEnrollment, AttendanceRecord.session_enrollment_id == SessionEnrollment.id).where(SessionEnrollment.user_id == current_user.id, AttendanceRecord.status.in_(['EXCUSED', 'CANCELLED']))",
+      "select(SessionEnrollment.session_id).where(SessionEnrollment.user_id == current_user.id, SessionEnrollment.status == EnrollmentStatus.ACTIVE.value, SessionEnrollment.valid_from <= ClassOccurrence.actual_start_at, or_(SessionEnrollment.valid_until.is_(None), SessionEnrollment.valid_until > now), or_(SessionEnrollment.valid_until.is_(None), SessionEnrollment.valid_until > ClassOccurrence.actual_start_at))",
+      "select(ClassOccurrence).options(selectinload(ClassOccurrence.session).selectinload(Session.organization), selectinload(ClassOccurrence.instructor).selectinload(OrganizationMember.user)).where(ClassOccurrence.session_id.in_(enr_stmt), ClassOccurrence.id.not_in(excused_occ_ids), ClassOccurrence.status.in_(['SCHEDULED', 'RESCHEDULED', 'IN_PROGRESS']), ClassOccurrence.session_id.in_(select(Session.id).join(Organization).where(Session.is_active == True, Session.deleted_at.is_(None), Organization.status == 'ACTIVE', Organization.deleted_at.is_(None))), ClassOccurrence.actual_end_at > now, ClassOccurrence.actual_start_at <= future)",
+      "select(Session.id).join(Organization).where(Session.is_active == True, Session.deleted_at.is_(None), Organization.status == 'ACTIVE', Organization.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/student/classes/{occurrence_id}/meeting-url",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/student/router.py",
+    "line": 169,
+    "handler": "get_class_meeting_url",
+    "dependencies": [
+      "get_class_meeting_url",
+      "require_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).options(selectinload(ClassOccurrence.session).selectinload(Session.organization)).where(ClassOccurrence.id == occurrence_id)",
+      "select(SessionEnrollment).where(SessionEnrollment.session_id == occ.session_id, SessionEnrollment.organization_id == occ.organization_id, SessionEnrollment.user_id == current_user.id, SessionEnrollment.status.in_(['ACTIVE', 'EXPIRED'] if historical else ['ACTIVE']), SessionEnrollment.valid_from <= access_at, or_(SessionEnrollment.valid_until.is_(None), SessionEnrollment.valid_until >= access_at))"
+    ]
+  },
+  {
+    "path": "/student/classes/{occurrence_id}/cancel",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/student/router.py",
+    "line": 223,
+    "handler": "cancel_student_class_booking",
+    "dependencies": [
+      "cancel_student_class_booking",
+      "require_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).options(selectinload(ClassOccurrence.session).selectinload(Session.organization)).where(ClassOccurrence.id == occurrence_id)",
+      "select(SessionEnrollment).where(SessionEnrollment.session_id == occ.session_id, SessionEnrollment.user_id == current_user.id, SessionEnrollment.status == 'ACTIVE')",
+      "select(AttendanceRecord).where(AttendanceRecord.class_occurrence_id == occ.id, AttendanceRecord.session_enrollment_id == enr.id)"
+    ]
+  },
+  {
+    "path": "/student/classes/{occurrence_id}/available-reschedule-slots",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/student/router.py",
+    "line": 286,
+    "handler": "get_available_reschedule_slots",
+    "dependencies": [
+      "get_available_reschedule_slots",
+      "require_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).options(selectinload(ClassOccurrence.session).selectinload(Session.organization), selectinload(ClassOccurrence.instructor).selectinload(OrganizationMember.user)).where(ClassOccurrence.id == occurrence_id)",
+      "select(SessionEnrollment).where(SessionEnrollment.session_id == occ.session_id, SessionEnrollment.user_id == current_user.id, SessionEnrollment.status == 'ACTIVE')",
+      "select(ClassOccurrence).options(selectinload(ClassOccurrence.instructor).selectinload(OrganizationMember.user)).where(ClassOccurrence.session_id == occ.session_id, ClassOccurrence.id != occ.id, ClassOccurrence.status == 'SCHEDULED', ClassOccurrence.actual_start_at >= min_reschedule_time, ClassOccurrence.actual_start_at <= max_reschedule_time)",
+      "select(AttendanceRecord).where(AttendanceRecord.class_occurrence_id == s.id, AttendanceRecord.session_enrollment_id == enr.id)"
+    ]
+  },
+  {
+    "path": "/student/classes/{occurrence_id}/reschedule",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/student/router.py",
+    "line": 359,
+    "handler": "reschedule_student_class_booking",
+    "dependencies": [
+      "reschedule_student_class_booking",
+      "require_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.student.router.RescheduleBookingRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).options(selectinload(ClassOccurrence.session)).where(ClassOccurrence.id == occurrence_id)",
+      "select(ClassOccurrence).options(selectinload(ClassOccurrence.session)).where(ClassOccurrence.id == payload.target_occurrence_id)",
+      "select(SessionEnrollment).where(SessionEnrollment.session_id == source_occ.session_id, SessionEnrollment.user_id == current_user.id, SessionEnrollment.status == 'ACTIVE')",
+      "select(AttendanceRecord).where(AttendanceRecord.class_occurrence_id == source_occ.id, AttendanceRecord.session_enrollment_id == enr.id)",
+      "select(AttendanceRecord).where(AttendanceRecord.class_occurrence_id == target_occ.id, AttendanceRecord.session_enrollment_id == enr.id)"
+    ]
+  },
+  {
+    "path": "/student/attendance",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/student/router.py",
+    "line": 453,
+    "handler": "get_my_attendance",
+    "dependencies": [
+      "get_my_attendance",
+      "require_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "month",
+      "studio_id"
+    ],
+    "filters": [
+      "stmt.where(Organization.id == studio_id)",
+      "select(ClassOccurrence, Session, AttendanceRecord, SessionEnrollment, Organization).options(selectinload(ClassOccurrence.instructor).selectinload(OrganizationMember.user)).join(Session, Session.id == ClassOccurrence.session_id).join(Organization, Organization.id == Session.organization_id).join(SessionEnrollment, and_(SessionEnrollment.session_id == Session.id, SessionEnrollment.user_id == current_user.id)).outerjoin(AttendanceRecord, and_(AttendanceRecord.class_occurrence_id == ClassOccurrence.id, AttendanceRecord.session_enrollment_id == SessionEnrollment.id)).where(ClassOccurrence.actual_start_at >= start, ClassOccurrence.actual_start_at < end, ClassOccurrence.actual_start_at >= SessionEnrollment.valid_from, SessionEnrollment.valid_until.is_(None) | (ClassOccurrence.actual_start_at <= SessionEnrollment.valid_until))"
+    ]
+  },
+  {
+    "path": "/student/classes/{occurrence_id}/send-invite",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/student/router.py",
+    "line": 548,
+    "handler": "send_my_class_invite",
+    "dependencies": [
+      "send_my_class_invite",
+      "require_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(ClassOccurrence).where(ClassOccurrence.id == occurrence_id)"
+    ]
+  },
+  {
+    "path": "/students",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/students/router.py",
+    "line": 38,
+    "handler": "list_students",
+    "dependencies": [
+      "list_students",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "page",
+      "page_size",
+      "search",
+      "status",
+      "studio_id",
+      "sort_by",
+      "sort_order"
+    ],
+    "filters": [
+      "select(OrganizationStudent, User).join(User).where(OrganizationStudent.organization_id == org.id)",
+      "stmt.where(or_(User.full_name.ilike(f'%{search}%'), User.email.ilike(f'%{search}%'), User.phone.ilike(f'%{search}%')))",
+      "stmt.where(OrganizationStudent.status == status)",
+      "select(SessionEnrollment.user_id, func.count(SessionEnrollment.id), func.sum(SessionEnrollment.sessions_attended), func.sum(SessionEnrollment.total_sessions)).where(SessionEnrollment.organization_id == org.id, SessionEnrollment.user_id.in_([user.id for _, user in rows]))"
+    ]
+  },
+  {
+    "path": "/students/{record_id}",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/students/router.py",
+    "line": 83,
+    "handler": "update_student",
+    "dependencies": [
+      "update_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.students.router.StudentUpdate'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(OrganizationMember).where(OrganizationMember.id == payload.teacher_member_id, OrganizationMember.organization_id == org.id, OrganizationMember.can_teach.is_(True), OrganizationMember.is_active == True)"
+    ]
+  },
+  {
+    "path": "/students",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/students/router.py",
+    "line": 123,
+    "handler": "add_registered_student",
+    "dependencies": [
+      "add_registered_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.students.router.AddStudent'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(User).where(User.email == payload.email.lower(), User.role == 'STUDENT', User.is_active == True, User.is_verified == True, User.deleted_at.is_(None), User.account_status == 'ACTIVE')",
+      "select(OrganizationStudent).where(OrganizationStudent.organization_id == org.id, OrganizationStudent.user_id == student.id)",
+      "select(SessionEnrollment.id).where(SessionEnrollment.session_id == cls.id, SessionEnrollment.user_id == student.id, SessionEnrollment.status.in_(['ACTIVE', 'PAUSED']))",
+      "select(OrganizationMember).where(OrganizationMember.id == payload.teacher_member_id, OrganizationMember.organization_id == org.id, OrganizationMember.can_teach.is_(True), OrganizationMember.is_active == True)",
+      "select(SessionPricing).where(SessionPricing.session_id == cls.id)",
+      "select(Session).where(Session.id == payload.class_id, Session.organization_id == org.id, Session.deleted_at.is_(None), Session.is_active == True)",
+      "select(func.count(SessionEnrollment.id)).where(SessionEnrollment.session_id == cls.id, SessionEnrollment.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/students/{record_id}/enrollments",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/students/router.py",
+    "line": 186,
+    "handler": "student_enrollments",
+    "dependencies": [
+      "student_enrollments",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(SessionEnrollment, Session.name).join(Session).where(SessionEnrollment.organization_id == record.organization_id, SessionEnrollment.user_id == record.user_id)"
+    ]
+  },
+  {
+    "path": "/students/{record_id}/enrollments/{enrollment_id}/{action}",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/students/router.py",
+    "line": 199,
+    "handler": "change_enrollment_pause",
+    "dependencies": [
+      "change_enrollment_pause",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(SessionEnrollment.id).where(SessionEnrollment.organization_id == record.organization_id, SessionEnrollment.user_id == record.user_id, SessionEnrollment.id != enrollment.id, SessionEnrollment.status.in_(['ACTIVE', 'PAUSED']))",
+      "select(SessionEnrollment).where(SessionEnrollment.id == enrollment_id, SessionEnrollment.organization_id == record.organization_id, SessionEnrollment.user_id == record.user_id)"
+    ]
+  },
+  {
+    "path": "/teachers/public/lookup",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/teachers/router.py",
+    "line": 62,
+    "handler": "public_teacher_lookup",
+    "dependencies": [
+      "public_teacher_lookup",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "query"
+    ],
+    "filters": [
+      "select(OrganizationMember).where(OrganizationMember.teacher_code == q)",
+      "select(User).join(OrganizationMember).where(OrganizationMember.can_teach.is_(True), OrganizationMember.is_active.is_(True), User.full_name.ilike(f'%{q}%'))",
+      "select(OrganizationMember.id).where(OrganizationMember.user_id == user.id, OrganizationMember.can_teach.is_(True))",
+      "select(func.count(SessionEnrollment.id)).where(SessionEnrollment.session_id == s.id, SessionEnrollment.status == 'ACTIVE')",
+      "select(OrganizationMember, Organization).join(Organization, OrganizationMember.organization_id == Organization.id).where(OrganizationMember.user_id == user.id, OrganizationMember.can_teach.is_(True), OrganizationMember.is_active.is_(True), Organization.status == 'ACTIVE', Organization.deleted_at.is_(None))",
+      "select(OrganizationMember).where(OrganizationMember.user_id == user.id, OrganizationMember.can_teach.is_(True), OrganizationMember.is_active.is_(True))",
+      "select(ClassOccurrence).where(ClassOccurrence.session_id == s.id, ClassOccurrence.status == 'SCHEDULED', ClassOccurrence.actual_start_at >= now_utc)",
+      "select(Session).join(SessionInstructor, SessionInstructor.session_id == Session.id).options(selectinload(Session.pricing), selectinload(Session.instructors).selectinload(SessionInstructor.member).selectinload(OrganizationMember.user), selectinload(Session.schedule_rules)).where(SessionInstructor.member_id == m.id, Session.organization_id == org.id, Session.is_active.is_(True), Session.is_public.is_(True), Session.deleted_at.is_(None))",
+      "select(MembershipTier).options(selectinload(MembershipTier.classes).selectinload(MembershipTierClass.session)).where(MembershipTier.organization_id == org.id, MembershipTier.is_active.is_(True), MembershipTier.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/teachers/public/{code_or_id}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/teachers/router.py",
+    "line": 257,
+    "handler": "public_teacher_profile",
+    "dependencies": [
+      "public_teacher_profile",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/teachers",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/teachers/router.py",
+    "line": 261,
+    "handler": "list_studio_teachers",
+    "dependencies": [
+      "list_studio_teachers",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "studio_id",
+      "search",
+      "page",
+      "page_size",
+      "sort_by",
+      "sort_order"
+    ],
+    "filters": [
+      "select(OrganizationMember, User).join(User).where(*filters)",
+      "select(func.count(OrganizationMember.id)).join(User).where(*filters, OrganizationMember.is_active.is_(True))"
+    ]
+  },
+  {
+    "path": "/teachers",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/teachers/router.py",
+    "line": 286,
+    "handler": "create_studio_teacher",
+    "dependencies": [
+      "create_studio_teacher",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.teachers.router.TeacherCreateRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(User.id).where(or_(User.email == email, User.username == username))"
+    ]
+  },
+  {
+    "path": "/teachers/{member_id}",
+    "methods": [
+      "PUT"
+    ],
+    "file": "app/modules/teachers/router.py",
+    "line": 320,
+    "handler": "update_studio_teacher",
+    "dependencies": [
+      "update_studio_teacher",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.teachers.router.TeacherUpdateRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(User.id).where(getattr(User, key) == values[key], User.id != user.id)",
+      "update(Session).where(Session.id.in_(select(SessionInstructor.session_id).where(SessionInstructor.member_id == member.id)), Session.organization_id == org.id, Session.is_active == True)",
+      "select(SessionInstructor.session_id).where(SessionInstructor.member_id == member.id)"
+    ]
+  },
+  {
+    "path": "/teachers/{member_id}",
+    "methods": [
+      "DELETE"
+    ],
+    "file": "app/modules/teachers/router.py",
+    "line": 367,
+    "handler": "remove_studio_teacher",
+    "dependencies": [
+      "remove_studio_teacher",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "update(Session).where(Session.id.in_(select(SessionInstructor.session_id).where(SessionInstructor.member_id == member.id)), Session.organization_id == org.id, Session.is_active == True)",
+      "select(SessionInstructor.session_id).where(SessionInstructor.member_id == member.id)"
+    ]
+  },
+  {
+    "path": "/teachers/{member_id}/password",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/teachers/router.py",
+    "line": 390,
+    "handler": "teacher_password",
+    "dependencies": [
+      "teacher_password",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.teachers.router.CredentialRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/teachers/{member_id}/invitation",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/teachers/router.py",
+    "line": 398,
+    "handler": "invite_teacher",
+    "dependencies": [
+      "invite_teacher",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.teachers.router.CredentialRequest'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(User).where(User.id == user.id)"
+    ]
+  },
+  {
+    "path": "/admin/metrics",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 18,
+    "handler": "get_admin_metrics",
+    "dependencies": [
+      "get_admin_metrics",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(func.sum(Order.total_amount)).where(Order.status == 'PAID')",
+      "select(func.count(OrganizationSubscription.id)).where(OrganizationSubscription.status == 'ACTIVE')"
+    ]
+  },
+  {
+    "path": "/admin/organizations",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 49,
+    "handler": "list_all_organizations",
+    "dependencies": [
+      "list_all_organizations",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(Organization).where(Organization.deleted_at.is_(None))",
+      "select(OrganizationMember.organization_id, User.full_name, User.email).join(User, User.id == OrganizationMember.user_id).where(OrganizationMember.role == 'STUDIO')",
+      "select(OrganizationMember.organization_id, func.count(OrganizationMember.id)).where(OrganizationMember.can_teach.is_(True))",
+      "select(StudentJoinEvent.organization_id, StudentJoinEvent.month).where(StudentJoinEvent.month.in_(set(months.values())), or_(StudentJoinEvent.pricing_region.is_(None), StudentJoinEvent.pricing_region != 'INDIA'))",
+      "select(StudentJoinEvent.organization_id, StudentJoinEvent.month, func.count(func.distinct(StudentJoinEvent.user_id))).where(StudentJoinEvent.month.in_(set(months.values())))"
+    ]
+  },
+  {
+    "path": "/admin/organizations/{org_id}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 107,
+    "handler": "studio_details",
+    "dependencies": [
+      "studio_details",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(OrganizationSetting).where(OrganizationSetting.organization_id == org_id)",
+      "select(OrganizationWebsite).where(OrganizationWebsite.organization_id == org_id)",
+      "select(User.full_name, User.email).join(OrganizationMember, OrganizationMember.user_id == User.id).where(OrganizationMember.organization_id == org_id, OrganizationMember.role == 'STUDIO')",
+      "select(func.count(OrganizationMember.id)).where(OrganizationMember.organization_id == org_id, OrganizationMember.can_teach.is_(True))",
+      "select(func.count(OrganizationStudent.id)).where(OrganizationStudent.organization_id == org_id)",
+      "select(func.count(func.distinct(StudentJoinEvent.user_id))).where(StudentJoinEvent.organization_id == org_id, StudentJoinEvent.month == month_at(org, datetime.now(timezone.utc)))"
+    ]
+  },
+  {
+    "path": "/admin/organizations/{org_id}/progressrooms",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 155,
+    "handler": "studio_billing_dashboard",
+    "dependencies": [
+      "studio_billing_dashboard",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "month",
+      "teacher_id"
+    ],
+    "filters": []
+  },
+  {
+    "path": "/admin/organizations/{org_id}/teachers",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 167,
+    "handler": "studio_teacher_filters",
+    "dependencies": [
+      "studio_teacher_filters",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(OrganizationMember.id, User.full_name).join(User, User.id == OrganizationMember.user_id).where(OrganizationMember.organization_id == org_id, OrganizationMember.can_teach.is_(True))"
+    ]
+  },
+  {
+    "path": "/admin/instructors",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 173,
+    "handler": "list_all_instructors",
+    "dependencies": [
+      "list_all_instructors",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "page",
+      "page_size",
+      "search",
+      "status"
+    ],
+    "filters": [
+      "select(OrganizationMember, User, Organization).join(User, User.id == OrganizationMember.user_id).join(Organization, Organization.id == OrganizationMember.organization_id).where(User.deleted_at.is_(None), Organization.deleted_at.is_(None), OrganizationMember.can_teach.is_(True))",
+      "stmt.where(or_(func.lower(User.full_name).like(search_term), func.lower(User.email).like(search_term), func.lower(Organization.name).like(search_term), func.lower(OrganizationMember.title).like(search_term)))",
+      "stmt.where(OrganizationMember.is_active == True)",
+      "stmt.where(OrganizationMember.is_active == False)"
+    ]
+  },
+  {
+    "path": "/admin/instructors/{member_id}/toggle-status",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 248,
+    "handler": "toggle_instructor_status",
+    "dependencies": [
+      "toggle_instructor_status",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(OrganizationMember).where(OrganizationMember.id == member_id)"
+    ]
+  },
+  {
+    "path": "/admin/instructors/{member_id}/zoom-impact",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 277,
+    "handler": "instructor_zoom_impact",
+    "dependencies": [
+      "instructor_zoom_impact",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/admin/organizations/{org_id}/status",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 293,
+    "handler": "set_studio_status",
+    "dependencies": [
+      "set_studio_status",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.admin.router.StudioState'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/admin/organizations/{org_id}",
+    "methods": [
+      "DELETE"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 304,
+    "handler": "delete_studio",
+    "dependencies": [
+      "delete_studio",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/admin/people",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 315,
+    "handler": "list_people",
+    "dependencies": [
+      "list_people",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "role",
+      "search",
+      "page",
+      "page_size"
+    ],
+    "filters": [
+      "select(User).where(User.role == role, User.deleted_at.is_(None))",
+      "stmt.where(or_(func.lower(User.full_name).like(term), func.lower(User.email).like(term)))",
+      "select(association.user_id, Organization.name).join(Organization, Organization.id == association.organization_id).where(association.user_id.in_(ids), Organization.deleted_at.is_(None))"
+    ]
+  },
+  {
+    "path": "/admin/people/{user_id}",
+    "methods": [
+      "DELETE"
+    ],
+    "file": "app/modules/admin/router.py",
+    "line": 337,
+    "handler": "delete_person",
+    "dependencies": [
+      "delete_person",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(User).where(User.id == user_id)",
+      "select(OrganizationMember).where(OrganizationMember.user_id == user.id)"
+    ]
+  },
+  {
+    "path": "/admin/health",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/admin/health.py",
+    "line": 111,
+    "handler": "platform_health",
+    "dependencies": [
+      "platform_health",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "period",
+      "tz"
+    ],
+    "filters": []
+  },
+  {
+    "path": "/organizations/{org_id}/support-tickets",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/support/router.py",
+    "line": 42,
+    "handler": "list_org_tickets",
+    "dependencies": [
+      "list_org_tickets",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "status_filter"
+    ],
+    "filters": [
+      "select(SupportTicket).options(selectinload(SupportTicket.messages)).where(SupportTicket.organization_id == org_id)",
+      "stmt.where(SupportTicket.status == status_filter)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/support-tickets/{ticket_id}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/support/router.py",
+    "line": 78,
+    "handler": "get_org_ticket_detail",
+    "dependencies": [
+      "get_org_ticket_detail",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(SupportTicket).options(selectinload(SupportTicket.messages)).where(SupportTicket.id == ticket_id, SupportTicket.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/support-tickets/{ticket_id}/messages",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/support/router.py",
+    "line": 115,
+    "handler": "send_org_ticket_message",
+    "dependencies": [
+      "send_org_ticket_message",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.support.router.SendMessagePayload'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(SupportTicket).where(SupportTicket.id == ticket_id, SupportTicket.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/organizations/{org_id}/support-tickets/{ticket_id}/status",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/support/router.py",
+    "line": 161,
+    "handler": "update_org_ticket_status",
+    "dependencies": [
+      "update_org_ticket_status",
+      "require_org_role.<locals>.dependency",
+      "get_current_tenant_member",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.support.router.UpdateTicketStatusPayload'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(SupportTicket).where(SupportTicket.id == ticket_id, SupportTicket.organization_id == org_id)"
+    ]
+  },
+  {
+    "path": "/student/support-tickets",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/support/router.py",
+    "line": 199,
+    "handler": "list_student_tickets",
+    "dependencies": [
+      "list_student_tickets",
+      "support_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(SupportTicket).options(selectinload(SupportTicket.messages), selectinload(SupportTicket.organization)).where(SupportTicket.student_id == current_user.id)"
+    ]
+  },
+  {
+    "path": "/student/support-tickets",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/support/router.py",
+    "line": 230,
+    "handler": "create_student_ticket",
+    "dependencies": [
+      "create_student_ticket",
+      "support_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.support.router.CreateTicketPayload'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(Organization).where(Organization.id == payload.organization_id, Organization.status == 'ACTIVE', Organization.deleted_at.is_(None))",
+      "select(OrganizationStudent.id).where(OrganizationStudent.organization_id == org.id, OrganizationStudent.user_id == current_user.id)",
+      "select(SessionEnrollment.id).where(SessionEnrollment.organization_id == org.id, SessionEnrollment.user_id == current_user.id)"
+    ]
+  },
+  {
+    "path": "/student/support-tickets/{ticket_id}",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/support/router.py",
+    "line": 283,
+    "handler": "get_student_ticket_detail",
+    "dependencies": [
+      "get_student_ticket_detail",
+      "support_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": [
+      "select(SupportTicket).options(selectinload(SupportTicket.messages), selectinload(SupportTicket.organization)).where(SupportTicket.id == ticket_id, SupportTicket.student_id == current_user.id)"
+    ]
+  },
+  {
+    "path": "/student/support-tickets/{ticket_id}/messages",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/support/router.py",
+    "line": 322,
+    "handler": "send_student_ticket_message",
+    "dependencies": [
+      "send_student_ticket_message",
+      "support_student",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.support.router.SendMessagePayload'>"
+      }
+    ],
+    "query": [],
+    "filters": [
+      "select(SupportTicket).where(SupportTicket.id == ticket_id, SupportTicket.student_id == current_user.id)"
+    ]
+  },
+  {
+    "path": "/admin/communication/settings",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/communication/router.py",
+    "line": 52,
+    "handler": "get_communication_settings",
+    "dependencies": [
+      "get_communication_settings",
+      "require_communication_tester",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/admin/communication/settings",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/communication/router.py",
+    "line": 64,
+    "handler": "patch_communication_settings",
+    "dependencies": [
+      "patch_communication_settings",
+      "require_communication_tester",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.communication.schemas.CommunicationSettingsUpdate'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/admin/communication/test",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/communication/router.py",
+    "line": 84,
+    "handler": "trigger_communication_test",
+    "dependencies": [
+      "trigger_communication_test",
+      "require_communication_tester",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.communication.schemas.CommunicationTestPayload'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/admin/communication/history",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/communication/router.py",
+    "line": 98,
+    "handler": "get_communication_history",
+    "dependencies": [
+      "get_communication_history",
+      "require_communication_tester",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "page",
+      "page_size",
+      "channel",
+      "status_filter"
+    ],
+    "filters": [
+      "stmt.where(CommunicationLog.channel == channel.upper())",
+      "stmt.where(CommunicationLog.status == status_filter.upper())"
+    ]
+  },
+  {
+    "path": "/admin/communication/audit-logs",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/communication/router.py",
+    "line": 158,
+    "handler": "get_communication_audit_logs",
+    "dependencies": [
+      "get_communication_audit_logs",
+      "require_communication_tester",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [
+      "limit"
+    ],
+    "filters": []
+  },
+  {
+    "path": "/admin/communication/budgets",
+    "methods": [
+      "GET"
+    ],
+    "file": "app/modules/communication/router.py",
+    "line": 189,
+    "handler": "list_studio_budgets",
+    "dependencies": [
+      "list_studio_budgets",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/admin/communication/budgets/{organization_id}",
+    "methods": [
+      "PATCH"
+    ],
+    "file": "app/modules/communication/router.py",
+    "line": 201,
+    "handler": "patch_studio_budget",
+    "dependencies": [
+      "patch_studio_budget",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [
+      {
+        "name": "payload",
+        "type": "<class 'app.modules.communication.schemas.StudioBudgetUpdate'>"
+      }
+    ],
+    "query": [],
+    "filters": []
+  },
+  {
+    "path": "/admin/communication/run-engine-cycle",
+    "methods": [
+      "POST"
+    ],
+    "file": "app/modules/communication/router.py",
+    "line": 227,
+    "handler": "trigger_engine_cycle",
+    "dependencies": [
+      "trigger_engine_cycle",
+      "require_superadmin",
+      "get_current_user",
+      "",
+      "get_db",
+      "get_db"
+    ],
+    "body": [],
+    "query": [],
+    "filters": []
+  }
+]

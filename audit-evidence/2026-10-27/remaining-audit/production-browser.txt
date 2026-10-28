@@ -1,0 +1,76 @@
+
+> progressrooms-web@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:81633) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer]  ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+[WebServer] (node:81644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 54 tests using 2 workers
+
+(node:81674) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81673) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /login (909ms)
+  ✓   2 [chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /register?role=STUDENT (922ms)
+  ✓   4 [chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /privacy (582ms)
+  ✓   3 [chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /register?role=STUDIO (625ms)
+  ✓   6 [chromium] › tests/browser/accessibility.spec.ts:10:5 › privacy dialog keyboard focus is contained, Escape closes and returns focus without consenting (433ms)
+  ✓   5 [chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /pricing-policy (575ms)
+  ✓   8 [chromium] › tests/browser/auth.spec.ts:2:5 › student registration requires consent, preserves password, verifies OTP and returns to next (617ms)
+  ✓   7 [chromium] › tests/browser/accessibility.spec.ts:16:5 › native checkout dialog and billing controls are accessible (1.2s)
+  ✓   9 [chromium] › tests/browser/auth.spec.ts:18:5 › login reports rejected credentials, then preserves next and exact password (420ms)
+  ✓  10 [chromium] › tests/browser/auth.spec.ts:26:5 › expired staff session redirects with requested studio destination intact (368ms)
+  ✓  11 [chromium] › tests/browser/auth.spec.ts:31:5 › foreign studio cannot silently switch into an authorized studio (386ms)
+  ✓  12 [chromium] › tests/browser/auth.spec.ts:37:5 › password recovery preserves new password and requires a fresh sign in (443ms)
+  ✓  13 [chromium] › tests/browser/auth.spec.ts:44:5 › unverified login rejects invalid OTP then verifies before saving credentials (560ms)
+  ✓  15 [chromium] › tests/browser/auth.spec.ts:58:5 › unsafe external login return destination is discarded (299ms)
+  ✓  14 [chromium] › tests/browser/auth.spec.ts:52:5 › studio registration requires a studio name and submits studio onboarding details (465ms)
+  ✓  17 [chromium] › tests/browser/commerce.spec.ts:12:5 › free enrollment verifies before activation (517ms)
+  ✓  16 [chromium] › tests/browser/commerce.spec.ts:3:5 › paid class purchase waits for verification; failure retries the same order after reload (855ms)
+  ✓  18 [chromium] › tests/browser/commerce.spec.ts:17:5 › dismissed payment can retry without a false success (522ms)
+  ✓  20 [chromium] › tests/browser/commerce.spec.ts:32:5 › billing permission denial exposes no payment controls (334ms)
+  ✓  19 [chromium] › tests/browser/commerce.spec.ts:21:5 › billing consent, quote total and verified purchase history (576ms)
+  ✓  21 [chromium] › tests/browser/commerce.spec.ts:36:5 › pending subscription reconciles into paid history without starting checkout (514ms)
+  ✓  22 [chromium] › tests/browser/commerce.spec.ts:43:5 › guest checkout goes to sign in before creating any order (605ms)
+  ✓  23 [chromium] › tests/browser/commerce.spec.ts:47:5 › denied class purchase does not activate access (498ms)
+  ✓  24 [chromium] › tests/browser/commerce.spec.ts:51:5 › expired checkout clears credentials and preserves the sign-in destination (657ms)
+  ✓  25 [chromium] › tests/browser/performance.spec.ts:3:5 › records local page paint and layout samples (531ms)
+  ✓  27 [chromium] › tests/browser/security-headers.spec.ts:2:5 › auth page responses include safe embedding and referrer headers (218ms)
+(node:81957) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  28 [mobile-chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /login (625ms)
+  ✓  29 [mobile-chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /register?role=STUDENT (533ms)
+  ✓  30 [mobile-chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /register?role=STUDIO (569ms)
+  ✓  31 [mobile-chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /privacy (532ms)
+  ✓  32 [mobile-chromium] › tests/browser/accessibility.spec.ts:4:6 › WCAG A/AA checks /pricing-policy (494ms)
+  ✓  33 [mobile-chromium] › tests/browser/accessibility.spec.ts:10:5 › privacy dialog keyboard focus is contained, Escape closes and returns focus without consenting (347ms)
+  ✓  34 [mobile-chromium] › tests/browser/accessibility.spec.ts:16:5 › native checkout dialog and billing controls are accessible (950ms)
+  ✓  26 [chromium] › tests/browser/resources.spec.ts:3:5 › repeated checkout and billing unmounts release DOM and listeners (5.1s)
+(node:82039) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  35 [mobile-chromium] › tests/browser/auth.spec.ts:2:5 › student registration requires consent, preserves password, verifies OTP and returns to next (559ms)
+  ✓  37 [mobile-chromium] › tests/browser/auth.spec.ts:26:5 › expired staff session redirects with requested studio destination intact (414ms)
+  ✓  36 [mobile-chromium] › tests/browser/auth.spec.ts:18:5 › login reports rejected credentials, then preserves next and exact password (644ms)
+  ✓  38 [mobile-chromium] › tests/browser/auth.spec.ts:31:5 › foreign studio cannot silently switch into an authorized studio (380ms)
+  ✓  39 [mobile-chromium] › tests/browser/auth.spec.ts:37:5 › password recovery preserves new password and requires a fresh sign in (494ms)
+  ✓  40 [mobile-chromium] › tests/browser/auth.spec.ts:44:5 › unverified login rejects invalid OTP then verifies before saving credentials (556ms)
+  ✓  41 [mobile-chromium] › tests/browser/auth.spec.ts:52:5 › studio registration requires a studio name and submits studio onboarding details (478ms)
+  ✓  42 [mobile-chromium] › tests/browser/auth.spec.ts:58:5 › unsafe external login return destination is discarded (283ms)
+  ✓  44 [mobile-chromium] › tests/browser/commerce.spec.ts:12:5 › free enrollment verifies before activation (601ms)
+  ✓  43 [mobile-chromium] › tests/browser/commerce.spec.ts:3:5 › paid class purchase waits for verification; failure retries the same order after reload (805ms)
+  ✓  45 [mobile-chromium] › tests/browser/commerce.spec.ts:17:5 › dismissed payment can retry without a false success (519ms)
+  ✓  46 [mobile-chromium] › tests/browser/commerce.spec.ts:21:5 › billing consent, quote total and verified purchase history (656ms)
+  ✓  47 [mobile-chromium] › tests/browser/commerce.spec.ts:32:5 › billing permission denial exposes no payment controls (420ms)
+  ✓  48 [mobile-chromium] › tests/browser/commerce.spec.ts:36:5 › pending subscription reconciles into paid history without starting checkout (547ms)
+  ✓  49 [mobile-chromium] › tests/browser/commerce.spec.ts:43:5 › guest checkout goes to sign in before creating any order (698ms)
+  ✓  50 [mobile-chromium] › tests/browser/commerce.spec.ts:47:5 › denied class purchase does not activate access (521ms)
+  ✓  51 [mobile-chromium] › tests/browser/commerce.spec.ts:51:5 › expired checkout clears credentials and preserves the sign-in destination (709ms)
+  ✓  52 [mobile-chromium] › tests/browser/performance.spec.ts:3:5 › records local page paint and layout samples (487ms)
+  ✓  54 [mobile-chromium] › tests/browser/security-headers.spec.ts:2:5 › auth page responses include safe embedding and referrer headers (296ms)
+  ✓  53 [mobile-chromium] › tests/browser/resources.spec.ts:3:5 › repeated checkout and billing unmounts release DOM and listeners (5.0s)
+
+  54 passed (24.5s)

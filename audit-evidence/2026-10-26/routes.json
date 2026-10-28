@@ -1,0 +1,6168 @@
+[
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom",
+    "file": "app/modules/zoom/router.py",
+    "line": 39,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom/authorization-request",
+    "file": "app/modules/zoom/router.py",
+    "line": 45,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom/connect",
+    "file": "app/modules/zoom/router.py",
+    "line": 53,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom/studio-connect",
+    "file": "app/modules/zoom/router.py",
+    "line": 65,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "studio_password": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Studio Password",
+          "type": "string"
+        },
+        "zoom_email": {
+          "anyOf": [
+            {
+              "format": "email",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Email"
+        },
+        "zoom_host_id": {
+          "anyOf": [
+            {
+              "maxLength": 255,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Host Id"
+        }
+      },
+      "required": [
+        "studio_password"
+      ],
+      "title": "StudioConnectRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/integrations/zoom/request",
+    "file": "app/modules/zoom/router.py",
+    "line": 79,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "request": {
+          "maxLength": 512,
+          "minLength": 20,
+          "title": "Request",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "title": "RedeemRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/integrations/zoom/callback",
+    "file": "app/modules/zoom/router.py",
+    "line": 89,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "state": {
+          "maxLength": 512,
+          "minLength": 20,
+          "title": "State",
+          "type": "string"
+        },
+        "code": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "state",
+        "code"
+      ],
+      "title": "CallbackRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/integrations/zoom/confirm",
+    "file": "app/modules/zoom/router.py",
+    "line": 94,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "confirmation_id": {
+          "format": "uuid",
+          "title": "Confirmation Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation_id"
+      ],
+      "title": "ConfirmRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom/impact",
+    "file": "app/modules/zoom/router.py",
+    "line": 99,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "DELETE"
+    ],
+    "path": "/organizations/{org_id}/teachers/{member_id}/zoom",
+    "file": "app/modules/zoom/router.py",
+    "line": 105,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/zoom/retry-revocations",
+    "file": "app/modules/zoom/router.py",
+    "line": 181,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/zoom/apply-future-settings",
+    "file": "app/modules/zoom/router.py",
+    "line": 191,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "version": {
+          "title": "Version",
+          "type": "integer"
+        },
+        "apply": {
+          "default": false,
+          "title": "Apply",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "version"
+      ],
+      "title": "ApplyRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/zoom/reconcile",
+    "file": "app/modules/zoom/router.py",
+    "line": 234,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "replacement_member_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Replacement Member Id"
+        },
+        "confirm_links_change": {
+          "default": false,
+          "title": "Confirm Links Change",
+          "type": "boolean"
+        }
+      },
+      "title": "ReconcileRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/integrations/zoom/deauthorization",
+    "file": "app/modules/zoom/router.py",
+    "line": 270,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/zoom/meetings",
+    "file": "app/modules/zoom/router.py",
+    "line": 334,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/auth/register",
+    "file": "app/modules/auth/router.py",
+    "line": 28,
+    "response_model": "<class 'app.modules.auth.schemas.RegisterResponse'>",
+    "body_schema": {
+      "properties": {
+        "full_name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Full Name",
+          "type": "string"
+        },
+        "email": {
+          "format": "email",
+          "title": "Email",
+          "type": "string"
+        },
+        "password": {
+          "maxLength": 128,
+          "minLength": 8,
+          "title": "Password",
+          "type": "string"
+        },
+        "phone": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Phone"
+        },
+        "whatsapp_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Whatsapp Number"
+        },
+        "role": {
+          "default": "STUDIO",
+          "enum": [
+            "STUDIO",
+            "STUDENT"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "maxLength": 255,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "studio_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Studio Name"
+        },
+        "selected_plan": {
+          "default": "starter",
+          "enum": [
+            "starter",
+            "core",
+            "studio"
+          ],
+          "title": "Selected Plan",
+          "type": "string"
+        },
+        "billing_country": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Z]{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Billing Country"
+        },
+        "privacy_accepted": {
+          "title": "Privacy Accepted",
+          "type": "boolean"
+        },
+        "privacy_policy_version": {
+          "enum": [
+            "2026-10-21",
+            "2026-10-23"
+          ],
+          "title": "Privacy Policy Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "full_name",
+        "email",
+        "password",
+        "privacy_accepted",
+        "privacy_policy_version"
+      ],
+      "title": "RegisterRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/auth/login",
+    "file": "app/modules/auth/router.py",
+    "line": 52,
+    "response_model": "<class 'app.modules.auth.schemas.LoginResponse'>",
+    "body_schema": {
+      "properties": {
+        "email": {
+          "title": "Email",
+          "type": "string"
+        },
+        "password": {
+          "title": "Password",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ],
+      "title": "LoginRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/auth/dev-login",
+    "file": "app/modules/auth/router.py",
+    "line": 68,
+    "response_model": "<class 'app.modules.auth.schemas.LoginResponse'>",
+    "body_schema": {
+      "properties": {
+        "role": {
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role"
+      ],
+      "title": "DevLoginRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/auth/otp/generate",
+    "file": "app/modules/auth/router.py",
+    "line": 137,
+    "response_model": "<class 'app.modules.auth.schemas.RequestOTPResponse'>",
+    "body_schema": {
+      "properties": {
+        "email": {
+          "title": "Email",
+          "type": "string"
+        },
+        "purpose": {
+          "default": "LOGIN_VERIFICATION",
+          "title": "Purpose",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "title": "RequestOTPRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/auth/request-otp",
+    "file": "app/modules/auth/router.py",
+    "line": 137,
+    "response_model": "<class 'app.modules.auth.schemas.RequestOTPResponse'>",
+    "body_schema": {
+      "properties": {
+        "email": {
+          "title": "Email",
+          "type": "string"
+        },
+        "purpose": {
+          "default": "LOGIN_VERIFICATION",
+          "title": "Purpose",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "title": "RequestOTPRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/auth/otp/verify",
+    "file": "app/modules/auth/router.py",
+    "line": 153,
+    "response_model": "<class 'app.modules.auth.schemas.TokenResponse'>",
+    "body_schema": {
+      "properties": {
+        "email": {
+          "title": "Email",
+          "type": "string"
+        },
+        "otp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Otp"
+        },
+        "otp_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Otp Code"
+        },
+        "purpose": {
+          "default": "LOGIN_VERIFICATION",
+          "title": "Purpose",
+          "type": "string"
+        },
+        "full_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Name"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "title": "VerifyOTPRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/auth/verify-otp",
+    "file": "app/modules/auth/router.py",
+    "line": 153,
+    "response_model": "<class 'app.modules.auth.schemas.TokenResponse'>",
+    "body_schema": {
+      "properties": {
+        "email": {
+          "title": "Email",
+          "type": "string"
+        },
+        "otp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Otp"
+        },
+        "otp_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Otp Code"
+        },
+        "purpose": {
+          "default": "LOGIN_VERIFICATION",
+          "title": "Purpose",
+          "type": "string"
+        },
+        "full_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Name"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "title": "VerifyOTPRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/auth/me",
+    "file": "app/modules/auth/router.py",
+    "line": 242,
+    "response_model": "<class 'app.modules.auth.schemas.UserResponse'>",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/auth/me",
+    "file": "app/modules/auth/router.py",
+    "line": 257,
+    "response_model": "<class 'app.modules.auth.schemas.UserResponse'>",
+    "body_schema": {
+      "properties": {
+        "billing_country": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Z]{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Billing Country"
+        },
+        "full_name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Full Name",
+          "type": "string"
+        },
+        "phone": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Phone"
+        },
+        "whatsapp_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Whatsapp Number"
+        },
+        "address": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Address"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "maxLength": 255,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        }
+      },
+      "required": [
+        "full_name"
+      ],
+      "title": "ProfileUpdate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/auth/context",
+    "file": "app/modules/auth/router.py",
+    "line": 266,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/auth/forgot-password",
+    "file": "app/modules/auth/router.py",
+    "line": 313,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "email": {
+          "title": "Email",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "title": "ForgotPasswordRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/auth/reset-password",
+    "file": "app/modules/auth/router.py",
+    "line": 322,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "email": {
+          "title": "Email",
+          "type": "string"
+        },
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "new_password": {
+          "title": "New Password",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "code",
+        "new_password"
+      ],
+      "title": "ResetPasswordRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/auth/me/preferences",
+    "file": "app/modules/auth/router.py",
+    "line": 328,
+    "response_model": "<class 'app.modules.auth.schemas.DashboardPreferences'>",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/auth/me/preferences",
+    "file": "app/modules/auth/router.py",
+    "line": 333,
+    "response_model": "<class 'app.modules.auth.schemas.DashboardPreferences'>",
+    "body_schema": {
+      "properties": {
+        "dashboard_font": {
+          "default": "ibm-plex",
+          "enum": [
+            "lora",
+            "manrope",
+            "dm-sans",
+            "ibm-plex",
+            "source-sans",
+            "source-serif"
+          ],
+          "title": "Dashboard Font",
+          "type": "string"
+        }
+      },
+      "title": "DashboardPreferences",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations",
+    "file": "app/modules/organizations/router.py",
+    "line": 153,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string"
+        },
+        "timezone": {
+          "default": "Asia/Kolkata",
+          "title": "Timezone",
+          "type": "string"
+        },
+        "currency": {
+          "default": "INR",
+          "title": "Currency",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "slug"
+      ],
+      "title": "OrganizationCreate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}",
+    "file": "app/modules/organizations/router.py",
+    "line": 204,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/members",
+    "file": "app/modules/organizations/router.py",
+    "line": 233,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/profile",
+    "file": "app/modules/organizations/router.py",
+    "line": 258,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PUT"
+    ],
+    "path": "/organizations/{org_id}/profile",
+    "file": "app/modules/organizations/router.py",
+    "line": 337,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "phone": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Phone"
+        },
+        "whatsapp_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Whatsapp Number"
+        },
+        "support_email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Support Email"
+        },
+        "studio_tagline": {
+          "anyOf": [
+            {
+              "maxLength": 5000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Studio Tagline"
+        },
+        "disciplines": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Disciplines"
+        },
+        "teaching_mode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Teaching Mode"
+        },
+        "address_line1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Address Line1"
+        },
+        "address_line2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Address Line2"
+        },
+        "city": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "City"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "State"
+        },
+        "pincode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pincode"
+        },
+        "country": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "India",
+          "title": "Country"
+        },
+        "has_gst": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Has Gst"
+        },
+        "gst_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gst Number"
+        },
+        "legal_business_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Legal Business Name"
+        },
+        "pan_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pan Number"
+        },
+        "bank_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bank Name"
+        },
+        "account_holder_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Account Holder Name"
+        },
+        "account_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Account Number"
+        },
+        "ifsc_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ifsc Code"
+        },
+        "upi_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upi Id"
+        },
+        "settlement_cycle": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Settlement Cycle"
+        },
+        "zoom_connected": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Connected"
+        },
+        "zoom_account_email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Account Email"
+        },
+        "zoom_auto_meeting_enabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Auto Meeting Enabled"
+        },
+        "zoom_waiting_room": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Waiting Room"
+        },
+        "zoom_host_video": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Host Video"
+        },
+        "zoom_enforce_basic_login": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Enforce Basic Login"
+        },
+        "zoom_enforce_zoom_login": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Enforce Zoom Login"
+        },
+        "zoom_group_allow_self_buy_subscriptions": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Group Allow Self Buy Subscriptions"
+        },
+        "zoom_group_active_subscription_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Group Active Subscription Required"
+        },
+        "zoom_group_confirm_checkin_everytime": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Group Confirm Checkin Everytime"
+        },
+        "zoom_personal_allow_self_buy_subscriptions": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Personal Allow Self Buy Subscriptions"
+        },
+        "zoom_personal_active_subscription_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Personal Active Subscription Required"
+        },
+        "zoom_personal_confirm_checkin_everytime": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Personal Confirm Checkin Everytime"
+        },
+        "zoom_personal_no_show_penalty": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Personal No Show Penalty"
+        },
+        "zoom_join_before_host": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Join Before Host"
+        },
+        "zoom_cloud_recording_mode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Cloud Recording Mode"
+        },
+        "zoom_host_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zoom Host Key"
+        },
+        "account_completed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Account Completed"
+        },
+        "completion_step": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completion Step"
+        },
+        "completion_percentage": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completion Percentage"
+        }
+      },
+      "title": "StudioProfileUpdate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/zoom/connect",
+    "file": "app/modules/organizations/router.py",
+    "line": 445,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "account_email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Account Email"
+        },
+        "account_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Account Id"
+        },
+        "client_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Client Id"
+        },
+        "client_secret": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Client Secret"
+        },
+        "auto_meeting_enabled": {
+          "default": true,
+          "title": "Auto Meeting Enabled",
+          "type": "boolean"
+        },
+        "waiting_room": {
+          "default": true,
+          "title": "Waiting Room",
+          "type": "boolean"
+        },
+        "host_video": {
+          "default": true,
+          "title": "Host Video",
+          "type": "boolean"
+        },
+        "is_dev_simulation": {
+          "default": false,
+          "title": "Is Dev Simulation",
+          "type": "boolean"
+        }
+      },
+      "title": "ZoomConnectRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/zoom/settings",
+    "file": "app/modules/organizations/router.py",
+    "line": 451,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PUT"
+    ],
+    "path": "/organizations/{org_id}/zoom/settings",
+    "file": "app/modules/organizations/router.py",
+    "line": 456,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "version": {
+          "title": "Version",
+          "type": "integer"
+        },
+        "default_host_member_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Default Host Member Id"
+        },
+        "fallback_enabled": {
+          "default": true,
+          "title": "Fallback Enabled",
+          "type": "boolean"
+        },
+        "auto_meeting_enabled": {
+          "default": false,
+          "title": "Auto Meeting Enabled",
+          "type": "boolean"
+        },
+        "waiting_room": {
+          "default": true,
+          "title": "Waiting Room",
+          "type": "boolean"
+        },
+        "host_video": {
+          "default": true,
+          "title": "Host Video",
+          "type": "boolean"
+        },
+        "join_before_host": {
+          "default": false,
+          "title": "Join Before Host",
+          "type": "boolean"
+        },
+        "enforce_zoom_login": {
+          "default": false,
+          "title": "Enforce Zoom Login",
+          "type": "boolean"
+        },
+        "enforce_basic_login": {
+          "default": true,
+          "title": "Enforce Basic Login",
+          "type": "boolean"
+        },
+        "group_allow_self_buy_subscriptions": {
+          "default": true,
+          "title": "Group Allow Self Buy Subscriptions",
+          "type": "boolean"
+        },
+        "group_active_subscription_required": {
+          "default": true,
+          "title": "Group Active Subscription Required",
+          "type": "boolean"
+        },
+        "group_confirm_checkin_everytime": {
+          "default": true,
+          "title": "Group Confirm Checkin Everytime",
+          "type": "boolean"
+        },
+        "personal_allow_self_buy_subscriptions": {
+          "default": true,
+          "title": "Personal Allow Self Buy Subscriptions",
+          "type": "boolean"
+        },
+        "personal_active_subscription_required": {
+          "default": true,
+          "title": "Personal Active Subscription Required",
+          "type": "boolean"
+        },
+        "personal_confirm_checkin_everytime": {
+          "default": true,
+          "title": "Personal Confirm Checkin Everytime",
+          "type": "boolean"
+        },
+        "personal_no_show_penalty": {
+          "default": true,
+          "title": "Personal No Show Penalty",
+          "type": "boolean"
+        },
+        "acknowledge_impact": {
+          "default": false,
+          "title": "Acknowledge Impact",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "version"
+      ],
+      "title": "DefaultsRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "PUT"
+    ],
+    "path": "/organizations/{org_id}/zoom/host-key",
+    "file": "app/modules/organizations/router.py",
+    "line": 462,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "host_key": {
+          "pattern": "^\\d{6}$",
+          "title": "Host Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "host_key"
+      ],
+      "title": "ZoomHostKeyUpdateRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/zoom/host-key",
+    "file": "app/modules/organizations/router.py",
+    "line": 476,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/zoom/disconnect",
+    "file": "app/modules/organizations/router.py",
+    "line": 486,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/zoom/generate-meeting",
+    "file": "app/modules/organizations/router.py",
+    "line": 491,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "topic": {
+          "title": "Topic",
+          "type": "string"
+        },
+        "start_time": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start Time"
+        },
+        "duration_minutes": {
+          "default": 60,
+          "title": "Duration Minutes",
+          "type": "integer"
+        },
+        "timezone": {
+          "default": "Asia/Kolkata",
+          "title": "Timezone",
+          "type": "string"
+        }
+      },
+      "required": [
+        "topic"
+      ],
+      "title": "ZoomMeetingGenerateRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/plans",
+    "file": "app/modules/plans/router.py",
+    "line": 10,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "DELETE"
+    ],
+    "path": "/organizations/{org_id}/sessions/{class_id}",
+    "file": "app/modules/classes/router.py",
+    "line": 32,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "DELETE"
+    ],
+    "path": "/organizations/{org_id}/classes/{class_id}",
+    "file": "app/modules/classes/router.py",
+    "line": 32,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/class-types",
+    "file": "app/modules/classes/router.py",
+    "line": 66,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/class-types",
+    "file": "app/modules/classes/router.py",
+    "line": 77,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        }
+      },
+      "required": [
+        "name",
+        "slug"
+      ],
+      "title": "ClassTypeCreate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/sessions",
+    "file": "app/modules/classes/router.py",
+    "line": 95,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/classes",
+    "file": "app/modules/classes/router.py",
+    "line": 95,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/one-on-one-classes",
+    "file": "app/modules/classes/router.py",
+    "line": 183,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "title": {
+          "default": "1-on-1 Private Session",
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "teacher_member_id": {
+          "format": "uuid",
+          "title": "Teacher Member Id",
+          "type": "string"
+        },
+        "student_user_id": {
+          "format": "uuid",
+          "title": "Student User Id",
+          "type": "string"
+        },
+        "full_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Description"
+        },
+        "offer_price": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Offer Price"
+        },
+        "date": {
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "start_time": {
+          "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+          "title": "Start Time",
+          "type": "string"
+        },
+        "end_time": {
+          "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+          "title": "End Time",
+          "type": "string"
+        },
+        "price": {
+          "default": 0.0,
+          "minimum": 0.0,
+          "title": "Price",
+          "type": "number"
+        }
+      },
+      "required": [
+        "teacher_member_id",
+        "student_user_id",
+        "date",
+        "start_time",
+        "end_time"
+      ],
+      "title": "OneOnOneSessionCreate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/sessions",
+    "file": "app/modules/classes/router.py",
+    "line": 371,
+    "response_model": "None",
+    "body_schema": {
+      "$defs": {
+        "ClassPackage": {
+          "properties": {
+            "id": {
+              "format": "uuid",
+              "title": "Id",
+              "type": "string"
+            },
+            "total_classes": {
+              "maximum": 10000,
+              "minimum": 1,
+              "title": "Total Classes",
+              "type": "integer"
+            },
+            "price": {
+              "anyOf": [
+                {
+                  "minimum": 0.0,
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "title": "Price"
+            },
+            "offer_price": {
+              "anyOf": [
+                {
+                  "minimum": 0.0,
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Offer Price"
+            },
+            "validity_days": {
+              "default": 30,
+              "maximum": 3650,
+              "minimum": 1,
+              "title": "Validity Days",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "total_classes",
+            "price"
+          ],
+          "title": "ClassPackage",
+          "type": "object"
+        },
+        "PricingType": {
+          "enum": [
+            "ONE_TIME",
+            "MONTHLY",
+            "PACKAGE",
+            "PER_SESSION"
+          ],
+          "title": "PricingType",
+          "type": "string"
+        },
+        "ScheduleRuleCreate": {
+          "properties": {
+            "day_of_week": {
+              "maximum": 6,
+              "minimum": 0,
+              "title": "Day Of Week",
+              "type": "integer"
+            },
+            "start_time": {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+              "title": "Start Time",
+              "type": "string"
+            },
+            "end_time": {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+              "title": "End Time",
+              "type": "string"
+            },
+            "effective_start_date": {
+              "format": "date",
+              "title": "Effective Start Date",
+              "type": "string"
+            },
+            "effective_end_date": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Effective End Date"
+            }
+          },
+          "required": [
+            "day_of_week",
+            "start_time",
+            "end_time",
+            "effective_start_date"
+          ],
+          "title": "ScheduleRuleCreate",
+          "type": "object"
+        },
+        "SessionPricingCreate": {
+          "properties": {
+            "pricing_type": {
+              "$ref": "#/$defs/PricingType",
+              "default": "MONTHLY"
+            },
+            "price": {
+              "minimum": 0.0,
+              "title": "Price",
+              "type": "number"
+            },
+            "packages": {
+              "anyOf": [
+                {
+                  "items": {
+                    "$ref": "#/$defs/ClassPackage"
+                  },
+                  "maxItems": 20,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Packages"
+            },
+            "currency": {
+              "default": "INR",
+              "title": "Currency",
+              "type": "string"
+            },
+            "total_classes": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Total Classes"
+            },
+            "validity_days": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": 30,
+              "title": "Validity Days"
+            }
+          },
+          "required": [
+            "price"
+          ],
+          "title": "SessionPricingCreate",
+          "type": "object"
+        },
+        "SessionRequirementCreate": {
+          "properties": {
+            "prerequisites": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Prerequisites"
+            },
+            "required_equipment": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Required Equipment"
+            },
+            "preparation_instructions": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Preparation Instructions"
+            },
+            "additional_notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Additional Notes"
+            }
+          },
+          "title": "SessionRequirementCreate",
+          "type": "object"
+        },
+        "SessionType": {
+          "enum": [
+            "GROUP",
+            "ONE_TO_ONE",
+            "WORKSHOP",
+            "PROGRAM"
+          ],
+          "title": "SessionType",
+          "type": "string"
+        },
+        "SkillLevel": {
+          "enum": [
+            "ALL_LEVELS",
+            "BEGINNER",
+            "INTERMEDIATE",
+            "ADVANCED"
+          ],
+          "title": "SkillLevel",
+          "type": "string"
+        }
+      },
+      "properties": {
+        "class_type_id": {
+          "format": "uuid",
+          "title": "Class Type Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string"
+        },
+        "short_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Short Description"
+        },
+        "full_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Description"
+        },
+        "session_type": {
+          "$ref": "#/$defs/SessionType",
+          "default": "GROUP"
+        },
+        "capacity": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capacity"
+        },
+        "min_age": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Age"
+        },
+        "max_age": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Age"
+        },
+        "skill_level": {
+          "$ref": "#/$defs/SkillLevel",
+          "default": "ALL_LEVELS"
+        },
+        "duration_minutes": {
+          "default": 60,
+          "title": "Duration Minutes",
+          "type": "integer"
+        },
+        "language": {
+          "default": "English",
+          "title": "Language",
+          "type": "string"
+        },
+        "is_public": {
+          "default": true,
+          "title": "Is Public",
+          "type": "boolean"
+        },
+        "is_active": {
+          "default": true,
+          "title": "Is Active",
+          "type": "boolean"
+        },
+        "instructor_member_ids": {
+          "default": [],
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "title": "Instructor Member Ids",
+          "type": "array"
+        },
+        "pricing": {
+          "$ref": "#/$defs/SessionPricingCreate"
+        },
+        "requirements": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionRequirementCreate"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schedule_rules": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ScheduleRuleCreate"
+          },
+          "title": "Schedule Rules",
+          "type": "array"
+        }
+      },
+      "required": [
+        "class_type_id",
+        "name",
+        "slug",
+        "pricing"
+      ],
+      "title": "SessionCreate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/classes",
+    "file": "app/modules/classes/router.py",
+    "line": 371,
+    "response_model": "None",
+    "body_schema": {
+      "$defs": {
+        "ClassPackage": {
+          "properties": {
+            "id": {
+              "format": "uuid",
+              "title": "Id",
+              "type": "string"
+            },
+            "total_classes": {
+              "maximum": 10000,
+              "minimum": 1,
+              "title": "Total Classes",
+              "type": "integer"
+            },
+            "price": {
+              "anyOf": [
+                {
+                  "minimum": 0.0,
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "title": "Price"
+            },
+            "offer_price": {
+              "anyOf": [
+                {
+                  "minimum": 0.0,
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Offer Price"
+            },
+            "validity_days": {
+              "default": 30,
+              "maximum": 3650,
+              "minimum": 1,
+              "title": "Validity Days",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "total_classes",
+            "price"
+          ],
+          "title": "ClassPackage",
+          "type": "object"
+        },
+        "PricingType": {
+          "enum": [
+            "ONE_TIME",
+            "MONTHLY",
+            "PACKAGE",
+            "PER_SESSION"
+          ],
+          "title": "PricingType",
+          "type": "string"
+        },
+        "ScheduleRuleCreate": {
+          "properties": {
+            "day_of_week": {
+              "maximum": 6,
+              "minimum": 0,
+              "title": "Day Of Week",
+              "type": "integer"
+            },
+            "start_time": {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+              "title": "Start Time",
+              "type": "string"
+            },
+            "end_time": {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+              "title": "End Time",
+              "type": "string"
+            },
+            "effective_start_date": {
+              "format": "date",
+              "title": "Effective Start Date",
+              "type": "string"
+            },
+            "effective_end_date": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Effective End Date"
+            }
+          },
+          "required": [
+            "day_of_week",
+            "start_time",
+            "end_time",
+            "effective_start_date"
+          ],
+          "title": "ScheduleRuleCreate",
+          "type": "object"
+        },
+        "SessionPricingCreate": {
+          "properties": {
+            "pricing_type": {
+              "$ref": "#/$defs/PricingType",
+              "default": "MONTHLY"
+            },
+            "price": {
+              "minimum": 0.0,
+              "title": "Price",
+              "type": "number"
+            },
+            "packages": {
+              "anyOf": [
+                {
+                  "items": {
+                    "$ref": "#/$defs/ClassPackage"
+                  },
+                  "maxItems": 20,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Packages"
+            },
+            "currency": {
+              "default": "INR",
+              "title": "Currency",
+              "type": "string"
+            },
+            "total_classes": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Total Classes"
+            },
+            "validity_days": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": 30,
+              "title": "Validity Days"
+            }
+          },
+          "required": [
+            "price"
+          ],
+          "title": "SessionPricingCreate",
+          "type": "object"
+        },
+        "SessionRequirementCreate": {
+          "properties": {
+            "prerequisites": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Prerequisites"
+            },
+            "required_equipment": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Required Equipment"
+            },
+            "preparation_instructions": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Preparation Instructions"
+            },
+            "additional_notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Additional Notes"
+            }
+          },
+          "title": "SessionRequirementCreate",
+          "type": "object"
+        },
+        "SessionType": {
+          "enum": [
+            "GROUP",
+            "ONE_TO_ONE",
+            "WORKSHOP",
+            "PROGRAM"
+          ],
+          "title": "SessionType",
+          "type": "string"
+        },
+        "SkillLevel": {
+          "enum": [
+            "ALL_LEVELS",
+            "BEGINNER",
+            "INTERMEDIATE",
+            "ADVANCED"
+          ],
+          "title": "SkillLevel",
+          "type": "string"
+        }
+      },
+      "properties": {
+        "class_type_id": {
+          "format": "uuid",
+          "title": "Class Type Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string"
+        },
+        "short_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Short Description"
+        },
+        "full_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Description"
+        },
+        "session_type": {
+          "$ref": "#/$defs/SessionType",
+          "default": "GROUP"
+        },
+        "capacity": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capacity"
+        },
+        "min_age": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Age"
+        },
+        "max_age": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Age"
+        },
+        "skill_level": {
+          "$ref": "#/$defs/SkillLevel",
+          "default": "ALL_LEVELS"
+        },
+        "duration_minutes": {
+          "default": 60,
+          "title": "Duration Minutes",
+          "type": "integer"
+        },
+        "language": {
+          "default": "English",
+          "title": "Language",
+          "type": "string"
+        },
+        "is_public": {
+          "default": true,
+          "title": "Is Public",
+          "type": "boolean"
+        },
+        "is_active": {
+          "default": true,
+          "title": "Is Active",
+          "type": "boolean"
+        },
+        "instructor_member_ids": {
+          "default": [],
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "title": "Instructor Member Ids",
+          "type": "array"
+        },
+        "pricing": {
+          "$ref": "#/$defs/SessionPricingCreate"
+        },
+        "requirements": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionRequirementCreate"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schedule_rules": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ScheduleRuleCreate"
+          },
+          "title": "Schedule Rules",
+          "type": "array"
+        }
+      },
+      "required": [
+        "class_type_id",
+        "name",
+        "slug",
+        "pricing"
+      ],
+      "title": "SessionCreate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "PUT"
+    ],
+    "path": "/organizations/{org_id}/sessions/{class_id}",
+    "file": "app/modules/classes/router.py",
+    "line": 464,
+    "response_model": "None",
+    "body_schema": {
+      "$defs": {
+        "ClassPackage": {
+          "properties": {
+            "id": {
+              "format": "uuid",
+              "title": "Id",
+              "type": "string"
+            },
+            "total_classes": {
+              "maximum": 10000,
+              "minimum": 1,
+              "title": "Total Classes",
+              "type": "integer"
+            },
+            "price": {
+              "anyOf": [
+                {
+                  "minimum": 0.0,
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "title": "Price"
+            },
+            "offer_price": {
+              "anyOf": [
+                {
+                  "minimum": 0.0,
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Offer Price"
+            },
+            "validity_days": {
+              "default": 30,
+              "maximum": 3650,
+              "minimum": 1,
+              "title": "Validity Days",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "total_classes",
+            "price"
+          ],
+          "title": "ClassPackage",
+          "type": "object"
+        },
+        "PricingType": {
+          "enum": [
+            "ONE_TIME",
+            "MONTHLY",
+            "PACKAGE",
+            "PER_SESSION"
+          ],
+          "title": "PricingType",
+          "type": "string"
+        },
+        "ScheduleRuleCreate": {
+          "properties": {
+            "day_of_week": {
+              "maximum": 6,
+              "minimum": 0,
+              "title": "Day Of Week",
+              "type": "integer"
+            },
+            "start_time": {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+              "title": "Start Time",
+              "type": "string"
+            },
+            "end_time": {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+              "title": "End Time",
+              "type": "string"
+            },
+            "effective_start_date": {
+              "format": "date",
+              "title": "Effective Start Date",
+              "type": "string"
+            },
+            "effective_end_date": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Effective End Date"
+            }
+          },
+          "required": [
+            "day_of_week",
+            "start_time",
+            "end_time",
+            "effective_start_date"
+          ],
+          "title": "ScheduleRuleCreate",
+          "type": "object"
+        },
+        "SessionPricingCreate": {
+          "properties": {
+            "pricing_type": {
+              "$ref": "#/$defs/PricingType",
+              "default": "MONTHLY"
+            },
+            "price": {
+              "minimum": 0.0,
+              "title": "Price",
+              "type": "number"
+            },
+            "packages": {
+              "anyOf": [
+                {
+                  "items": {
+                    "$ref": "#/$defs/ClassPackage"
+                  },
+                  "maxItems": 20,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Packages"
+            },
+            "currency": {
+              "default": "INR",
+              "title": "Currency",
+              "type": "string"
+            },
+            "total_classes": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Total Classes"
+            },
+            "validity_days": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": 30,
+              "title": "Validity Days"
+            }
+          },
+          "required": [
+            "price"
+          ],
+          "title": "SessionPricingCreate",
+          "type": "object"
+        },
+        "SessionRequirementCreate": {
+          "properties": {
+            "prerequisites": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Prerequisites"
+            },
+            "required_equipment": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Required Equipment"
+            },
+            "preparation_instructions": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Preparation Instructions"
+            },
+            "additional_notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Additional Notes"
+            }
+          },
+          "title": "SessionRequirementCreate",
+          "type": "object"
+        },
+        "SessionType": {
+          "enum": [
+            "GROUP",
+            "ONE_TO_ONE",
+            "WORKSHOP",
+            "PROGRAM"
+          ],
+          "title": "SessionType",
+          "type": "string"
+        },
+        "SkillLevel": {
+          "enum": [
+            "ALL_LEVELS",
+            "BEGINNER",
+            "INTERMEDIATE",
+            "ADVANCED"
+          ],
+          "title": "SkillLevel",
+          "type": "string"
+        }
+      },
+      "properties": {
+        "acknowledge_zoom_host_impact": {
+          "default": false,
+          "title": "Acknowledge Zoom Host Impact",
+          "type": "boolean"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "capacity": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capacity"
+        },
+        "duration_minutes": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration Minutes"
+        },
+        "is_active": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Active"
+        },
+        "is_public": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Public"
+        },
+        "short_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Short Description"
+        },
+        "full_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Description"
+        },
+        "skill_level": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SkillLevel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "session_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "instructor_member_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Instructor Member Ids"
+        },
+        "pricing": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionPricingCreate"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "requirements": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionRequirementCreate"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schedule_rules": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/ScheduleRuleCreate"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Schedule Rules"
+        }
+      },
+      "title": "SessionUpdate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "PUT"
+    ],
+    "path": "/organizations/{org_id}/classes/{class_id}",
+    "file": "app/modules/classes/router.py",
+    "line": 464,
+    "response_model": "None",
+    "body_schema": {
+      "$defs": {
+        "ClassPackage": {
+          "properties": {
+            "id": {
+              "format": "uuid",
+              "title": "Id",
+              "type": "string"
+            },
+            "total_classes": {
+              "maximum": 10000,
+              "minimum": 1,
+              "title": "Total Classes",
+              "type": "integer"
+            },
+            "price": {
+              "anyOf": [
+                {
+                  "minimum": 0.0,
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "title": "Price"
+            },
+            "offer_price": {
+              "anyOf": [
+                {
+                  "minimum": 0.0,
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Offer Price"
+            },
+            "validity_days": {
+              "default": 30,
+              "maximum": 3650,
+              "minimum": 1,
+              "title": "Validity Days",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "total_classes",
+            "price"
+          ],
+          "title": "ClassPackage",
+          "type": "object"
+        },
+        "PricingType": {
+          "enum": [
+            "ONE_TIME",
+            "MONTHLY",
+            "PACKAGE",
+            "PER_SESSION"
+          ],
+          "title": "PricingType",
+          "type": "string"
+        },
+        "ScheduleRuleCreate": {
+          "properties": {
+            "day_of_week": {
+              "maximum": 6,
+              "minimum": 0,
+              "title": "Day Of Week",
+              "type": "integer"
+            },
+            "start_time": {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+              "title": "Start Time",
+              "type": "string"
+            },
+            "end_time": {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d)?$",
+              "title": "End Time",
+              "type": "string"
+            },
+            "effective_start_date": {
+              "format": "date",
+              "title": "Effective Start Date",
+              "type": "string"
+            },
+            "effective_end_date": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Effective End Date"
+            }
+          },
+          "required": [
+            "day_of_week",
+            "start_time",
+            "end_time",
+            "effective_start_date"
+          ],
+          "title": "ScheduleRuleCreate",
+          "type": "object"
+        },
+        "SessionPricingCreate": {
+          "properties": {
+            "pricing_type": {
+              "$ref": "#/$defs/PricingType",
+              "default": "MONTHLY"
+            },
+            "price": {
+              "minimum": 0.0,
+              "title": "Price",
+              "type": "number"
+            },
+            "packages": {
+              "anyOf": [
+                {
+                  "items": {
+                    "$ref": "#/$defs/ClassPackage"
+                  },
+                  "maxItems": 20,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Packages"
+            },
+            "currency": {
+              "default": "INR",
+              "title": "Currency",
+              "type": "string"
+            },
+            "total_classes": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Total Classes"
+            },
+            "validity_days": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": 30,
+              "title": "Validity Days"
+            }
+          },
+          "required": [
+            "price"
+          ],
+          "title": "SessionPricingCreate",
+          "type": "object"
+        },
+        "SessionRequirementCreate": {
+          "properties": {
+            "prerequisites": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Prerequisites"
+            },
+            "required_equipment": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Required Equipment"
+            },
+            "preparation_instructions": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Preparation Instructions"
+            },
+            "additional_notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Additional Notes"
+            }
+          },
+          "title": "SessionRequirementCreate",
+          "type": "object"
+        },
+        "SessionType": {
+          "enum": [
+            "GROUP",
+            "ONE_TO_ONE",
+            "WORKSHOP",
+            "PROGRAM"
+          ],
+          "title": "SessionType",
+          "type": "string"
+        },
+        "SkillLevel": {
+          "enum": [
+            "ALL_LEVELS",
+            "BEGINNER",
+            "INTERMEDIATE",
+            "ADVANCED"
+          ],
+          "title": "SkillLevel",
+          "type": "string"
+        }
+      },
+      "properties": {
+        "acknowledge_zoom_host_impact": {
+          "default": false,
+          "title": "Acknowledge Zoom Host Impact",
+          "type": "boolean"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "capacity": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capacity"
+        },
+        "duration_minutes": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration Minutes"
+        },
+        "is_active": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Active"
+        },
+        "is_public": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Public"
+        },
+        "short_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Short Description"
+        },
+        "full_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Description"
+        },
+        "skill_level": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SkillLevel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "session_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "instructor_member_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Instructor Member Ids"
+        },
+        "pricing": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionPricingCreate"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "requirements": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionRequirementCreate"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schedule_rules": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/ScheduleRuleCreate"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Schedule Rules"
+        }
+      },
+      "title": "SessionUpdate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/organizations/{org_id}/sessions/{class_id}/toggle-status",
+    "file": "app/modules/classes/router.py",
+    "line": 617,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/organizations/{org_id}/classes/{class_id}/toggle-status",
+    "file": "app/modules/classes/router.py",
+    "line": 617,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/membership-tiers",
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 68,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/membership-tiers",
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 125,
+    "response_model": "None",
+    "body_schema": {
+      "$defs": {
+        "ClassPackageSelection": {
+          "properties": {
+            "session_id": {
+              "format": "uuid",
+              "title": "Session Id",
+              "type": "string"
+            },
+            "package_id": {
+              "format": "uuid",
+              "title": "Package Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "session_id",
+            "package_id"
+          ],
+          "title": "ClassPackageSelection",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "tier_type": {
+          "default": "MONTHLY",
+          "title": "Tier Type",
+          "type": "string"
+        },
+        "price": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Price"
+        },
+        "offer_price": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Offer Price"
+        },
+        "currency": {
+          "default": "INR",
+          "title": "Currency",
+          "type": "string"
+        },
+        "validity_days": {
+          "default": 30,
+          "title": "Validity Days",
+          "type": "integer"
+        },
+        "total_classes": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Classes"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "is_active": {
+          "default": true,
+          "title": "Is Active",
+          "type": "boolean"
+        },
+        "class_ids": {
+          "default": [],
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "title": "Class Ids",
+          "type": "array"
+        },
+        "class_packages": {
+          "items": {
+            "$ref": "#/$defs/ClassPackageSelection"
+          },
+          "maxItems": 100,
+          "title": "Class Packages",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "price"
+      ],
+      "title": "MembershipTierCreate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "PUT"
+    ],
+    "path": "/organizations/{org_id}/membership-tiers/{tier_id}",
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 171,
+    "response_model": "None",
+    "body_schema": {
+      "$defs": {
+        "ClassPackageSelection": {
+          "properties": {
+            "session_id": {
+              "format": "uuid",
+              "title": "Session Id",
+              "type": "string"
+            },
+            "package_id": {
+              "format": "uuid",
+              "title": "Package Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "session_id",
+            "package_id"
+          ],
+          "title": "ClassPackageSelection",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "tier_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tier Type"
+        },
+        "price": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Price"
+        },
+        "offer_price": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Offer Price"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency"
+        },
+        "validity_days": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Validity Days"
+        },
+        "total_classes": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Classes"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "is_active": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Active"
+        },
+        "class_ids": {
+          "anyOf": [
+            {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Class Ids"
+        },
+        "class_packages": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/ClassPackageSelection"
+              },
+              "maxItems": 100,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Class Packages"
+        }
+      },
+      "title": "MembershipTierUpdate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/organizations/{org_id}/membership-tiers/{tier_id}/toggle-status",
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 239,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "DELETE"
+    ],
+    "path": "/organizations/{org_id}/membership-tiers/{tier_id}",
+    "file": "app/modules/membership_tiers/router.py",
+    "line": 261,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/billing/progressrooms",
+    "file": "app/modules/billing/router.py",
+    "line": 28,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/billing/teachers",
+    "file": "app/modules/billing/router.py",
+    "line": 131,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/billing/summary",
+    "file": "app/modules/billing/router.py",
+    "line": 150,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/billing/export.csv",
+    "file": "app/modules/billing/router.py",
+    "line": 201,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/saas-billing/access",
+    "file": "app/modules/billing/saas_router.py",
+    "line": 45,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/saas-billing",
+    "file": "app/modules/billing/saas_router.py",
+    "line": 53,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/saas-billing/quote",
+    "file": "app/modules/billing/saas_router.py",
+    "line": 73,
+    "response_model": "None",
+    "body_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "plan_id": {
+          "format": "uuid",
+          "title": "Plan Id",
+          "type": "string"
+        },
+        "billing_country": {
+          "pattern": "^[A-Z]{2}$",
+          "title": "Billing Country",
+          "type": "string"
+        }
+      },
+      "required": [
+        "plan_id",
+        "billing_country"
+      ],
+      "title": "QuoteRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/saas-billing/checkouts",
+    "file": "app/modules/billing/saas_router.py",
+    "line": 82,
+    "response_model": "None",
+    "body_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "plan_id": {
+          "format": "uuid",
+          "title": "Plan Id",
+          "type": "string"
+        },
+        "billing_country": {
+          "pattern": "^[A-Z]{2}$",
+          "title": "Billing Country",
+          "type": "string"
+        },
+        "idempotency_key": {
+          "maxLength": 64,
+          "minLength": 16,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "title": "Idempotency Key",
+          "type": "string"
+        },
+        "expected_total_paise": {
+          "exclusiveMinimum": 0,
+          "title": "Expected Total Paise",
+          "type": "integer"
+        },
+        "accepted_policy_version": {
+          "const": "2026-10-23",
+          "title": "Accepted Policy Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "plan_id",
+        "billing_country",
+        "idempotency_key",
+        "expected_total_paise",
+        "accepted_policy_version"
+      ],
+      "title": "CheckoutRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/saas-billing/checkouts/{checkout_id}/verify",
+    "file": "app/modules/billing/saas_router.py",
+    "line": 97,
+    "response_model": "None",
+    "body_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "razorpay_order_id": {
+          "maxLength": 255,
+          "title": "Razorpay Order Id",
+          "type": "string"
+        },
+        "razorpay_payment_id": {
+          "maxLength": 255,
+          "pattern": "^pay_[a-zA-Z0-9]+$",
+          "title": "Razorpay Payment Id",
+          "type": "string"
+        },
+        "razorpay_signature": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Razorpay Signature",
+          "type": "string"
+        }
+      },
+      "required": [
+        "razorpay_order_id",
+        "razorpay_payment_id",
+        "razorpay_signature"
+      ],
+      "title": "VerifyRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/saas-billing/checkouts/{checkout_id}/reconcile",
+    "file": "app/modules/billing/saas_router.py",
+    "line": 110,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/saas-billing/webhooks/razorpay",
+    "file": "app/modules/billing/saas_router.py",
+    "line": 126,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/occurrences",
+    "file": "app/modules/scheduling/router.py",
+    "line": 32,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/reschedule",
+    "file": "app/modules/scheduling/router.py",
+    "line": 71,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "new_start_at": {
+          "format": "date-time",
+          "title": "New Start At",
+          "type": "string"
+        },
+        "new_end_at": {
+          "format": "date-time",
+          "title": "New End At",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "new_start_at",
+        "new_end_at",
+        "reason"
+      ],
+      "title": "ReschedulePayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/cancel",
+    "file": "app/modules/scheduling/router.py",
+    "line": 129,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "title": "CancelPayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/join-link",
+    "file": "app/modules/scheduling/router.py",
+    "line": 172,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/occurrences/teacher-agenda",
+    "file": "app/modules/scheduling/router.py",
+    "line": 196,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/send-invite",
+    "file": "app/modules/scheduling/router.py",
+    "line": 231,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/commerce/orders",
+    "file": "app/modules/commerce/router.py",
+    "line": 36,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "session_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Session Id"
+        },
+        "tier_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tier Id"
+        },
+        "package_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Package Id"
+        }
+      },
+      "title": "CreateOrderPayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/commerce/payments/verify",
+    "file": "app/modules/commerce/router.py",
+    "line": 61,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "order_id": {
+          "format": "uuid",
+          "title": "Order Id",
+          "type": "string"
+        },
+        "razorpay_order_id": {
+          "title": "Razorpay Order Id",
+          "type": "string"
+        },
+        "razorpay_payment_id": {
+          "title": "Razorpay Payment Id",
+          "type": "string"
+        },
+        "razorpay_signature": {
+          "title": "Razorpay Signature",
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id",
+        "razorpay_order_id",
+        "razorpay_payment_id",
+        "razorpay_signature"
+      ],
+      "title": "VerifyPaymentPayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/commerce/webhooks/razorpay",
+    "file": "app/modules/commerce/router.py",
+    "line": 137,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/attendance",
+    "file": "app/modules/attendance/router.py",
+    "line": 26,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/occurrences/{occurrence_id}/attendance",
+    "file": "app/modules/attendance/router.py",
+    "line": 60,
+    "response_model": "None",
+    "body_schema": {
+      "$defs": {
+        "AttendanceStatus": {
+          "enum": [
+            "ATTENDED",
+            "ABSENT",
+            "EXCUSED"
+          ],
+          "title": "AttendanceStatus",
+          "type": "string"
+        }
+      },
+      "properties": {
+        "enrollment_id": {
+          "format": "uuid",
+          "title": "Enrollment Id",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/AttendanceStatus",
+          "default": "ATTENDED"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "enrollment_id"
+      ],
+      "title": "MarkAttendancePayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/attendance/teachers/{teacher_id}",
+    "file": "app/modules/attendance/calendar.py",
+    "line": 50,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PUT"
+    ],
+    "path": "/organizations/{org_id}/attendance/teachers/{teacher_id}/occurrences/{occurrence_id}",
+    "file": "app/modules/attendance/calendar.py",
+    "line": 78,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "status": {
+          "enum": [
+            "PRESENT",
+            "ABSENT",
+            "EXCUSED",
+            "CANCELLED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "TeacherAttendanceUpdate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/attendance/students/{student_id}",
+    "file": "app/modules/attendance/calendar.py",
+    "line": 101,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/public/website-templates",
+    "file": "app/modules/websites/router.py",
+    "line": 54,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/public/website-templates/{code}/preview",
+    "file": "app/modules/websites/router.py",
+    "line": 59,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/public/website-assets/{filename}",
+    "file": "app/modules/websites/router.py",
+    "line": 69,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/website-workspace",
+    "file": "app/modules/websites/router.py",
+    "line": 79,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/website",
+    "file": "app/modules/websites/router.py",
+    "line": 88,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/public/organizations/{org_slug}",
+    "file": "app/modules/websites/router.py",
+    "line": 129,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/public/organizations/{org_slug}/sessions/{session_slug}",
+    "file": "app/modules/websites/router.py",
+    "line": 237,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/public/organizations/{org_slug}/classes/{session_slug}",
+    "file": "app/modules/websites/router.py",
+    "line": 237,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PUT"
+    ],
+    "path": "/organizations/{org_id}/website",
+    "file": "app/modules/websites/router.py",
+    "line": 380,
+    "response_model": "None",
+    "body_schema": {
+      "$defs": {
+        "WebsiteCard": {
+          "properties": {
+            "title": {
+              "maxLength": 120,
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            },
+            "text": {
+              "default": "",
+              "maxLength": 1000,
+              "title": "Text",
+              "type": "string"
+            },
+            "image_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Image Id"
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "title": "WebsiteCard",
+          "type": "object"
+        },
+        "WebsiteImage": {
+          "properties": {
+            "id": {
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "title": "Id",
+              "type": "string"
+            },
+            "url": {
+              "maxLength": 1024,
+              "minLength": 1,
+              "title": "Url",
+              "type": "string"
+            },
+            "alt": {
+              "default": "",
+              "maxLength": 200,
+              "title": "Alt",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "url"
+          ],
+          "title": "WebsiteImage",
+          "type": "object"
+        },
+        "WebsiteSection": {
+          "properties": {
+            "id": {
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "title": "Id",
+              "type": "string"
+            },
+            "title": {
+              "maxLength": 160,
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            },
+            "description": {
+              "default": "",
+              "maxLength": 1200,
+              "title": "Description",
+              "type": "string"
+            },
+            "cards": {
+              "items": {
+                "$ref": "#/$defs/WebsiteCard"
+              },
+              "maxItems": 9,
+              "title": "Cards",
+              "type": "array"
+            }
+          },
+          "required": [
+            "id",
+            "title"
+          ],
+          "title": "WebsiteSection",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "template_code": {
+          "default": "TEMPLATE_1",
+          "title": "Template Code",
+          "type": "string"
+        },
+        "eyebrow": {
+          "default": "A little space for you",
+          "maxLength": 100,
+          "title": "Eyebrow",
+          "type": "string"
+        },
+        "headline": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Headline",
+          "type": "string"
+        },
+        "subheadline": {
+          "default": "",
+          "maxLength": 500,
+          "title": "Subheadline",
+          "type": "string"
+        },
+        "about_title": {
+          "default": "More than a studio. A place to belong.",
+          "maxLength": 180,
+          "title": "About Title",
+          "type": "string"
+        },
+        "about_text": {
+          "default": "",
+          "maxLength": 5000,
+          "title": "About Text",
+          "type": "string"
+        },
+        "cta_title": {
+          "default": "Your next chapter starts here.",
+          "maxLength": 180,
+          "title": "Cta Title",
+          "type": "string"
+        },
+        "cta_text": {
+          "default": "Find your class. Make a little time for yourself.",
+          "maxLength": 500,
+          "title": "Cta Text",
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "$ref": "#/$defs/WebsiteImage"
+          },
+          "maxItems": 5,
+          "title": "Images",
+          "type": "array"
+        },
+        "sections": {
+          "items": {
+            "$ref": "#/$defs/WebsiteSection"
+          },
+          "maxItems": 12,
+          "title": "Sections",
+          "type": "array"
+        },
+        "hero_image_url": {
+          "default": "",
+          "maxLength": 1024,
+          "title": "Hero Image Url",
+          "type": "string"
+        },
+        "primary_color": {
+          "default": "#243c32",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "title": "Primary Color",
+          "type": "string"
+        },
+        "accent_color": {
+          "default": "#d4c7aa",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "title": "Accent Color",
+          "type": "string"
+        }
+      },
+      "required": [
+        "headline"
+      ],
+      "title": "WebsiteUpdatePayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/website/preview",
+    "file": "app/modules/websites/router.py",
+    "line": 399,
+    "response_model": "None",
+    "body_schema": {
+      "$defs": {
+        "WebsiteCard": {
+          "properties": {
+            "title": {
+              "maxLength": 120,
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            },
+            "text": {
+              "default": "",
+              "maxLength": 1000,
+              "title": "Text",
+              "type": "string"
+            },
+            "image_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Image Id"
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "title": "WebsiteCard",
+          "type": "object"
+        },
+        "WebsiteImage": {
+          "properties": {
+            "id": {
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "title": "Id",
+              "type": "string"
+            },
+            "url": {
+              "maxLength": 1024,
+              "minLength": 1,
+              "title": "Url",
+              "type": "string"
+            },
+            "alt": {
+              "default": "",
+              "maxLength": 200,
+              "title": "Alt",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "url"
+          ],
+          "title": "WebsiteImage",
+          "type": "object"
+        },
+        "WebsiteSection": {
+          "properties": {
+            "id": {
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "title": "Id",
+              "type": "string"
+            },
+            "title": {
+              "maxLength": 160,
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            },
+            "description": {
+              "default": "",
+              "maxLength": 1200,
+              "title": "Description",
+              "type": "string"
+            },
+            "cards": {
+              "items": {
+                "$ref": "#/$defs/WebsiteCard"
+              },
+              "maxItems": 9,
+              "title": "Cards",
+              "type": "array"
+            }
+          },
+          "required": [
+            "id",
+            "title"
+          ],
+          "title": "WebsiteSection",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "template_code": {
+          "default": "TEMPLATE_1",
+          "title": "Template Code",
+          "type": "string"
+        },
+        "eyebrow": {
+          "default": "A little space for you",
+          "maxLength": 100,
+          "title": "Eyebrow",
+          "type": "string"
+        },
+        "headline": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Headline",
+          "type": "string"
+        },
+        "subheadline": {
+          "default": "",
+          "maxLength": 500,
+          "title": "Subheadline",
+          "type": "string"
+        },
+        "about_title": {
+          "default": "More than a studio. A place to belong.",
+          "maxLength": 180,
+          "title": "About Title",
+          "type": "string"
+        },
+        "about_text": {
+          "default": "",
+          "maxLength": 5000,
+          "title": "About Text",
+          "type": "string"
+        },
+        "cta_title": {
+          "default": "Your next chapter starts here.",
+          "maxLength": 180,
+          "title": "Cta Title",
+          "type": "string"
+        },
+        "cta_text": {
+          "default": "Find your class. Make a little time for yourself.",
+          "maxLength": 500,
+          "title": "Cta Text",
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "$ref": "#/$defs/WebsiteImage"
+          },
+          "maxItems": 5,
+          "title": "Images",
+          "type": "array"
+        },
+        "sections": {
+          "items": {
+            "$ref": "#/$defs/WebsiteSection"
+          },
+          "maxItems": 12,
+          "title": "Sections",
+          "type": "array"
+        },
+        "hero_image_url": {
+          "default": "",
+          "maxLength": 1024,
+          "title": "Hero Image Url",
+          "type": "string"
+        },
+        "primary_color": {
+          "default": "#243c32",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "title": "Primary Color",
+          "type": "string"
+        },
+        "accent_color": {
+          "default": "#d4c7aa",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "title": "Accent Color",
+          "type": "string"
+        }
+      },
+      "required": [
+        "headline"
+      ],
+      "title": "WebsiteUpdatePayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/website/publish",
+    "file": "app/modules/websites/router.py",
+    "line": 407,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/website/download/{version}",
+    "file": "app/modules/websites/router.py",
+    "line": 436,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/public/organizations/{org_slug}/website-html",
+    "file": "app/modules/websites/router.py",
+    "line": 444,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/website/image",
+    "file": "app/modules/websites/router.py",
+    "line": 468,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "file": {
+          "format": "binary",
+          "title": "File",
+          "type": "string"
+        }
+      },
+      "required": [
+        "file"
+      ],
+      "title": "Body_upload_website_image_organizations__org_id__website_image_post",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/public/website-images/{filename}",
+    "file": "app/modules/websites/router.py",
+    "line": 487,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/student/studios",
+    "file": "app/modules/student/router.py",
+    "line": 28,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/student/enrollments",
+    "file": "app/modules/student/router.py",
+    "line": 41,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/student/upcoming-classes",
+    "file": "app/modules/student/router.py",
+    "line": 106,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/student/classes/{occurrence_id}/meeting-url",
+    "file": "app/modules/student/router.py",
+    "line": 169,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/student/classes/{occurrence_id}/cancel",
+    "file": "app/modules/student/router.py",
+    "line": 223,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/student/classes/{occurrence_id}/available-reschedule-slots",
+    "file": "app/modules/student/router.py",
+    "line": 286,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/student/classes/{occurrence_id}/reschedule",
+    "file": "app/modules/student/router.py",
+    "line": 359,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "target_occurrence_id": {
+          "format": "uuid",
+          "title": "Target Occurrence Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "target_occurrence_id"
+      ],
+      "title": "RescheduleBookingRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/student/attendance",
+    "file": "app/modules/student/router.py",
+    "line": 453,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/student/classes/{occurrence_id}/send-invite",
+    "file": "app/modules/student/router.py",
+    "line": 548,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/students",
+    "file": "app/modules/students/router.py",
+    "line": 32,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/students/{record_id}",
+    "file": "app/modules/students/router.py",
+    "line": 77,
+    "response_model": "None",
+    "body_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "full_name": {
+          "anyOf": [
+            {
+              "maxLength": 255,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Name"
+        },
+        "phone": {
+          "title": "Phone",
+          "type": "string"
+        },
+        "whatsapp_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Whatsapp Number"
+        },
+        "address": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Address"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "maxLength": 255,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "enum": [
+                "ACTIVE",
+                "INACTIVE",
+                "SUSPENDED"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Status"
+        },
+        "student_notes": {
+          "anyOf": [
+            {
+              "maxLength": 5000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Student Notes"
+        },
+        "teacher_member_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Teacher Member Id"
+        }
+      },
+      "required": [
+        "phone"
+      ],
+      "title": "StudentUpdate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/students",
+    "file": "app/modules/students/router.py",
+    "line": 116,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "email": {
+          "format": "email",
+          "title": "Email",
+          "type": "string"
+        },
+        "class_id": {
+          "format": "uuid",
+          "title": "Class Id",
+          "type": "string"
+        },
+        "teacher_member_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Teacher Member Id"
+        }
+      },
+      "required": [
+        "email",
+        "class_id"
+      ],
+      "title": "AddStudent",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/students/{record_id}/enrollments",
+    "file": "app/modules/students/router.py",
+    "line": 179,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/students/{record_id}/enrollments/{enrollment_id}/{action}",
+    "file": "app/modules/students/router.py",
+    "line": 192,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/teachers/public/lookup",
+    "file": "app/modules/teachers/router.py",
+    "line": 59,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/teachers/public/{code_or_id}",
+    "file": "app/modules/teachers/router.py",
+    "line": 254,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/teachers",
+    "file": "app/modules/teachers/router.py",
+    "line": 258,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/teachers",
+    "file": "app/modules/teachers/router.py",
+    "line": 283,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "billing_country": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Z]{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Billing Country"
+        },
+        "name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "email": {
+          "format": "email",
+          "title": "Email",
+          "type": "string"
+        },
+        "username": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 3,
+              "pattern": "^[a-zA-Z0-9_.-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Username"
+        },
+        "password": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 8,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Password"
+        },
+        "phone": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Phone"
+        },
+        "address": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Address"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "maxLength": 255,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "title": {
+          "default": "Teacher",
+          "title": "Title",
+          "type": "string"
+        },
+        "bio": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bio"
+        },
+        "studio_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Studio Id"
+        }
+      },
+      "required": [
+        "name",
+        "email"
+      ],
+      "title": "TeacherCreateRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "PUT"
+    ],
+    "path": "/teachers/{member_id}",
+    "file": "app/modules/teachers/router.py",
+    "line": 317,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "billing_country": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Z]{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Billing Country"
+        },
+        "studio_password": {
+          "default": "",
+          "maxLength": 128,
+          "title": "Studio Password",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "maxLength": 255,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "email": {
+          "anyOf": [
+            {
+              "format": "email",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Email"
+        },
+        "username": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 3,
+              "pattern": "^[a-zA-Z0-9_.-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Username"
+        },
+        "password": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 8,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Password"
+        },
+        "phone": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Phone"
+        },
+        "address": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Address"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "maxLength": 255,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "bio": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bio"
+        },
+        "is_active": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Active"
+        }
+      },
+      "title": "TeacherUpdateRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "DELETE"
+    ],
+    "path": "/teachers/{member_id}",
+    "file": "app/modules/teachers/router.py",
+    "line": 363,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/teachers/{member_id}/password",
+    "file": "app/modules/teachers/router.py",
+    "line": 386,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "studio_password": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Studio Password",
+          "type": "string"
+        }
+      },
+      "required": [
+        "studio_password"
+      ],
+      "title": "CredentialRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/teachers/{member_id}/invitation",
+    "file": "app/modules/teachers/router.py",
+    "line": 394,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "studio_password": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Studio Password",
+          "type": "string"
+        }
+      },
+      "required": [
+        "studio_password"
+      ],
+      "title": "CredentialRequest",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/metrics",
+    "file": "app/modules/admin/router.py",
+    "line": 18,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/organizations",
+    "file": "app/modules/admin/router.py",
+    "line": 49,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/organizations/{org_id}",
+    "file": "app/modules/admin/router.py",
+    "line": 107,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/organizations/{org_id}/progressrooms",
+    "file": "app/modules/admin/router.py",
+    "line": 155,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/organizations/{org_id}/teachers",
+    "file": "app/modules/admin/router.py",
+    "line": 167,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/instructors",
+    "file": "app/modules/admin/router.py",
+    "line": 173,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/admin/instructors/{member_id}/toggle-status",
+    "file": "app/modules/admin/router.py",
+    "line": 248,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/instructors/{member_id}/zoom-impact",
+    "file": "app/modules/admin/router.py",
+    "line": 277,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/admin/organizations/{org_id}/status",
+    "file": "app/modules/admin/router.py",
+    "line": 293,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "status": {
+          "enum": [
+            "ACTIVE",
+            "SUSPENDED"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "StudioState",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "DELETE"
+    ],
+    "path": "/admin/organizations/{org_id}",
+    "file": "app/modules/admin/router.py",
+    "line": 304,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/people",
+    "file": "app/modules/admin/router.py",
+    "line": 315,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "DELETE"
+    ],
+    "path": "/admin/people/{user_id}",
+    "file": "app/modules/admin/router.py",
+    "line": 337,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/health",
+    "file": "app/modules/admin/health.py",
+    "line": 111,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/support-tickets",
+    "file": "app/modules/support/router.py",
+    "line": 34,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/organizations/{org_id}/support-tickets/{ticket_id}",
+    "file": "app/modules/support/router.py",
+    "line": 70,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/organizations/{org_id}/support-tickets/{ticket_id}/messages",
+    "file": "app/modules/support/router.py",
+    "line": 107,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "title": "SendMessagePayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/organizations/{org_id}/support-tickets/{ticket_id}/status",
+    "file": "app/modules/support/router.py",
+    "line": 153,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "status": {
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "UpdateTicketStatusPayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/student/support-tickets",
+    "file": "app/modules/support/router.py",
+    "line": 191,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/student/support-tickets",
+    "file": "app/modules/support/router.py",
+    "line": 225,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "organization_id": {
+          "format": "uuid",
+          "title": "Organization Id",
+          "type": "string"
+        },
+        "subject": {
+          "title": "Subject",
+          "type": "string"
+        },
+        "category": {
+          "default": "GENERAL",
+          "title": "Category",
+          "type": "string"
+        },
+        "initial_message": {
+          "title": "Initial Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "organization_id",
+        "subject",
+        "initial_message"
+      ],
+      "title": "CreateTicketPayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/student/support-tickets/{ticket_id}",
+    "file": "app/modules/support/router.py",
+    "line": 271,
+    "response_model": "None",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/student/support-tickets/{ticket_id}/messages",
+    "file": "app/modules/support/router.py",
+    "line": 313,
+    "response_model": "None",
+    "body_schema": {
+      "properties": {
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "title": "SendMessagePayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/communication/settings",
+    "file": "app/modules/communication/router.py",
+    "line": 52,
+    "response_model": "<class 'app.modules.communication.schemas.CommunicationSettingsResponse'>",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/admin/communication/settings",
+    "file": "app/modules/communication/router.py",
+    "line": 64,
+    "response_model": "<class 'app.modules.communication.schemas.CommunicationSettingsResponse'>",
+    "body_schema": {
+      "properties": {
+        "whatsapp_enabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Whatsapp Enabled"
+        },
+        "email_enabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Email Enabled"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "title": "CommunicationSettingsUpdate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/admin/communication/test",
+    "file": "app/modules/communication/router.py",
+    "line": 84,
+    "response_model": "<class 'app.modules.communication.schemas.CommunicationTestResponse'>",
+    "body_schema": {
+      "properties": {
+        "channel": {
+          "description": "Target channel: 'EMAIL', 'WHATSAPP_ADMIN', or 'WHATSAPP_CLASSES'",
+          "title": "Channel",
+          "type": "string"
+        },
+        "recipient": {
+          "description": "Target recipient email or E.164 phone number",
+          "title": "Recipient",
+          "type": "string"
+        },
+        "message": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Optional custom test message",
+          "title": "Message"
+        }
+      },
+      "required": [
+        "channel",
+        "recipient"
+      ],
+      "title": "CommunicationTestPayload",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/communication/history",
+    "file": "app/modules/communication/router.py",
+    "line": 98,
+    "response_model": "<class 'app.modules.communication.schemas.CommunicationLogListResponse'>",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/communication/audit-logs",
+    "file": "app/modules/communication/router.py",
+    "line": 158,
+    "response_model": "list[app.modules.communication.schemas.CommunicationAuditLogItem]",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "GET"
+    ],
+    "path": "/admin/communication/budgets",
+    "file": "app/modules/communication/router.py",
+    "line": 189,
+    "response_model": "list[app.modules.communication.schemas.StudioBudgetResponse]",
+    "body_schema": null
+  },
+  {
+    "methods": [
+      "PATCH"
+    ],
+    "path": "/admin/communication/budgets/{organization_id}",
+    "file": "app/modules/communication/router.py",
+    "line": 201,
+    "response_model": "<class 'app.modules.communication.schemas.StudioBudgetResponse'>",
+    "body_schema": {
+      "properties": {
+        "monthly_allowance_inr": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Monthly Allowance Inr"
+        },
+        "overage_policy": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Overage Policy"
+        }
+      },
+      "title": "StudioBudgetUpdate",
+      "type": "object"
+    }
+  },
+  {
+    "methods": [
+      "POST"
+    ],
+    "path": "/admin/communication/run-engine-cycle",
+    "file": "app/modules/communication/router.py",
+    "line": 227,
+    "response_model": "<class 'app.modules.communication.schemas.EngineCycleResponse'>",
+    "body_schema": null
+  }
+]

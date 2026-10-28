@@ -1,0 +1,153 @@
+{
+  "mode": "in-process ASGI + real PostgreSQL, tracemalloc enabled",
+  "requests": 3000,
+  "concurrency": 10,
+  "seconds": 405.0315351659665,
+  "cpu_seconds": 402.35416,
+  "requests_per_second": 7.406830677445188,
+  "statuses": {
+    "200": 3000
+  },
+  "latency_ms": {
+    "p50": 1141.025270568207,
+    "p95": 2419.4354999344796,
+    "p99": 3311.34962500073
+  },
+  "event_loop_lag_ms": {
+    "p95": 358.24012502096593,
+    "max": 576.2120000040159
+  },
+  "samples": [
+    {
+      "batch": 1,
+      "python_bytes": 907031,
+      "python_peak_bytes": 4756955,
+      "rss_bytes": 141131776,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 2,
+      "python_bytes": 1241045,
+      "python_peak_bytes": 5413816,
+      "rss_bytes": 118751232,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 3,
+      "python_bytes": 1415821,
+      "python_peak_bytes": 5887269,
+      "rss_bytes": 120750080,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 4,
+      "python_bytes": 1448483,
+      "python_peak_bytes": 5887269,
+      "rss_bytes": 120963072,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 5,
+      "python_bytes": 1476573,
+      "python_peak_bytes": 5966634,
+      "rss_bytes": 119488512,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 6,
+      "python_bytes": 1507715,
+      "python_peak_bytes": 6232880,
+      "rss_bytes": 123338752,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    }
+  ],
+  "top_retained_growth": [
+    {
+      "location": "/Users/sahil/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/asyncio/selector_events.py:1013",
+      "bytes": 271614,
+      "allocations": 5471
+    },
+    {
+      "location": "/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/.venv/lib/python3.11/site-packages/asyncpg/connection.py:470",
+      "bytes": 156710,
+      "allocations": 1935
+    },
+    {
+      "location": "<string>:1",
+      "bytes": 109680,
+      "allocations": 1515
+    },
+    {
+      "location": "/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/scripts/profile_runtime.py:67",
+      "bytes": 71952,
+      "allocations": 2998
+    },
+    {
+      "location": "/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/scripts/profile_runtime.py:61",
+      "bytes": 69920,
+      "allocations": 2157
+    },
+    {
+      "location": "/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/.venv/lib/python3.11/site-packages/asyncpg/prepared_stmt.py:100",
+      "bytes": 59230,
+      "allocations": 810
+    },
+    {
+      "location": "/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/.venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py:2168",
+      "bytes": 53515,
+      "allocations": 45
+    },
+    {
+      "location": "/Users/sahil/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/_weakrefset.py:88",
+      "bytes": 36944,
+      "allocations": 3
+    },
+    {
+      "location": "/Users/sahil/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/weakref.py:428",
+      "bytes": 36888,
+      "allocations": 1
+    },
+    {
+      "location": "/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/scripts/profile_runtime.py:68",
+      "bytes": 26068,
+      "allocations": 3
+    },
+    {
+      "location": "/Users/sahil/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/json/decoder.py:329",
+      "bytes": 23040,
+      "allocations": 370
+    },
+    {
+      "location": "/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/.venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py:1311",
+      "bytes": 15190,
+      "allocations": 217
+    },
+    {
+      "location": "/Users/sahil/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/re/__init__.py:223",
+      "bytes": 15125,
+      "allocations": 275
+    },
+    {
+      "location": "/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/.venv/lib/python3.11/site-packages/_distutils_hack/__init__.py:107",
+      "bytes": 10855,
+      "allocations": 167
+    },
+    {
+      "location": "/Users/sahil/Documents/work/openroots/progressrooms/progressrooms-api/.venv/lib/python3.11/site-packages/asyncpg/connection.py:432",
+      "bytes": 10400,
+      "allocations": 65
+    }
+  ]
+}

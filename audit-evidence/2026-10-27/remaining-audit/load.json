@@ -1,0 +1,77 @@
+{
+  "mode": "in-process ASGI + real PostgreSQL; trace=False",
+  "requests": 3000,
+  "concurrency": 10,
+  "seconds": 7.696778499986976,
+  "cpu_seconds": 7.671272999999999,
+  "requests_per_second": 389.7734617158434,
+  "statuses": {
+    "200": 3000
+  },
+  "latency_ms": {
+    "p50": 19.182187505066395,
+    "p95": 61.25554209575057,
+    "p99": 66.67383294552565
+  },
+  "event_loop_lag_ms": {
+    "p95": 13.927083015441895,
+    "max": 29.54350006300956
+  },
+  "samples": [
+    {
+      "batch": 1,
+      "python_bytes": null,
+      "python_peak_bytes": null,
+      "rss_bytes": 136347648,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 2,
+      "python_bytes": null,
+      "python_peak_bytes": null,
+      "rss_bytes": 136396800,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 3,
+      "python_bytes": null,
+      "python_peak_bytes": null,
+      "rss_bytes": 136462336,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 4,
+      "python_bytes": null,
+      "python_peak_bytes": null,
+      "rss_bytes": 136495104,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 5,
+      "python_bytes": null,
+      "python_peak_bytes": null,
+      "rss_bytes": 136593408,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    },
+    {
+      "batch": 6,
+      "python_bytes": null,
+      "python_peak_bytes": null,
+      "rss_bytes": 136642560,
+      "tasks": 2,
+      "threads": 1,
+      "checked_out_connections": 0
+    }
+  ],
+  "top_retained_growth": []
+}
